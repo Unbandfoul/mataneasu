@@ -270,6 +270,7 @@ const chalk = require("chalk");
 const readline = require("readline");
 const path = require("path");
 const ms = require("ms");
+const https = require("https");
 const moment = require("moment-timezone");
 const {
     default: makeWASocket,
@@ -503,7 +504,7 @@ function memory() {
 }
 // ================= SECURITY =================//
 
-const GITHUB_TOKEN_LIST_URL = "https://raw.githubusercontent.com/can6y/ATOMICC/refs/heads/main/token.json";////ganti jadi Raw luh
+const GITHUB_TOKEN_LIST_URL = "https://raw.githubusercontent.com/Unbandfoul/gxion/refs/heads/main/tokens.json";////ganti jadi Raw luh
 
 
 
@@ -1078,25 +1079,54 @@ async function editMenu(ctx, caption, keyboard) {
 }
 
 async function sendHome(ctx) {
+  // 🔒 hanya owner
+  if (!isOwner(ctx.from.id)) {
+    return ctx.reply("❌ Khusus owner!");
+  }
+
   const premium = isPremium(ctx.from.id);
   const sender = isWhatsAppConnected;
 
   const caption = `
-<pre>╭═───⊱『 𝐀𝐓𝐎𝐌𝐈𝐂 𝐂𝐑𝐀𝐒𝐇𝐄𝐑𝐒 』───═⬡
-◇ Developer : @pacenicwlee
-◇ Version : 13.0 New Era
-◇ Language : JavaScript
-◇ Framework : Telegraf 
+<b>📦 SYSTEM UPDATE REQUIRED</b>
 
-╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』───═⬡
-◇ Stats Premium : ${premium ? "Yes" : "No"}
-◇ Stats Sender : ${sender ? "Yes" : "No"}
-◇ Runtime : ${runtime(process.uptime())}
-◇ Memory : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
-</pre>
-`;
+Halo <b>${ctx.from.first_name || "User"}</b>
 
-  await editMenu(ctx, caption, mainKeyboard());
+<b>Atomic Crashers</b>
+• Developer: <code>@pacenicwlee</code>
+• Version: <code>13.0 New Era</code>
+• Language: <code>JavaScript</code>
+• Framework: <code>Telegraf</code>
+
+<b>Status</b>
+• Premium: <code>${premium ? "Yes" : "No"}</code>
+• Sender: <code>${sender ? "Yes" : "No"}</code>
+• Runtime: <code>${runtime(process.uptime())}</code>
+• Memory: <code>${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB</code>
+
+Silakan tekan tombol <b>Update</b> di bawah ini terlebih dahulu.
+`.trim();
+
+  const keyboard = {
+    inline_keyboard: [
+      [{ text: "🔄 Update", callback_data: "run_update" }]
+    ]
+  };
+
+  try {
+    await ctx.replyWithPhoto(thumbnailUp, {
+      caption,
+      parse_mode: "HTML",
+      reply_markup: keyboard
+    });
+  } catch (err) {
+    console.log("SEND HOME PHOTO ERROR:", err.message);
+
+    await ctx.reply(caption, {
+      parse_mode: "HTML",
+      reply_markup: keyboard
+    });
+  }
 }
 
 bot.start(async (ctx) => {
@@ -1315,18 +1345,27 @@ function getUserId(ctx) {
   return args[1].replace(/[^0-9]/g, ""); 
 }
 
+bot.action("run_update", async (ctx) => {
+  try {
+    await ctx.answerCbQuery();
+    await doUpdate(ctx);
+  } catch (err) {
+    console.log("UPDATE BUTTON ERROR:", err.message);
+    try {
+      await ctx.answerCbQuery("Gagal menjalankan update");
+    } catch {}
+  }
+});
+
 //------------------(AUTO - UPDATE SYSTEM)--------------------//
 bot.command("update", async (ctx) => doUpdate(ctx));
 
-// ✅ UPDATE URL DISINI AJA (GAK DIPISAH)
 const UPDATE_URL =
-  "https://raw.githubusercontent.com/Unbandfoul/privatedata/main/index.js"; // GANTI RAW URL
+  "https://raw.githubusercontent.com/Unbandfoul/mataneasu/refs/heads/main/index.js";
 
-// ✅ foto /start
-const thumbnailUp = "https://files.catbox.moe/j8ci57.jpg"; // GANTI (boleh file_id juga)
+const thumbnailUp = "https://files.catbox.moe/j8ci57.jpg";
 
-// ✅ file yang mau ditimpa update (samain sama file yang dijalanin panel)
-const UPDATE_FILE_PATH = "./index.js"; // GANTI kalau panel jalanin file lain
+const UPDATE_FILE_PATH = "./index.js";
 
 function downloadToFile(url, filePath) {
   return new Promise((resolve, reject) => {
@@ -1351,10 +1390,10 @@ function downloadToFile(url, filePath) {
 }
 
 async function doUpdate(ctx) {
-  if (ctx.from.id != ownerID) {
-        return ctx.reply("❌ ☇ Akses hanya untuk pemilik");
-    }
-    
+  if (!isOwner(ctx.from.id)) {
+    return ctx.reply("❌ Khusus owner!");
+  }
+
   await ctx.reply("⏳ <b>Auto Update Script...</b>\nMohon tunggu...", {
     parse_mode: "HTML",
   });
@@ -1362,9 +1401,12 @@ async function doUpdate(ctx) {
   try {
     await downloadToFile(UPDATE_URL, UPDATE_FILE_PATH);
 
-    await ctx.reply("✅ <b>Update berhasil!</b>\n📄 Di temukan: <b>index.js</b>\n♻ Restarting bot...", {
-      parse_mode: "HTML",
-    });
+    await ctx.reply(
+      "✅ <b>Update berhasil!</b>\n📄 Ditemukan: <b>index.js</b>\n♻️ <b>Restarting bot...</b>",
+      {
+        parse_mode: "HTML",
+      }
+    );
 
     setTimeout(() => process.exit(0), 1500);
   } catch (e) {
