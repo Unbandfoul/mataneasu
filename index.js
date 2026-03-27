@@ -1057,7 +1057,7 @@ async function editMenu(ctx, caption, keyboard) {
     await ctx.editMessageMedia(
       {
         type: "photo",
-        media: { source: "./image/gxion.jpg" },
+        media: { source: "./image/AtomicCrashers.jpg" }
         caption: caption,
         parse_mode: "HTML"
       },
@@ -1067,7 +1067,7 @@ async function editMenu(ctx, caption, keyboard) {
     );
   } catch (e) {
     await ctx.replyWithPhoto(
-      { source: "./image/gxion.jpg" },
+      { source: "./image/AtomicCrashers.jpg" },
       {
         caption,
         parse_mode: "HTML",
@@ -2085,7 +2085,7 @@ bot.command("flowerdelay", checkAllPremium,checkWhatsAppConnection, async (ctx) 
 
   const processMessage = await ctx.telegram.sendPhoto(
     ctx.chat.id,
-    { source: "./image/gxion.jpg" }, 
+    { source: "./image/AtomicCrashers.jpg" }, 
     {
       caption: `
 <blockquote><pre>𝐆𝐗𝐈𝐎𝐍 𝐀𝐓𝐓𝐀𝐂𝐊𝐒</pre></blockquote>
