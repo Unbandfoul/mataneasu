@@ -2129,8 +2129,8 @@ bot.command("killsesi", checkOwner, async (ctx) => {
   }
 });
 /// ============= CASE BUG 1 BEBAS SPAM=============\\\
-bot.command("specterdelay", checkPremium, checkCooldown, checkWhatsAppConnection, async (ctx) => {
-
+bot.command("specterdelay", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
+  try {
   const q = ctx.message.text.split(" ")[1]; 
   if (!q) return ctx.reply("🪧 ☇ Example : /specterdelay 62xx");
 
