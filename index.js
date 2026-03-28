@@ -2165,7 +2165,7 @@ X Date           : ${dateStr}
 
     } catch (error) {
         console.error(error);
-        ctx.reply("❌ Gagal mengeksekusi delayInvisVnX.");
+        ctx.reply("❌ Gagal mengeksekusi DelayHardNullVnX.");
     }
 });
 /// CASE BUG 2///
