@@ -1322,11 +1322,11 @@ async function showInfo(ctx, page = 1) {
 
     keyboard = [
       [
-        { text: "⬅️", callback_data: "info_2", style: "primary" },
-        { text: "➡️", callback_data: "info_2", style: "danger" }
+        { text: "⬅️", callback_data: "info_two", style: "primary" },
+        { text: "➡️", callback_data: "info_two", style: "danger" }
       ],
       [
-        { text: "🔙𝐁𝐀𝐂𝐊 𝐌𝐄𝐍𝐔", callback_data: "backmenu", style: "success" }
+        { text: "🏠𝐁𝐀𝐂𝐊 𝐇𝐎𝐌𝐄", callback_data: "backmenu", style: "success" }
       ]
     ];
   }
@@ -1348,17 +1348,19 @@ async function showInfo(ctx, page = 1) {
 📩 Message Forwarded From : @Bawzhhh
 ━━━━━━━━━━━━━━━━━
 Halo user, perkenalkan nama saya adalah Bawzhhh saya salah pemilik atau developer di script ini, Saya ingin mengucapkan sebuah kata kata terimakasih kepada user yang telah membeli atau bahkan menggunakan script ini, Saya ingin mengucapkan sebuah kata maaf dikarenakan Script saya ini tidak sesuai sengan ekspektasi kalian, Saya memohon maaf jika fitur-fitur yang ada dikit, Tetapi saya akan usahakan dengan semaksimal mungkin next Update bakal Saya kembangin terus sampai hasilnya Memuaskan.
+
+Terimkasih Dengan Ini Saya Ucapkan Terimakasih Dan Salam Hormat.
 ━━━━━━━━━━━━━━━━━ 
 </pre>
 `;
 
     keyboard = [
       [
-        { text: "⬅️", callback_data: "info_1", style: "primary" },
-        { text: "➡️", callback_data: "info_1", style: "danger" }
+        { text: "⬅️", callback_data: "info_one", style: "primary" },
+        { text: "➡️", callback_data: "info_two", style: "danger" }
       ],
       [
-        { text: "🔙𝐁𝐀𝐂𝐊 𝐌𝐄𝐍𝐔", callback_data: "backmenu", style: "success" }
+        { text: "🏠𝐁𝐀𝐂𝐊 𝐇𝐎𝐌𝐄", callback_data: "backmenu", style: "success" }
       ]
     ];
   }
@@ -1366,12 +1368,12 @@ Halo user, perkenalkan nama saya adalah Bawzhhh saya salah pemilik atau develope
   await editMenu(ctx, caption, keyboard);
 }
 
-bot.action("info_1", async (ctx) => {
+bot.action("info_one", async (ctx) => {
   await ctx.answerCbQuery();
   await showInfo(ctx, 1);
 });
 
-bot.action("info_2", async (ctx) => {
+bot.action("info_two", async (ctx) => {
   await ctx.answerCbQuery();
   await showInfo(ctx, 2);
 });
