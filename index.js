@@ -1037,17 +1037,17 @@ bot.use((ctx, next) => {
 function mainKeyboard() {
   return [
     [
-      { text: "⚙️𝐗𝐒𝐄𝐓𝐓𝐈𝐍𝐆𝐒", callback_data: "xsettings", style: "danger" },
-      { text: "🚀𝐗𝐌𝐄𝐍𝐔𝐁𝐔𝐆𝐒", callback_data: "xbugs", style: "danger" }
+      { text: "⚙️𝐗𝐒𝐄𝐓𝐓𝐈𝐍𝐆𝐒", callback_data: "xsettings", style: "danger", style: "success", style: "primary" },
+      { text: "🚀𝐗𝐌𝐄𝐍𝐔𝐁𝐔𝐆𝐒", callback_data: "xbugs", style: "danger", style: "success", style: "primary" }
     ],
     [
-      { text: "💎𝐓𝐎𝐎𝐋𝐒", callback_data: "tools", style: "success" }
+      { text: "💎𝐓𝐎𝐎𝐋𝐒", callback_data: "tools", style: "danger", style: "success", style: "primary"}
     ],
     [
       { text: "🌿𝐂𝐇𝐀𝐍𝐄𝐋", url: "https://t.me/AboutMybawz", style: "success" },
     ],
     [
-      { text: "👑𝐃𝐄𝐕𝐄𝐋𝐎𝐏𝐄𝐑", url: "https://t.me/Bawzhhh", style: "primary" }
+      { text: "👑𝐃𝐄𝐕𝐄𝐋𝐎𝐏𝐄𝐑", url: "https://t.me/Bawzhhh", style: "danger", style: "success", style: "primary" }
     ]
   ];
 }
