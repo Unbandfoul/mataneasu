@@ -1288,7 +1288,7 @@ bot.action("info", async (ctx) => {
   await showInfo(ctx, 1);
 });
 
-async function showInfo(ctx, page = 1) {
+async function showInfo(ctx, page = 6) {
 
   const premium = isPremium(ctx.from.id); 
   const sender = isWhatsAppConnected;     
@@ -1296,7 +1296,7 @@ async function showInfo(ctx, page = 1) {
   let caption = "";
   let keyboard = [];
 
-  if (page === 1) {
+  if (page === 6) {
     caption = `
 <pre>𝔾   𝕏   𝕀   𝕆   ℕ
 ━━━━━━━━━━━━━━━━━━━━━━━━
@@ -1322,8 +1322,8 @@ async function showInfo(ctx, page = 1) {
 
     keyboard = [
       [
-        { text: "⬅️", callback_data: "info_two", style: "primary" },
-        { text: "➡️", callback_data: "info_two", style: "danger" }
+        { text: "⬅️", callback_data: "info_6", style: "primary" },
+        { text: "➡️", callback_data: "info_7", style: "danger" }
       ],
       [
         { text: "🏠𝐁𝐀𝐂𝐊 𝐇𝐎𝐌𝐄", callback_data: "backmenu", style: "success" }
@@ -1331,7 +1331,7 @@ async function showInfo(ctx, page = 1) {
     ];
   }
 
-  if (page === 2) {
+  if (page === 7) {
     caption = `
 <pre>𝔾   𝕏   𝕀   𝕆   ℕ
 ━━━━━━━━━━━━━━━━━━━━━━━━
@@ -1356,8 +1356,8 @@ Terimkasih Dengan Ini Saya Ucapkan Terimakasih Dan Salam Hormat.
 
     keyboard = [
       [
-        { text: "⬅️", callback_data: "info_one", style: "primary" },
-        { text: "➡️", callback_data: "info_two", style: "danger" }
+        { text: "⬅️", callback_data: "info_6", style: "primary" },
+        { text: "➡️", callback_data: "info_7", style: "danger" }
       ],
       [
         { text: "🏠𝐁𝐀𝐂𝐊 𝐇𝐎𝐌𝐄", callback_data: "backmenu", style: "success" }
@@ -1368,14 +1368,14 @@ Terimkasih Dengan Ini Saya Ucapkan Terimakasih Dan Salam Hormat.
   await editMenu(ctx, caption, keyboard);
 }
 
-bot.action("info_one", async (ctx) => {
+bot.action("info_6", async (ctx) => {
   await ctx.answerCbQuery();
-  await showInfo(ctx, 1);
+  await showInfo(ctx, 6);
 });
 
-bot.action("info_two", async (ctx) => {
+bot.action("info_7", async (ctx) => {
   await ctx.answerCbQuery();
-  await showInfo(ctx, 2);
+  await showInfo(ctx, 7);
 });
 
 bot.action("backmenu", async (ctx) => {
