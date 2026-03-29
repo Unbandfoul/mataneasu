@@ -1157,7 +1157,7 @@ bot.action("xsettings", async (ctx) => {
 
 bot.action("xbugs", async (ctx) => {
   await ctx.answerCbQuery();
-  await showInfo(ctx, 1);
+  await showxbugs(ctx, 1);
 });
 
 async function showxbugs(ctx, page = 1) {
