@@ -1048,7 +1048,7 @@ function mainKeyboard() {
       { text: "👑𝐃𝐄𝐕𝐄𝐋𝐎𝐏𝐄𝐑", url: "https://t.me/Bawzhhh", style: "danger" }
     ],
     [
-      { text: "📢𝐏𝐑𝐈𝐂𝐄 𝐒𝐂𝐑𝐈𝐏𝐓", callback_data: "info", style: "primary" }
+      { text: "📢𝐌𝐄𝐒𝐒𝐀𝐆𝐄 𝐅𝐎𝐑 𝐃𝐄𝐕𝐄𝐋𝐎𝐏𝐄𝐑", callback_data: "info", style: "primary" }
     ]
   ];
 }
@@ -1083,17 +1083,23 @@ async function sendHome(ctx) {
   const sender = isWhatsAppConnected;
 
   const caption = `
-<pre>╭═───⊱『 🐉𝐆𝐗𝐈𝐎𝐍 』───═⬡
+<pre>𝔾   𝕏   𝕀   𝕆   ℕ
+━━━━━━━━━━━━━━━━━━━━━━━━
+📩 I N F O R M A T I O N
+━━━━━━━━━━━━━━━━━━━━━━━━
 ◇ Developer : @Bawzhhh
 ◇ Version : 1.0 New Era
+◇ System : Auto-Update
 ◇ Language : JavaScript
-◇ Framework : Telegraf 
-
-╭═───⊱『 🪧𝐒𝐓𝐀𝐓𝐔𝐒 』───═⬡
+◇ Framework : Telegraf
+━━━━━━━━━━━━━━━━━
+🪧 S T A T U S
+━━━━━━━━━━━━━━━━━
 ◇ Stats Premium : ${premium ? "Yes" : "No"}
 ◇ Stats Sender : ${sender ? "Yes" : "No"}
 ◇ Runtime : ${runtime(process.uptime())}
 ◇ Memory : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
+━━━━━━━━━━━━━━━━━
 </pre>
 `;
 
@@ -1111,13 +1117,18 @@ bot.action("xsettings", async (ctx) => {
   const sender = isWhatsAppConnected;
 
   const caption = `
-<pre>╭═───⊱『 🐉𝐆𝐗𝐈𝐎𝐍 』───═⬡
+<pre>𝔾   𝕏   𝕀   𝕆   ℕ
+━━━━━━━━━━━━━━━━━━━━━━━━
+📩 I N F O R M A T I O N
+━━━━━━━━━━━━━━━━━━━━━━━━
 ◇ Developer : @Bawzhhh
 ◇ Version : 1.0 New Era
+◇ System : Auto-Update
 ◇ Language : JavaScript
-◇ Framework : Telegraf 
-
-╭═───⊱『 ⚙️𝐗𝐒𝐄𝐓𝐓𝐈𝐍𝐆𝐒 𝐌𝐄𝐍𝐔 』───═⬡
+◇ Framework : Telegraf
+━━━━━━━━━━━━━━━━━
+ ⚙️𝐗𝐒𝐄𝐓𝐓𝐈𝐍𝐆𝐒 𝐌𝐄𝐍𝐔 
+━━━━━━━━━━━━━━━━━
 ◇ /update          
 ◇ /connect
 ◇ /addprem
@@ -1138,6 +1149,7 @@ bot.action("xsettings", async (ctx) => {
 ◇ /runtime
 ◇ /mode
 ◇ /cekowner
+━━━━━━━━━━━━━━━━━
 </pre>
 `;
 
@@ -1159,18 +1171,24 @@ async function showxbugs(ctx, page = 1) {
 
   if (page === 1) {
     caption = `
-<pre>╭═───⊱『 🐉𝐆𝐗𝐈𝐎𝐍 』───═⬡
+<pre>𝔾   𝕏   𝕀   𝕆   ℕ
+━━━━━━━━━━━━━━━━━━━━━━━━
+📩 I N F O R M A T I O N
+━━━━━━━━━━━━━━━━━━━━━━━━
 ◇ Developer : @Bawzhhh
 ◇ Version : 1.0 New Era
+◇ System : Auto-Update
 ◇ Language : JavaScript
-◇ Framework : Telegraf 
-
-╭═───⊱『 🚀𝐁𝐄𝐁𝐀𝐒 𝐒𝐏𝐀𝐌 𝐌𝐄𝐍𝐔 』───═⬡        
+◇ Framework : Telegraf
+━━━━━━━━━━━━━━━━━
+🚀𝐁𝐄𝐁𝐀𝐒 𝐒𝐏𝐀𝐌 𝐌𝐄𝐍𝐔 
+━━━━━━━━━━━━━━━━━   
 ◇ /specterdelay 62xxx - Delay No Kenon
 ◇ /delayworek 62xxx - Delay Hard Worth ( Maybe )
 ◇ /EquarTerdelay 62xxx - One Shoot Delay 
 ◇ /qiSys 62xxx - Delay Hard Can Spam No Kenon
 ◇ /dangerdelay 62xxx - Delay Hard Invisible 100%
+━━━━━━━━━━━━━━━━━
 </pre>
 `;
 
@@ -1187,14 +1205,20 @@ async function showxbugs(ctx, page = 1) {
   
     if (page === 2) {
     caption = `
-  <pre>╭═───⊱『 🐉𝐆𝐗𝐈𝐎𝐍 』───═⬡
+<pre>𝔾   𝕏   𝕀   𝕆   ℕ
+━━━━━━━━━━━━━━━━━━━━━━━━
+📩 I N F O R M A T I O N
+━━━━━━━━━━━━━━━━━━━━━━━━
 ◇ Developer : @Bawzhhh
 ◇ Version : 1.0 New Era
+◇ System : Auto-Update
 ◇ Language : JavaScript
-◇ Framework : Telegraf 
-
-  ╭═───⊱『 ✨𝐍𝐎 𝐒𝐏𝐀𝐌 𝐌𝐄𝐍𝐔 』───═⬡        
+◇ Framework : Telegraf
+━━━━━━━━━━━━━━━━━
+✨ 𝐍𝐎 𝐒𝐏𝐀𝐌 𝐌𝐄𝐍𝐔 
+━━━━━━━━━━━━━━━━━        
 ◇ /androcrash 62xxxx - Crash Android 
+━━━━━━━━━━━━━━━━━
 </pre>
 `;
 
@@ -1234,19 +1258,25 @@ bot.action("backmenu", async (ctx) => {
   const sender = isWhatsAppConnected;
 
   const caption = `
-  <pre>╭═───⊱『 🐉𝐆𝐗𝐈𝐎𝐍 』───═⬡
+<pre>𝔾   𝕏   𝕀   𝕆   ℕ
+━━━━━━━━━━━━━━━━━━━━━━━━
+📩 I N F O R M A T I O N
+━━━━━━━━━━━━━━━━━━━━━━━━
 ◇ Developer : @Bawzhhh
 ◇ Version : 1.0 New Era
+◇ System : Auto-Update
 ◇ Language : JavaScript
-◇ Framework : Telegraf 
-
-╭═───⊱『 ⚙️𝐓𝐎𝐎𝐋𝐒 』───═⬡
+◇ Framework : Telegraf
+━━━━━━━━━━━━━━━━━
+⚙️ 𝐓𝐎𝐎𝐋𝐒 
+━━━━━━━━━━━━━━━━━
 ◇ /brat
 ◇ /tiktokdl
 ◇ /convert
 ◇ /waktu
 ◇ /ssiphone
 ◇ /cekidch
+━━━━━━━━━━━━━━━━━
 </pre>
 `;
 
@@ -1268,19 +1298,25 @@ async function showInfo(ctx, page = 1) {
 
   if (page === 1) {
     caption = `
-<pre>╭═───⊱『 🐉𝐆𝐗𝐈𝐎𝐍 』 ───═⬡
+<pre>𝔾   𝕏   𝕀   𝕆   ℕ
+━━━━━━━━━━━━━━━━━━━━━━━━
+📩 I N F O R M A T I O N
+━━━━━━━━━━━━━━━━━━━━━━━━
 ◇ Developer : @Bawzhhh
 ◇ Version : 1.0 New Era
+◇ System : Auto-Update
 ◇ Language : JavaScript
 ◇ Framework : Telegraf
-
-╭═───⊱『 📢𝐇𝐀𝐑𝐆𝐀 𝐒𝐂𝐑𝐈𝐏𝐓 』───═⬡           
+━━━━━━━━━━━━━━━━━
+📢 𝐇𝐀𝐑𝐆𝐀 𝐒𝐂𝐑𝐈𝐏𝐓
+━━━━━━━━━━━━━━━━━      
 ◇40K FULL UP SCRIPT
 ◇50K RESELLER SCRIPT
 ◇60K PARTNER SCRIPT
 ◇75K MODERATOR SCRIPT
 ◇90K CEO SCRIPT
 ◇110K OWNER SCRIPT
+━━━━━━━━━━━━━━━━━
 </pre>
 `;
 
@@ -1297,14 +1333,22 @@ async function showInfo(ctx, page = 1) {
 
   if (page === 2) {
     caption = `
-<pre>╭═───⊱『 🐉𝐆𝐗𝐈𝐎𝐍 』 ───═⬡
+<pre>𝔾   𝕏   𝕀   𝕆   ℕ
+━━━━━━━━━━━━━━━━━━━━━━━━
+📩 I N F O R M A T I O N
+━━━━━━━━━━━━━━━━━━━━━━━━
 ◇ Developer : @Bawzhhh
 ◇ Version : 1.0 New Era
+◇ System : Auto-Update
 ◇ Language : JavaScript
-◇ Framework : Telegraf 
-
-╭═───⊱『 🦋𝐈𝐍𝐅𝐎𝐑𝐌𝐀𝐒𝐈 』───═⬡
- olaa saya Bawzhhh ingin memberitahu bahwa script ini adalah karya milik saya, saya berterimakasih kalian sudah memakai script bug ini walaupun ampas yakh hehe, titik bahagia seseorang adalah ketika karyanya di gunakan tanpa adanya rasa terpaksa tapi dengan hati yang tulus Terimakasih 
+◇ Framework : Telegraf
+━━━━━━━━━━━━━━━━━
+ 🦋 𝐈𝐍𝐅𝐎𝐑𝐌𝐀𝐒𝐈 
+━━━━━━━━━━━━━━━━━
+📩 Message Forwarded From : @Bawzhhh
+━━━━━━━━━━━━━━━━━
+Halo user, perkenalkan nama saya adalah Bawzhhh saya salah pemilik atau developer di script ini, Saya ingin mengucapkan sebuah kata kata terimakasih kepada user yang telah membeli atau bahkan menggunakan script ini, Saya ingin mengucapkan sebuah kata maaf dikarenakan Script saya ini tidak sesuai sengan ekspektasi kalian, Saya memohon maaf jika fitur-fitur yang ada dikit, Tetapi saya akan usahakan dengan semaksimal mungkin next Update bakal Saya kembangin terus sampai hasilnya Memuaskan.
+━━━━━━━━━━━━━━━━━ 
 </pre>
 `;
 
