@@ -1037,18 +1037,17 @@ bot.use((ctx, next) => {
 function mainKeyboard() {
   return [
     [
-      { text: "⚙️𝐗𝐒𝐄𝐓𝐓𝐈𝐍𝐆𝐒", callback_data: "xsettings", style: "success" },
+      { text: "⚙️𝐗𝐒𝐄𝐓𝐓𝐈𝐍𝐆𝐒", callback_data: "xsettings", style: "danger" },
       { text: "🚀𝐗𝐌𝐄𝐍𝐔𝐁𝐔𝐆𝐒", callback_data: "xbugs", style: "danger" }
     ],
     [
-      { text: "💎𝐓𝐎𝐎𝐋𝐒", callback_data: "tools", style: "primary" }
+      { text: "💎𝐓𝐎𝐎𝐋𝐒", callback_data: "tools", style: "success" }
     ],
     [
       { text: "🌿𝐂𝐇𝐀𝐍𝐄𝐋", url: "https://t.me/AboutMybawz", style: "success" },
-      { text: "👑𝐃𝐄𝐕𝐄𝐋𝐎𝐏𝐄𝐑", url: "https://t.me/Bawzhhh", style: "danger" }
     ],
     [
-      { text: "📢𝐌𝐄𝐒𝐒𝐀𝐆𝐄 𝐅𝐎𝐑 𝐃𝐄𝐕𝐄𝐋𝐎𝐏𝐄𝐑", callback_data: "info", style: "primary" }
+      { text: "👑𝐃𝐄𝐕𝐄𝐋𝐎𝐏𝐄𝐑", url: "https://t.me/Bawzhhh", style: "primary" }
     ]
   ];
 }
@@ -1281,106 +1280,6 @@ bot.action("backmenu", async (ctx) => {
 `;
 
   await editMenu(ctx, caption, [[{ text: "🔙𝐁𝐀𝐂𝐊 𝐌𝐄𝐍𝐔", callback_data: "backmenu", style: "primary" }]]);
-});
-
-bot.action("info", async (ctx) => {
-  await ctx.answerCbQuery();
-  await showInfo(ctx, 1);
-});
-
-async function showInfo(ctx, page = 6) {
-
-  const premium = isPremium(ctx.from.id); 
-  const sender = isWhatsAppConnected;     
-
-  let caption = "";
-  let keyboard = [];
-
-  if (page === 6) {
-    caption = `
-<pre>𝔾   𝕏   𝕀   𝕆   ℕ
-━━━━━━━━━━━━━━━━━━━━━━━━
-📩 I N F O R M A T I O N
-━━━━━━━━━━━━━━━━━━━━━━━━
-◇ Developer : @Bawzhhh
-◇ Version : 1.0 New Era
-◇ System : Auto-Update
-◇ Language : JavaScript
-◇ Framework : Telegraf
-━━━━━━━━━━━━━━━━━
-📢 𝐇𝐀𝐑𝐆𝐀 𝐒𝐂𝐑𝐈𝐏𝐓
-━━━━━━━━━━━━━━━━━      
-◇40K FULL UP SCRIPT
-◇50K RESELLER SCRIPT
-◇60K PARTNER SCRIPT
-◇75K MODERATOR SCRIPT
-◇90K CEO SCRIPT
-◇110K OWNER SCRIPT
-━━━━━━━━━━━━━━━━━
-</pre>
-`;
-
-    keyboard = [
-      [
-        { text: "⬅️", callback_data: "info_6", style: "primary" },
-        { text: "➡️", callback_data: "info_7", style: "danger" }
-      ],
-      [
-        { text: "🏠𝐁𝐀𝐂𝐊 𝐇𝐎𝐌𝐄", callback_data: "backmenu", style: "success" }
-      ]
-    ];
-  }
-
-  if (page === 7) {
-    caption = `
-<pre>𝔾   𝕏   𝕀   𝕆   ℕ
-━━━━━━━━━━━━━━━━━━━━━━━━
-📩 I N F O R M A T I O N
-━━━━━━━━━━━━━━━━━━━━━━━━
-◇ Developer : @Bawzhhh
-◇ Version : 1.0 New Era
-◇ System : Auto-Update
-◇ Language : JavaScript
-◇ Framework : Telegraf
-━━━━━━━━━━━━━━━━━
- 🦋 𝐈𝐍𝐅𝐎𝐑𝐌𝐀𝐒𝐈 
-━━━━━━━━━━━━━━━━━
-📩 Message Forwarded From : @Bawzhhh
-━━━━━━━━━━━━━━━━━
-Halo user, perkenalkan nama saya adalah Bawzhhh saya salah pemilik atau developer di script ini, Saya ingin mengucapkan sebuah kata kata terimakasih kepada user yang telah membeli atau bahkan menggunakan script ini, Saya ingin mengucapkan sebuah kata maaf dikarenakan Script saya ini tidak sesuai sengan ekspektasi kalian, Saya memohon maaf jika fitur-fitur yang ada dikit, Tetapi saya akan usahakan dengan semaksimal mungkin next Update bakal Saya kembangin terus sampai hasilnya Memuaskan.
-
-Terimkasih Dengan Ini Saya Ucapkan Terimakasih Dan Salam Hormat.
-━━━━━━━━━━━━━━━━━ 
-</pre>
-`;
-
-    keyboard = [
-      [
-        { text: "⬅️", callback_data: "info_6", style: "primary" },
-        { text: "➡️", callback_data: "info_7", style: "danger" }
-      ],
-      [
-        { text: "🏠𝐁𝐀𝐂𝐊 𝐇𝐎𝐌𝐄", callback_data: "backmenu", style: "success" }
-      ]
-    ];
-  }
-
-  await editMenu(ctx, caption, keyboard);
-}
-
-bot.action("info_6", async (ctx) => {
-  await ctx.answerCbQuery();
-  await showInfo(ctx, 6);
-});
-
-bot.action("info_7", async (ctx) => {
-  await ctx.answerCbQuery();
-  await showInfo(ctx, 7);
-});
-
-bot.action("backmenu", async (ctx) => {
-  await ctx.answerCbQuery();
-  await sendHome(ctx);
 });
 /// ------ ( Plugins ) ------- \\\
 function getUserId(ctx) {
