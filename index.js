@@ -1082,19 +1082,19 @@ async function sendHome(ctx) {
   const sender = isWhatsAppConnected;
 
   const caption = `
-<blockquote>𝔾   𝕏   𝕀   𝕆   ℕ</blockquote>
-<blockquote>📩 INFORMATION</blockquote
+<blockquote>☾. ⬡═―⊱「 𝔾   𝕏   𝕀   𝕆   ℕ 」⊰―═⬡ ࣪ ִֶָ☾.</blockquote>
+<blockquote>📩 INFORMATION</blockquote>
 ◇ Developer : @Bawzhhh
 ◇ Version   : 1.0 New Era
 ◇ System    : Auto-Update
 ◇ Language  : JavaScript
 ◇ Framework : Telegraf
-<blockquote>🪧 STATUS</blockquote>
+<blockquote>☾. ⬡═―⊱「 🪧 STATUS 」⊰―═⬡ ࣪ ִֶָ☾.</blockquote>
 ◇ Premium : ${premium ? "Yes" : "No"}
 ◇ Sender  : ${sender ? "Yes" : "No"}
 ◇ Runtime : ${runtime(process.uptime())}
 ◇ Memory  : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
-<blockquote>━━━━━━━━━━━━━━━━━━━━━━━━</blockquote>
+<blockquote>ֶָ࣪☾. ( ! ) 𝚂𝚎𝚕𝚕𝚎𝚌𝚝 𝚃𝚑𝚎 𝙼𝚎𝚗𝚞 𝙱𝚞𝚝𝚝𝚘𝚗 𝙱𝚎𝚕𝚘𝚠 ࣪ ִֶָ☾.</blockquote>
 `;
 
   await editMenu(ctx, caption, mainKeyboard(), {
@@ -1114,14 +1114,14 @@ bot.action("xsettings", async (ctx) => {
   await ctx.answerCbQuery();
 
   const caption = `
-<blockquote>𝔾   𝕏   𝕀   𝕆   ℕ</blockquote>
-<blockquote>📩 INFORMATION</blockquote
+<blockquote>☾. ⬡═―⊱「 𝔾   𝕏   𝕀   𝕆   ℕ 」⊰―═⬡ ࣪ ִֶָ☾.</blockquote>
+<blockquote>☾. ⬡═―⊱「 📩 INFORMATION 」⊰―═⬡ ࣪ ִֶָ☾.</blockquote>
 ◇ Developer : @Bawzhhh
 ◇ Version   : 1.0 New Era
 ◇ System    : Auto-Update
 ◇ Language  : JavaScript
 ◇ Framework : Telegraf
-<blockquote>⚙️ XSETTINGS MENU</blockquote>
+<blockquote>☾. ⬡═―⊱「 ⚙️ XSETTINGS MENU 」⊰―═⬡ ࣪ ִֶָ☾.</blockquote>
 ◇ /update
 ◇ /connect
 ◇ /addprem
@@ -1142,7 +1142,7 @@ bot.action("xsettings", async (ctx) => {
 ◇ /runtime
 ◇ /mode
 ◇ /cekowner
-<blockquote>━━━━━━━━━━━━━━━━━━━━━━━━</blockquote>
+<blockquote>ִֶָ࣪☾. ( ! ) 𝚂𝚎𝚕𝚕𝚎𝚌𝚝 𝚃𝚑𝚎 𝙼𝚎𝚗𝚞 𝙱𝚞𝚝𝚝𝚘𝚗 𝙱𝚎𝚕𝚘𝚠 ࣪ ִֶָ☾.</blockquote>
 `;
 
   await editMenu(
@@ -1166,20 +1166,20 @@ async function showxbugs(ctx, page = 1) {
 
   if (page === 1) {
     caption = `
-<blockquote>𝔾   𝕏   𝕀   𝕆   ℕ</blockquote>
-<blockquote>📩 INFORMATION</blockquote
+<blockquote>☾. ⬡═―⊱「 𝔾   𝕏   𝕀   𝕆   ℕ 」⊰―═⬡ ࣪ ִֶָ☾.</blockquote>
+<blockquote>📩 INFORMATION</blockquote>
 ◇ Developer : @Bawzhhh
 ◇ Version   : 1.0 New Era
 ◇ System    : Auto-Update
 ◇ Language  : JavaScript
 ◇ Framework : Telegraf
-<blockquote>🚀 SPAM BUG MENU</blockquote>
+<blockquote>☾. ⬡═―⊱「 🚀 SPAM BUG MENU 」⊰―═⬡ ࣪ ִֶָ☾.</blockquote>
 ◇ /specterdelay   62xxx  → Delay No Kenon
 ◇ /delayworek     62xxx  → Hard Delay (Maybe)
 ◇ /EquarTerdelay  62xxx  → One Shot Delay
 ◇ /qiSys          62xxx  → Hard Spam No Kenon
 ◇ /dangerdelay    62xxx  → Invisible Delay 100%
-<blockquote>━━━━━━━━━━━━━━━━━━━━━━━━</blockquote
+<blockquote>ִֶָ࣪☾. ( ! ) 𝚂𝚎𝚕𝚕𝚎𝚌𝚝 𝚃𝚑𝚎 𝙼𝚎𝚗𝚞 𝙱𝚞𝚝𝚝𝚘𝚗 𝙱𝚎𝚕𝚘𝚠 ࣪ ִֶָ☾.</blockquote>
 `;
 
     keyboard = [
@@ -1194,16 +1194,16 @@ async function showxbugs(ctx, page = 1) {
 
   if (page === 2) {
     caption = `
-<blockquote>𝔾   𝕏   𝕀   𝕆   ℕ</blockquote>
-<blockquote>📩 INFORMATION</blockquote
+<blockquote>☾. ⬡═―⊱「 𝔾   𝕏   𝕀   𝕆   ℕ 」⊰―═⬡ ࣪ ִֶָ☾.</blockquote>
+<blockquote>📩 INFORMATION</blockquote>
 ◇ Developer : @Bawzhhh
 ◇ Version   : 1.0 New Era
 ◇ System    : Auto-Update
 ◇ Language  : JavaScript
 ◇ Framework : Telegraf
-<blockquote>✨ NO SPAM MENU</blockquote>
+<blockquote>☾. ⬡═―⊱「 ✨ NO SPAM MENU BUG 」⊰―═⬡ ࣪ ִֶָ☾.</blockquote>
 ◇ /androcrash   62xxxx  → Crash Android
-<blockquote>━━━━━━━━━━━━━━━━━━━━━━━━</blockquote>
+<blockquote>ִֶָ࣪☾. ( ! ) 𝚂𝚎𝚕𝚕𝚎𝚌𝚝 𝚃𝚑𝚎 𝙼𝚎𝚗𝚞 𝙱𝚞𝚝𝚝𝚘𝚗 𝙱𝚎𝚕𝚘𝚠 ࣪ ִֶָ☾.</blockquote>
 `;
 
     keyboard = [
@@ -1244,26 +1244,21 @@ bot.action("tools", async (ctx) => {
   await ctx.answerCbQuery();
 
   const caption = `
-<blockquote>𝔾   𝕏   𝕀   𝕆   ℕ</blockquote>
-<blockquote>📩 INFORMATION</blockquote
+<blockquote>☾. ⬡═―⊱「 𝔾   𝕏   𝕀   𝕆   ℕ 」⊰―═⬡ ࣪ ִֶָ☾.</blockquote>
+<blockquote>📩 INFORMATION</blockquote>
 ◇ Developer : @Bawzhhh
 ◇ Version   : 1.0 New Era
 ◇ System    : Auto-Update
 ◇ Language  : JavaScript
 ◇ Framework : Telegraf
-◇ Developer : @Bawzhhh
-◇ Version   : 1.0 New Era
-◇ System    : Auto-Update
-◇ Language  : JavaScript
-◇ Framework : Telegraf
-<blockquote>⚙️ TOOLS</blockquote>
+<blockquote>☾. ⬡═―⊱「 ⚙️ TOOLS 」⊰―═⬡ ࣪ ִֶָ☾.</blockquote>
 ◇ /brat
 ◇ /tiktokdl
 ◇ /convert
 ◇ /waktu
 ◇ /ssiphone
 ◇ /cekidch
-<blockquote>━━━━━━━━━━━━━━━━━━━━━━━━</blockquote>
+<blockquote>ִֶָ࣪☾. ( ! ) 𝚂𝚎𝚕𝚕𝚎𝚌𝚝 𝚃𝚑𝚎 𝙼𝚎𝚗𝚞 𝙱𝚞𝚝𝚝𝚘𝚗 𝙱𝚎𝚕𝚘𝚠 ࣪ ִֶָ☾.</blockquote>
 `;
 
   await editMenu(
