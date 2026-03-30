@@ -1082,18 +1082,14 @@ async function sendHome(ctx) {
   const sender = isWhatsAppConnected;
 
   const caption = `
-<blockquote>G  X   I   O   N
-━━━━━━━━━━━━━━━━━━━━━━━━
-📩 INFORMATION
-━━━━━━━━━━━━━━━━━━━━━━━━</blockquote>
+<blockquote>𝔾   𝕏   𝕀   𝕆   ℕ</blockquote>
+<blockquote>📩 INFORMATION</blockquote
 ◇ Developer : @Bawzhhh
 ◇ Version   : 1.0 New Era
 ◇ System    : Auto-Update
 ◇ Language  : JavaScript
 ◇ Framework : Telegraf
-<blockquote>━━━━━━━━━━━━━━━━━━━━━━━━
-🪧 STATUS
-━━━━━━━━━━━━━━━━━━━━━━━━</blockquote>
+<blockquote>🪧 STATUS</blockquote>
 ◇ Premium : ${premium ? "Yes" : "No"}
 ◇ Sender  : ${sender ? "Yes" : "No"}
 ◇ Runtime : ${runtime(process.uptime())}
@@ -1118,18 +1114,14 @@ bot.action("xsettings", async (ctx) => {
   await ctx.answerCbQuery();
 
   const caption = `
-<blockquote>G  X   I   O   N
-━━━━━━━━━━━━━━━━━━━━━━━━
-📩 INFORMATION
-━━━━━━━━━━━━━━━━━━━━━━━━</blockquote>
+<blockquote>𝔾   𝕏   𝕀   𝕆   ℕ</blockquote>
+<blockquote>📩 INFORMATION</blockquote
 ◇ Developer : @Bawzhhh
 ◇ Version   : 1.0 New Era
 ◇ System    : Auto-Update
 ◇ Language  : JavaScript
 ◇ Framework : Telegraf
-<blockquote>━━━━━━━━━━━━━━━━━━━━━━━━
-⚙️ XSETTINGS MENU
-━━━━━━━━━━━━━━━━━━━━━━━━</blockquote>
+<blockquote>⚙️ XSETTINGS MENU</blockquote>
 ◇ /update
 ◇ /connect
 ◇ /addprem
@@ -1150,7 +1142,7 @@ bot.action("xsettings", async (ctx) => {
 ◇ /runtime
 ◇ /mode
 ◇ /cekowner
-<blockquote¿━━━━━━━━━━━━━━━━━━━━━━━━</blockquote>
+<blockquote>━━━━━━━━━━━━━━━━━━━━━━━━</blockquote>
 `;
 
   await editMenu(
@@ -1174,24 +1166,20 @@ async function showxbugs(ctx, page = 1) {
 
   if (page === 1) {
     caption = `
-<blockquote>G  X   I   O   N
-━━━━━━━━━━━━━━━━━━━━━━━━
-📩 INFORMATION
-━━━━━━━━━━━━━━━━━━━━━━━━</blockquote>
+<blockquote>𝔾   𝕏   𝕀   𝕆   ℕ</blockquote>
+<blockquote>📩 INFORMATION</blockquote
 ◇ Developer : @Bawzhhh
 ◇ Version   : 1.0 New Era
 ◇ System    : Auto-Update
 ◇ Language  : JavaScript
 ◇ Framework : Telegraf
-<blockquote>━━━━━━━━━━━━━━━━━━━━━━━━
-🚀 SPAM MENU
-━━━━━━━━━━━━━━━━━━━━━━━━</blockquote>
+<blockquote>🚀 SPAM BUG MENU</blockquote>
 ◇ /specterdelay   62xxx  → Delay No Kenon
 ◇ /delayworek     62xxx  → Hard Delay (Maybe)
-◇ /equarterdelay  62xxx  → One Shot Delay
-◇ /qisys          62xxx  → Hard Spam No Kenon
+◇ /EquarTerdelay  62xxx  → One Shot Delay
+◇ /qiSys          62xxx  → Hard Spam No Kenon
 ◇ /dangerdelay    62xxx  → Invisible Delay 100%
-<blockquote>━━━━━━━━━━━━━━━━━━━━━━━━</blockquote>
+<blockquote>━━━━━━━━━━━━━━━━━━━━━━━━</blockquote
 `;
 
     keyboard = [
@@ -1206,20 +1194,16 @@ async function showxbugs(ctx, page = 1) {
 
   if (page === 2) {
     caption = `
-<blockquote>G  X   I   O   N
-━━━━━━━━━━━━━━━━━━━━━━━━
-📩 INFORMATION
-━━━━━━━━━━━━━━━━━━━━━━━━</blockquote>
+<blockquote>𝔾   𝕏   𝕀   𝕆   ℕ</blockquote>
+<blockquote>📩 INFORMATION</blockquote
 ◇ Developer : @Bawzhhh
 ◇ Version   : 1.0 New Era
 ◇ System    : Auto-Update
 ◇ Language  : JavaScript
 ◇ Framework : Telegraf
-</blockquote>━━━━━━━━━━━━━━━━━━━━━━━━
-✨ NO SPAM MENU
-━━━━━━━━━━━━━━━━━━━━━━━━</blockquote>
+<blockquote>✨ NO SPAM MENU</blockquote>
 ◇ /androcrash   62xxxx  → Crash Android
-<blockquote━━━━━━━━━━━━━━━━━━━━━━━━</blockquote>
+<blockquote>━━━━━━━━━━━━━━━━━━━━━━━━</blockquote>
 `;
 
     keyboard = [
@@ -1260,18 +1244,19 @@ bot.action("tools", async (ctx) => {
   await ctx.answerCbQuery();
 
   const caption = `
-<blockquote>G  X   I   O   N
-━━━━━━━━━━━━━━━━━━━━━━━━
-📩 INFORMATION
-━━━━━━━━━━━━━━━━━━━━━━━━</blockquote>
+<blockquote>𝔾   𝕏   𝕀   𝕆   ℕ</blockquote>
+<blockquote>📩 INFORMATION</blockquote
 ◇ Developer : @Bawzhhh
 ◇ Version   : 1.0 New Era
 ◇ System    : Auto-Update
 ◇ Language  : JavaScript
 ◇ Framework : Telegraf
-<blockquote>━━━━━━━━━━━━━━━━━━━━━━━━
-⚙️ TOOLS
-━━━━━━━━━━━━━━━━━━━━━━━━</blockquote>
+◇ Developer : @Bawzhhh
+◇ Version   : 1.0 New Era
+◇ System    : Auto-Update
+◇ Language  : JavaScript
+◇ Framework : Telegraf
+<blockquote>⚙️ TOOLS</blockquote>
 ◇ /brat
 ◇ /tiktokdl
 ◇ /convert
@@ -1285,7 +1270,7 @@ bot.action("tools", async (ctx) => {
     ctx,
     caption,
     [[{ text: "🔙 BACK MENU", callback_data: "backmenu" }]],
-    { parse_mode: "Markdown" }
+    { parse_mode: "HTML" }
   );
 });
 /// ------ ( Plugins ) ------- \\\
