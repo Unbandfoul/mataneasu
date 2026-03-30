@@ -1,4 +1,4 @@
-///CREDIT BASE BY AMBALABU 
+    ///CREDIT BASE BY AMBALABU 
 /// NO HAPUS CREDIT 
 (function() {
   'use strict'
@@ -1082,28 +1082,30 @@ async function sendHome(ctx) {
   const sender = isWhatsAppConnected;
 
   const caption = `
-<pre>𝔾   𝕏   𝕀   𝕆   ℕ
+\`\`\`javascript
+GXION
 ━━━━━━━━━━━━━━━━━━━━━━━━
-📩 I N F O R M A T I O N
+📩 INFORMATION
 ━━━━━━━━━━━━━━━━━━━━━━━━
 ◇ Developer : @Bawzhhh
-◇ Version : 1.0 New Era
-◇ System : Auto-Update
-◇ Language : JavaScript
+◇ Version   : 1.0 New Era
+◇ System    : Auto-Update
+◇ Language  : JavaScript
 ◇ Framework : Telegraf
-━━━━━━━━━━━━━━━━━
-🪧 S T A T U S
-━━━━━━━━━━━━━━━━━
-◇ Stats Premium : ${premium ? "Yes" : "No"}
-◇ Stats Sender : ${sender ? "Yes" : "No"}
+━━━━━━━━━━━━━━━━━━━━━━━━
+🪧 STATUS
+━━━━━━━━━━━━━━━━━━━━━━━━
+◇ Premium : ${premium ? "Yes" : "No"}
+◇ Sender  : ${sender ? "Yes" : "No"}
 ◇ Runtime : ${runtime(process.uptime())}
-◇ Memory : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
-━━━━━━━━━━━━━━━━━
-</pre>
+◇ Memory  : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
+━━━━━━━━━━━━━━━━━━━━━━━━
+\`\`\`
 `;
 
-  await editMenu(ctx, caption, mainKeyboard());
-}
+await editMenu(ctx, caption, mainKeyboard(), {
+  parse_mode: "Markdown"
+});
 
 bot.start(async (ctx) => {
   await sendHome(ctx);
@@ -1115,26 +1117,27 @@ bot.action("xsettings", async (ctx) => {
   const premium = isPremium(ctx.from.id);
   const sender = isWhatsAppConnected;
 
-  const caption = `
-<pre>𝔾   𝕏   𝕀   𝕆   ℕ
+const caption = `
+\`\`\`javascript
+GXION
 ━━━━━━━━━━━━━━━━━━━━━━━━
-📩 I N F O R M A T I O N
+📩 INFORMATION
 ━━━━━━━━━━━━━━━━━━━━━━━━
 ◇ Developer : @Bawzhhh
-◇ Version : 1.0 New Era
-◇ System : Auto-Update
-◇ Language : JavaScript
+◇ Version   : 1.0 New Era
+◇ System    : Auto-Update
+◇ Language  : JavaScript
 ◇ Framework : Telegraf
-━━━━━━━━━━━━━━━━━
- ⚙️𝐗𝐒𝐄𝐓𝐓𝐈𝐍𝐆𝐒 𝐌𝐄𝐍𝐔 
-━━━━━━━━━━━━━━━━━
-◇ /update          
+━━━━━━━━━━━━━━━━━━━━━━━━
+⚙️ XSETTINGS MENU
+━━━━━━━━━━━━━━━━━━━━━━━━
+◇ /update
 ◇ /connect
 ◇ /addprem
 ◇ /delprem
 ◇ /addadmin
 ◇ /deladmin
-◇ /addgroupremium
+◇ /addgrouppremium
 ◇ /delgrouppremium
 ◇ /anticulik
 ◇ /addsafe
@@ -1148,12 +1151,16 @@ bot.action("xsettings", async (ctx) => {
 ◇ /runtime
 ◇ /mode
 ◇ /cekowner
-━━━━━━━━━━━━━━━━━
-</pre>
+━━━━━━━━━━━━━━━━━━━━━━━━
+\`\`\`
 `;
 
-  await editMenu(ctx, caption, [[{ text: "🔙𝐁𝐀𝐂𝐊 𝐌𝐄𝐍𝐔", callback_data: "backmenu", style: "primary" }]]);
-});
+await editMenu(
+  ctx,
+  caption,
+  [[{ text: "🔙 BACK MENU", callback_data: "backmenu" }]],
+  { parse_mode: "Markdown" }
+);
 
 bot.action("xbugs", async (ctx) => {
   await ctx.answerCbQuery();
@@ -1170,25 +1177,26 @@ async function showxbugs(ctx, page = 1) {
 
   if (page === 1) {
     caption = `
-<pre>𝔾   𝕏   𝕀   𝕆   ℕ
+\`\`\`javascript
+GXION
 ━━━━━━━━━━━━━━━━━━━━━━━━
-📩 I N F O R M A T I O N
+📩 INFORMATION
 ━━━━━━━━━━━━━━━━━━━━━━━━
 ◇ Developer : @Bawzhhh
-◇ Version : 1.0 New Era
-◇ System : Auto-Update
-◇ Language : JavaScript
+◇ Version   : 1.0 New Era
+◇ System    : Auto-Update
+◇ Language  : JavaScript
 ◇ Framework : Telegraf
-━━━━━━━━━━━━━━━━━
-🚀𝐁𝐄𝐁𝐀𝐒 𝐒𝐏𝐀𝐌 𝐌𝐄𝐍𝐔 
-━━━━━━━━━━━━━━━━━   
-◇ /specterdelay 62xxx - Delay No Kenon
-◇ /delayworek 62xxx - Delay Hard Worth ( Maybe )
-◇ /EquarTerdelay 62xxx - One Shoot Delay 
-◇ /qiSys 62xxx - Delay Hard Can Spam No Kenon
-◇ /dangerdelay 62xxx - Delay Hard Invisible 100%
-━━━━━━━━━━━━━━━━━
-</pre>
+━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 SPAM MENU
+━━━━━━━━━━━━━━━━━━━━━━━━
+◇ /specterdelay   62xxx  → Delay No Kenon
+◇ /delayworek     62xxx  → Hard Delay (Maybe)
+◇ /equarterdelay  62xxx  → One Shot Delay
+◇ /qisys          62xxx  → Hard Spam No Kenon
+◇ /dangerdelay    62xxx  → Invisible Delay 100%
+━━━━━━━━━━━━━━━━━━━━━━━━
+\`\`\`
 `;
 
     keyboard = [
@@ -1204,21 +1212,22 @@ async function showxbugs(ctx, page = 1) {
   
     if (page === 2) {
     caption = `
-<pre>𝔾   𝕏   𝕀   𝕆   ℕ
+\`\`\`javascript
+GXION
 ━━━━━━━━━━━━━━━━━━━━━━━━
-📩 I N F O R M A T I O N
+📩 INFORMATION
 ━━━━━━━━━━━━━━━━━━━━━━━━
 ◇ Developer : @Bawzhhh
-◇ Version : 1.0 New Era
-◇ System : Auto-Update
-◇ Language : JavaScript
+◇ Version   : 1.0 New Era
+◇ System    : Auto-Update
+◇ Language  : JavaScript
 ◇ Framework : Telegraf
-━━━━━━━━━━━━━━━━━
-✨ 𝐍𝐎 𝐒𝐏𝐀𝐌 𝐌𝐄𝐍𝐔 
-━━━━━━━━━━━━━━━━━        
-◇ /androcrash 62xxxx - Crash Android 
-━━━━━━━━━━━━━━━━━
-</pre>
+━━━━━━━━━━━━━━━━━━━━━━━━
+✨ NO SPAM MENU
+━━━━━━━━━━━━━━━━━━━━━━━━
+◇ /androcrash   62xxxx  → Crash Android
+━━━━━━━━━━━━━━━━━━━━━━━━
+\`\`\`
 `;
 
 keyboard = [
@@ -1257,30 +1266,35 @@ bot.action("backmenu", async (ctx) => {
   const sender = isWhatsAppConnected;
 
   const caption = `
-<pre>𝔾   𝕏   𝕀   𝕆   ℕ
+\`\`\`javascript
+GXION
 ━━━━━━━━━━━━━━━━━━━━━━━━
-📩 I N F O R M A T I O N
+📩 INFORMATION
 ━━━━━━━━━━━━━━━━━━━━━━━━
 ◇ Developer : @Bawzhhh
-◇ Version : 1.0 New Era
-◇ System : Auto-Update
-◇ Language : JavaScript
+◇ Version   : 1.0 New Era
+◇ System    : Auto-Update
+◇ Language  : JavaScript
 ◇ Framework : Telegraf
-━━━━━━━━━━━━━━━━━
-⚙️ 𝐓𝐎𝐎𝐋𝐒 
-━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━
+⚙️ TOOLS
+━━━━━━━━━━━━━━━━━━━━━━━━
 ◇ /brat
 ◇ /tiktokdl
 ◇ /convert
 ◇ /waktu
 ◇ /ssiphone
 ◇ /cekidch
-━━━━━━━━━━━━━━━━━
-</pre>
+━━━━━━━━━━━━━━━━━━━━━━━━
+\`\`\`
 `;
 
-  await editMenu(ctx, caption, [[{ text: "🔙𝐁𝐀𝐂𝐊 𝐌𝐄𝐍𝐔", callback_data: "backmenu", style: "primary" }]]);
-});
+await editMenu(
+  ctx,
+  caption,
+  [[{ text: "🔙 BACK MENU", callback_data: "backmenu" }]],
+  { parse_mode: "Markdown" }
+);
 /// ------ ( Plugins ) ------- \\\
 function getUserId(ctx) {
   const args = ctx.message.text.split(" ");
