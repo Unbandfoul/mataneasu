@@ -1082,55 +1082,54 @@ async function sendHome(ctx) {
   const sender = isWhatsAppConnected;
 
   const caption = `
-\`\`\`javascript
-GXION
+<blockquote>G  X   I   O   N
 ━━━━━━━━━━━━━━━━━━━━━━━━
 📩 INFORMATION
-━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━</blockquote>
 ◇ Developer : @Bawzhhh
 ◇ Version   : 1.0 New Era
 ◇ System    : Auto-Update
 ◇ Language  : JavaScript
 ◇ Framework : Telegraf
-━━━━━━━━━━━━━━━━━━━━━━━━
+<blockquote>━━━━━━━━━━━━━━━━━━━━━━━━
 🪧 STATUS
-━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━</blockquote>
 ◇ Premium : ${premium ? "Yes" : "No"}
 ◇ Sender  : ${sender ? "Yes" : "No"}
 ◇ Runtime : ${runtime(process.uptime())}
 ◇ Memory  : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
-━━━━━━━━━━━━━━━━━━━━━━━━
-\`\`\`
+<blockquote>━━━━━━━━━━━━━━━━━━━━━━━━</blockquote>
 `;
 
-await editMenu(ctx, caption, mainKeyboard(), {
-  parse_mode: "Markdown"
-});
+  await editMenu(ctx, caption, mainKeyboard(), {
+    parse_mode: "HTML"
+  });
+} // ✅ WAJIB DITUTUP
+
+// =========================
 
 bot.start(async (ctx) => {
   await sendHome(ctx);
 });
 
+// =========================
+
 bot.action("xsettings", async (ctx) => {
   await ctx.answerCbQuery();
 
-  const premium = isPremium(ctx.from.id);
-  const sender = isWhatsAppConnected;
-
-const caption = `
-\`\`\`javascript
-GXION
+  const caption = `
+<blockquote>G  X   I   O   N
 ━━━━━━━━━━━━━━━━━━━━━━━━
 📩 INFORMATION
-━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━</blockquote>
 ◇ Developer : @Bawzhhh
 ◇ Version   : 1.0 New Era
 ◇ System    : Auto-Update
 ◇ Language  : JavaScript
 ◇ Framework : Telegraf
-━━━━━━━━━━━━━━━━━━━━━━━━
+<blockquote>━━━━━━━━━━━━━━━━━━━━━━━━
 ⚙️ XSETTINGS MENU
-━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━</blockquote>
 ◇ /update
 ◇ /connect
 ◇ /addprem
@@ -1151,16 +1150,18 @@ GXION
 ◇ /runtime
 ◇ /mode
 ◇ /cekowner
-━━━━━━━━━━━━━━━━━━━━━━━━
-\`\`\`
+<blockquote¿━━━━━━━━━━━━━━━━━━━━━━━━</blockquote>
 `;
 
-await editMenu(
-  ctx,
-  caption,
-  [[{ text: "🔙 BACK MENU", callback_data: "backmenu" }]],
-  { parse_mode: "Markdown" }
-);
+  await editMenu(
+    ctx,
+    caption,
+    [[{ text: "🔙 BACK MENU", callback_data: "backmenu" }]],
+    { parse_mode: "HTML" }
+  );
+});
+
+// =========================
 
 bot.action("xbugs", async (ctx) => {
   await ctx.answerCbQuery();
@@ -1168,81 +1169,75 @@ bot.action("xbugs", async (ctx) => {
 });
 
 async function showxbugs(ctx, page = 1) {
-
-  const premium = isPremium(ctx.from.id); 
-  const sender = isWhatsAppConnected;     
-
   let caption = "";
   let keyboard = [];
 
   if (page === 1) {
     caption = `
-\`\`\`javascript
-GXION
+<blockquote>G  X   I   O   N
 ━━━━━━━━━━━━━━━━━━━━━━━━
 📩 INFORMATION
-━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━</blockquote>
 ◇ Developer : @Bawzhhh
 ◇ Version   : 1.0 New Era
 ◇ System    : Auto-Update
 ◇ Language  : JavaScript
 ◇ Framework : Telegraf
-━━━━━━━━━━━━━━━━━━━━━━━━
+<blockquote>━━━━━━━━━━━━━━━━━━━━━━━━
 🚀 SPAM MENU
-━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━</blockquote>
 ◇ /specterdelay   62xxx  → Delay No Kenon
 ◇ /delayworek     62xxx  → Hard Delay (Maybe)
 ◇ /equarterdelay  62xxx  → One Shot Delay
 ◇ /qisys          62xxx  → Hard Spam No Kenon
 ◇ /dangerdelay    62xxx  → Invisible Delay 100%
-━━━━━━━━━━━━━━━━━━━━━━━━
-\`\`\`
+<blockquote>━━━━━━━━━━━━━━━━━━━━━━━━</blockquote>
 `;
 
     keyboard = [
       [
-        { text: "⬅️", callback_data: "info_2", style: "primary" },
-        { text: "➡️", callback_data: "info_2", style: "danger" }
+        { text: "➡️", callback_data: "info_2" }
       ],
       [
-        { text: "🔙𝐁𝐀𝐂𝐊 𝐌𝐄𝐍𝐔", callback_data: "backmenu", style: "success" }
+        { text: "🔙 BACK MENU", callback_data: "backmenu" }
       ]
     ];
   }
-  
-    if (page === 2) {
+
+  if (page === 2) {
     caption = `
-\`\`\`javascript
-GXION
+<blockquote>G  X   I   O   N
 ━━━━━━━━━━━━━━━━━━━━━━━━
 📩 INFORMATION
-━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━</blockquote>
 ◇ Developer : @Bawzhhh
 ◇ Version   : 1.0 New Era
 ◇ System    : Auto-Update
 ◇ Language  : JavaScript
 ◇ Framework : Telegraf
-━━━━━━━━━━━━━━━━━━━━━━━━
+</blockquote>━━━━━━━━━━━━━━━━━━━━━━━━
 ✨ NO SPAM MENU
-━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━</blockquote>
 ◇ /androcrash   62xxxx  → Crash Android
-━━━━━━━━━━━━━━━━━━━━━━━━
-\`\`\`
+<blockquote━━━━━━━━━━━━━━━━━━━━━━━━</blockquote>
 `;
 
-keyboard = [
+    keyboard = [
       [
-        { text: "⬅️", callback_data: "info_1", style: "primary" },
-        { text: "➡️", callback_data: "info_1", style: "danger" }
+        { text: "⬅️", callback_data: "info_1" }
       ],
       [
-        { text: "🔙𝐁𝐀𝐂𝐊 𝐌𝐄𝐍𝐔", callback_data: "backmenu", style: "success" }
+        { text: "🔙 BACK MENU", callback_data: "backmenu" }
       ]
     ];
   }
 
-  await editMenu(ctx, caption, keyboard);
+  await editMenu(ctx, caption, keyboard, {
+    parse_mode: "HTML"
+  });
 }
+
+// =========================
 
 bot.action("info_1", async (ctx) => {
   await ctx.answerCbQuery();
@@ -1259,42 +1254,40 @@ bot.action("backmenu", async (ctx) => {
   await sendHome(ctx);
 });
 
-  bot.action("tools", async (ctx) => {
+// =========================
+
+bot.action("tools", async (ctx) => {
   await ctx.answerCbQuery();
 
-  const premium = isPremium(ctx.from.id);
-  const sender = isWhatsAppConnected;
-
   const caption = `
-\`\`\`javascript
-GXION
+<blockquote>G  X   I   O   N
 ━━━━━━━━━━━━━━━━━━━━━━━━
 📩 INFORMATION
-━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━</blockquote>
 ◇ Developer : @Bawzhhh
 ◇ Version   : 1.0 New Era
 ◇ System    : Auto-Update
 ◇ Language  : JavaScript
 ◇ Framework : Telegraf
-━━━━━━━━━━━━━━━━━━━━━━━━
+<blockquote>━━━━━━━━━━━━━━━━━━━━━━━━
 ⚙️ TOOLS
-━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━</blockquote>
 ◇ /brat
 ◇ /tiktokdl
 ◇ /convert
 ◇ /waktu
 ◇ /ssiphone
 ◇ /cekidch
-━━━━━━━━━━━━━━━━━━━━━━━━
-\`\`\`
+<blockquote>━━━━━━━━━━━━━━━━━━━━━━━━</blockquote>
 `;
 
-await editMenu(
-  ctx,
-  caption,
-  [[{ text: "🔙 BACK MENU", callback_data: "backmenu" }]],
-  { parse_mode: "Markdown" }
-);
+  await editMenu(
+    ctx,
+    caption,
+    [[{ text: "🔙 BACK MENU", callback_data: "backmenu" }]],
+    { parse_mode: "Markdown" }
+  );
+});
 /// ------ ( Plugins ) ------- \\\
 function getUserId(ctx) {
   const args = ctx.message.text.split(" ");
