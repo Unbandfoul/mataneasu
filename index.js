@@ -1095,7 +1095,6 @@ async function sendHome(ctx) {
 ◇ Sender  : ${sender ? "Yes" : "No"}
 ◇ Runtime : ${runtime(process.uptime())}
 ◇ Memory  : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
-◇ Started : ${getStartDate()}
 <blockquote>ֶָ࣪☾. ( ! ) 𝚂𝚎𝚕𝚕𝚎𝚌𝚝 𝚃𝚑𝚎 𝙼𝚎𝚗𝚞 𝙱𝚞𝚝𝚝𝚘𝚗 𝙱𝚎𝚕𝚘𝚠 ࣪ ִֶָ☾.</blockquote>
 `;
 
@@ -1155,11 +1154,13 @@ bot.action("xsettings", async (ctx) => {
   );
 });
 // =========================
+// PINDAHIN FUNCTION KE LUAR
+async function showthanks(ctx, page = 3) {
+  let caption = "";
+  let keyboard = [];
 
-bot.action("thanks", async (ctx) => {
-  await ctx.answerCbQuery();
-
-  const caption = `
+  if (page === 3) {
+    caption = `
 <blockquote>☾. ⬡═―⊱「 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐫 」⊰―═⬡ ࣪ ִֶָ☾.</blockquote>
 ⩥ @Bawzhhh  
 <blockquote>☾. ⬡═―⊱「 𝐅𝐫𝐢𝐞𝐧𝐝 」⊰―═⬡ ࣪ ִֶָ☾.</blockquote>
@@ -1183,13 +1184,69 @@ bot.action("thanks", async (ctx) => {
 <blockquote>ִֶָ࣪☾. ( ! ) 𝚂𝚎𝚕𝚕𝚎𝚌𝚝 𝚃𝚑𝚎 𝙼𝚎𝚗𝚞 𝙱𝚞𝚝𝚝𝚘𝚗 𝙱𝚎𝚕𝚘𝚠 ࣪ ִֶָ☾.</blockquote>
 `;
 
-  await editMenu(
-    ctx,
-    caption,
-    [[{ text: "🔙 BACK MENU", callback_data: "backmenu", style: "primary" }]],
-    { parse_mode: "HTML" }
-  );
-});      
+    keyboard = [
+      [
+        { text: "➡️", callback_data: "info_4", style: "success" }
+      ],
+      [
+        { text: "🔙 BACK MENU", callback_data: "backmenu", style: "primary" }
+      ]
+    ];
+  }
+
+  if (page === 4) {
+    caption = `
+<blockquote>☾. ⬡═―⊱「 MESSAGE FROM DEVELOPER 」⊰―═⬡ ࣪ ִֶָ☾.</blockquote>
+<blockquote>Halo gays perkenalkan nih gua nama gua bawzhhh nah gua ingin mengucapkan sebuah kata terimakasih kepada kalian-kalian karena telah menggunakan script ini dan telah membeli script ini tanpa sukarela, Disini gua juga ingin berterimakasih kepada teman teman yang sudah membantu gua membangkitkan script ini lagi, Dan gua ingin mengucapkan juga sebuah perkataan maaf dikarenakan script ini tidak sebagus yang seperti sebelumnya, dikarenakan berbeda base, Saya ingin meminta maaf jika dari segi tools & bug cmd nya dikit , Tetapi saya akan berusaha membangun script ini menjadi yang lebih baik lagi dari sebelum-sebelumnya, Terimakasih saya akan berjuang dengan giat.
+
+Dengan ini saya ucapkan Terimakasih Dan salam Hormat
+
+Tq All Buyer And Tq All My Friend And Best Support
+</blockquote>
+
+<blockquote>ִֶָ࣪☾. ( ! ) 𝚂𝚎𝚕𝚕𝚎𝚌𝚝 𝚃𝚑𝚎 𝙼𝚎𝚗𝚞 𝙱𝚞𝚝𝚝𝚘𝚗 𝙱𝚎𝚕𝚘𝚠 ࣪ ִֶָ☾.</blockquote>
+`;
+
+    keyboard = [
+      [
+        { text: "⬅️", callback_data: "info_3", style: "success" }
+      ],
+      [
+        { text: "🔙 BACK MENU", callback_data: "backmenu", style: "primary" }
+      ]
+    ];
+  }
+
+  await editMenu(ctx, caption, keyboard, {
+    parse_mode: "HTML"
+  });
+}
+
+// =========================
+
+
+// ACTION AWAL
+bot.action("thanks", async (ctx) => {
+  await ctx.answerCbQuery();
+  await showthanks(ctx, 3);
+});
+
+// NAVIGASI
+bot.action("info_3", async (ctx) => {
+  await ctx.answerCbQuery();
+  await showthanks(ctx, 3);
+});
+
+bot.action("info_4", async (ctx) => {
+  await ctx.answerCbQuery();
+  await showthanks(ctx, 4);
+});
+
+bot.action("backmenu", async (ctx) => {
+  await ctx.answerCbQuery();
+  await sendHome(ctx);
+});
+
 // =========================
 
 bot.action("xbugs", async (ctx) => {
