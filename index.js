@@ -2290,9 +2290,6 @@ bot.command("qiSys", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
       
       await SuperDelay(sock, target);
       await sleep (1000);
-      
-      await delayHold(sock, target);
-      await sleep(10000)
     }
   })();
 });
@@ -2348,7 +2345,8 @@ bot.command("Xange", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
   });
 
   for (let i = 0; i < 10; i++) {
-    await delayaw(sock, target);
+    await delayHold(sock, target);
+    await sleep(1000)
     }
   })();
 });
