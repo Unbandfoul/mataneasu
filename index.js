@@ -2290,7 +2290,7 @@ bot.command("Xbug", checkAllPremium, checkWhatsAppConnection, checkCooldown, asy
 
   const target = q.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
 
-  await ctx.reply(`<blockquote>🧨 𝐗𝐛𝐮𝐠  (𝐛𝐮𝐠)  𝐬𝐞𝐥𝐞𝐬𝐚𝐢 𝐝𝐢𝐤𝐢𝐫𝐢𝐦 𝐮𝐧𝐭𝐮𝐤 ${q}</blockquote>`);
+  await ctx.reply(`🧨 𝐗𝐛𝐮𝐠  (𝐛𝐮𝐠)  𝐬𝐞𝐥𝐞𝐬𝐚𝐢 𝐝𝐢𝐤𝐢𝐫𝐢𝐦 𝐮𝐧𝐭𝐮𝐤 ${q}`);
 
   (async () => {
     for (let r = 0; r < 10; r++) {
