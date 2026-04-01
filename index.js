@@ -2880,7 +2880,7 @@ async function RxVzInvis(sock, target) {
         encodeSignedDeviceIdentity, 
         jidDecode, 
         encodeWAMessage
-    } = require("@whiskeysockets/baileys");
+    } = require("@otaxayuns/baileys");
     
     const crypto = require('crypto');
     
