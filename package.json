@@ -1,5 +1,5 @@
 {
-  "name": "Scrip-New",
+  "name": "Scrape-New-Gxion-Stabil",
   "version": "0.0.0",
   "description": "@Bawzhhh",
   "main": "index.js",
@@ -7,15 +7,16 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "@bellaxchuu/ybails": "^0.0.6",
-    "whatsapp-rust-bridge": "^0.5.4",
-    "chalk": "^4.1.2",
-    "pino": "^8.17.0",
-    "telegraf": "^4.16.3",
-    "mongoose": "^8.4.0",
-    "moment-timezone": "^0.5.45",
-    "ms": "^2.1.3",
-    "form-data": "^4.0.0"
+  "@bellaxchuu/ybails": "^0.0.6",
+  "whatsapp-rust-bridge": "^0.5.4",
+  "axios": "^1.11.0",
+  "chalk": "^4.1.2",
+  "pino": "^8.17.0",
+  "telegraf": "^4.16.3",
+  "mongoose": "^8.4.0",
+  "moment-timezone": "^0.5.45",
+  "ms": "^2.1.3",
+  "form-data": "^4.0.0"
   },
   "engines": {
     "node": ">=18"
