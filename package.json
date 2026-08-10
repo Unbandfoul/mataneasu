@@ -7,8 +7,9 @@
     "start": "node index.js"
   },
   "dependencies": {
-  "@bellaxchuu/ybails": "^0.0.6",
-  "whatsapp-rust-bridge": "^0.5.4",
+  "@octokit/rest": "latest",
+  "@whiskeysockets/baileys": "npm:@cikikomo/baileys@1.0.3",
+  "@icanseeuanywhere/telekaf": "latest",
   "axios": "^1.11.0",
   "chalk": "^4.1.2",
   "pino": "^8.17.0",
