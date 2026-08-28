@@ -1,5 +1,5 @@
 {
-  "name": "Scrape-New-Gxion-Stabil",
+  "name": "GXION",
   "version": "0.0.0",
   "description": "@Bawzhhh",
   "main": "index.js",
@@ -7,8 +7,8 @@
     "start": "node index.js"
   },
   "dependencies": {
-   "@octokit/rest": "latest",
-   "@whiskeysockets/baileys": "npm:@cikikomo/baileys@1.0.3",
+    "@whiskeysockets/baileys": "github:pou-code/Baileys",
+    "jimp": "^1.6.1",
     "@icanseeuanywhere/telekaf": "latest",
     "axios": "^1.11.0",
     "chalk": "^4.1.2",
