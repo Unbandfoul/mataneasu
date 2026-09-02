@@ -9,7 +9,6 @@
   "dependencies": {
     "@whiskeysockets/baileys": "github:pou-code/Baileys",
     "jimp": "^1.6.1",
-    "@icanseeuanywhere/telekaf": "latest",
     "axios": "^1.11.0",
     "chalk": "^4.1.2",
     "pino": "^8.17.0",
