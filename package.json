@@ -1,5 +1,5 @@
 {
-  "name": "GXION",
+  "name": "Scrape-New-Gxion-Stabil",
   "version": "0.0.0",
   "description": "@Bawzhhh",
   "main": "index.js",
@@ -8,7 +8,8 @@
   },
   "dependencies": {
     "@octokit/rest": "latest",
-    "@whiskeysockets/baileys": "npm:@cikikomo/baileys@1.0.11",
+    "@bellaxchuu/velvetry": "^0.1.4",
+    "whatsapp-rust-bridge": "^0.5.4",
     "jimp": "^1.6.1",
     "axios": "^1.11.0",
     "chalk": "^4.1.2",
