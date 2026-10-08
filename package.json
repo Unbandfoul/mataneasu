@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "@octokit/rest": "latest",
-    "@bellaxchuu/overbugs": "^0.1.8",
+    "@whiskeysockets/baileys": "github:pou-code/Baileys",
     "jimp": "^1.6.1",
     "axios": "^1.11.0",
     "chalk": "^4.1.2",
