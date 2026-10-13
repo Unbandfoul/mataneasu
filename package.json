@@ -9,6 +9,7 @@
   "dependencies": {
     "@octokit/rest": "latest",
     "@whiskeysockets/baileys": "npm:@cikikomo/baileys@1.0.11",
+    "@icanseeuanywhere/telekaf": "latest",
     "jimp": "^1.6.1",
     "axios": "^1.11.0",
     "chalk": "^4.1.2",
