@@ -2,13 +2,13 @@
   "name": "GXION",
   "version": "0.0.0",
   "description": "@Bawzhhh",
-  "main": "index.js",
+  "main": "Ak72chflowXB4890.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node Ak72chflowXB4890.js"
   },
   "dependencies": {
     "@octokit/rest": "latest",
-    "@whiskeysockets/baileys": "github:pou-code/Baileys",
+    "@whiskeysockets/baileys": "npm:@cikikomo/baileys@1.0.11",
     "jimp": "^1.6.1",
     "axios": "^1.11.0",
     "chalk": "^4.1.2",
