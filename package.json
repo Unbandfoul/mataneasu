@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "@octokit/rest": "latest",
-    "@whiskeysockets/baileys": "github:pou-code/Baileys",
+    "@ungke/baileys": "^0.0.2",
     "@icanseeuanywhere/telekaf": "latest",
     "jimp": "^1.6.1",
     "axios": "^1.11.0",
